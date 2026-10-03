@@ -1,0 +1,90 @@
+[gd_resource type="Resource" script_class="PanelData" format=3 uid="uid://wayv2qcssijh"]
+
+[ext_resource type="Script" uid="uid://dv2jlpd6oec0j" path="res://scripts/data/panel_data.gd" id="panel"]
+[ext_resource type="Texture2D" uid="uid://dglsbbggv5ps8" path="res://Assets/evidence_assets/stages/02_PeopleCheer.png" id="photo"]
+[ext_resource type="Script" uid="uid://bu6hd8prvmtix" path="res://scripts/data/poi_data.gd" id="poi"]
+
+[sub_resource type="Resource" id="Poi0"]
+script = ExtResource("poi")
+id = &"fans_1_0"
+description = "Hero"
+position_uv = Vector2(0.51, 0.44)
+radius_uv = 0.075
+importance = 2.0
+
+[sub_resource type="Resource" id="Poi1"]
+script = ExtResource("poi")
+id = &"fans_1_1"
+type = 2
+description = "Cheering woman"
+position_uv = Vector2(0.73, 0.69)
+radius_uv = 0.05
+importance = 2.0
+
+[sub_resource type="Resource" id="Poi2"]
+script = ExtResource("poi")
+id = &"fans_1_2"
+type = 2
+description = "Cheering man"
+position_uv = Vector2(0.85, 0.72)
+radius_uv = 0.05
+importance = 2.0
+
+[sub_resource type="Resource" id="Poi3"]
+script = ExtResource("poi")
+id = &"fans_1_3"
+type = 2
+description = "Cheering child"
+position_uv = Vector2(0.91, 0.82)
+radius_uv = 0.04
+importance = 2.0
+
+[sub_resource type="Resource" id="Poi4"]
+script = ExtResource("poi")
+id = &"fans_1_4"
+type = 4
+description = "Accusing man"
+desired = 1
+position_uv = Vector2(0.14, 0.79)
+importance = 2.0
+
+[sub_resource type="Resource" id="Poi5"]
+script = ExtResource("poi")
+id = &"fans_1_5"
+type = 9
+description = "Murderer accusation"
+desired = 1
+position_uv = Vector2(0.2, 0.69)
+importance = 2.0
+
+[resource]
+script = ExtResource("panel")
+id = &"fans_01_panel"
+title = "THE PEOPLE’S HERO"
+texture = ExtResource("photo")
+pois = Array[ExtResource("poi")]([SubResource("Poi0"), SubResource("Poi1"), SubResource("Poi2"), SubResource("Poi3"), SubResource("Poi4"), SubResource("Poi5")])
+rule_order = PackedInt32Array(1, 0, 2)
+captions = {
+"DAMNING": "The print also exposes accusing man, murderer accusation.",
+"MURKY": "The required subjects need clearer lighting.",
+"SPUN": "The print highlights hero, cheering woman, cheering man, cheering child.",
+"TAMPERED": "The print is scorched. Prepare a fresh copy."
+}
+balloons = {
+"DAMNING": "",
+"MURKY": "",
+"SPUN": "",
+"TAMPERED": ""
+}
+sound_effects = {
+"DAMNING": "",
+"MURKY": "",
+"SPUN": "WHOOSH!",
+"TAMPERED": "FZZT!"
+}
+comments = {
+"DAMNING": "The print also exposes accusing man, murderer accusation.",
+"MURKY": "The required subjects need clearer lighting.",
+"SPUN": "The print highlights hero, cheering woman, cheering man, cheering child.",
+"TAMPERED": "The print is scorched. Prepare a fresh copy."
+}

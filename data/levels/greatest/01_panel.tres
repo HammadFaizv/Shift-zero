@@ -1,0 +1,63 @@
+[gd_resource type="Resource" script_class="PanelData" format=3 uid="uid://baslirdf11x4u"]
+
+[ext_resource type="Script" uid="uid://dv2jlpd6oec0j" path="res://scripts/data/panel_data.gd" id="panel"]
+[ext_resource type="Texture2D" uid="uid://co0mouvapmoct" path="res://Assets/evidence/greatest/01_panel.svg" id="photo"]
+[ext_resource type="Script" uid="uid://bu6hd8prvmtix" path="res://scripts/data/poi_data.gd" id="poi"]
+
+[sub_resource type="Resource" id="Hero"]
+script = ExtResource("poi")
+id = &"greatest_1_hero"
+description = "Hero"
+position_uv = Vector2(0.75, 0.4)
+importance = 2.0
+
+[sub_resource type="Resource" id="Attack"]
+script = ExtResource("poi")
+id = &"greatest_1_attack"
+type = 7
+description = "Attack"
+desired = 1
+position_uv = Vector2(0.45, 0.4)
+radius_uv = 0.06
+importance = 2.0
+
+[sub_resource type="Resource" id="Damage"]
+script = ExtResource("poi")
+id = &"greatest_1_damage"
+type = 5
+description = "Damage"
+desired = 1
+position_uv = Vector2(0.2, 0.57)
+radius_uv = 0.08
+importance = 2.0
+
+[resource]
+script = ExtResource("panel")
+id = &"greatest_01_panel"
+title = "THE ATTACK"
+texture = ExtResource("photo")
+pois = Array[ExtResource("poi")]([SubResource("Hero"), SubResource("Attack"), SubResource("Damage")])
+rule_order = PackedInt32Array(1, 0, 2)
+captions = {
+"DAMNING": "Halcyon's attack tears through the city.",
+"MURKY": "The subject needs clearer lighting.",
+"SPUN": "Halcyon charges into danger.",
+"TAMPERED": "The print is scorched. Prepare a fresh copy."
+}
+balloons = {
+"DAMNING": "",
+"MURKY": "",
+"SPUN": "First City can count on me.",
+"TAMPERED": ""
+}
+sound_effects = {
+"DAMNING": "",
+"MURKY": "",
+"SPUN": "WHOOSH!",
+"TAMPERED": "FZZT!"
+}
+comments = {
+"DAMNING": "Halcyon's attack tears through the city.",
+"MURKY": "Panel 1 is too dark to read.",
+"SPUN": "We don’t deserve Halcyon!"
+}

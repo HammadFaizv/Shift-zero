@@ -1,0 +1,63 @@
+[gd_resource type="Resource" script_class="PanelData" format=3 uid="uid://0qotmynijesi"]
+
+[ext_resource type="Script" uid="uid://dv2jlpd6oec0j" path="res://scripts/data/panel_data.gd" id="panel"]
+[ext_resource type="Texture2D" uid="uid://cpam8hkch88he" path="res://Assets/evidence_assets/stages/03_drowning_girl.png" id="photo"]
+[ext_resource type="Script" uid="uid://bu6hd8prvmtix" path="res://scripts/data/poi_data.gd" id="poi"]
+
+[sub_resource type="Resource" id="Poi0"]
+script = ExtResource("poi")
+id = &"lake_1_0"
+description = "Hero"
+position_uv = Vector2(0.66, 0.46)
+radius_uv = 0.085
+importance = 2.0
+
+[sub_resource type="Resource" id="Poi1"]
+script = ExtResource("poi")
+id = &"lake_1_1"
+type = 4
+description = "Girl on shore"
+desired = 1
+position_uv = Vector2(0.11, 0.83)
+importance = 2.0
+
+[sub_resource type="Resource" id="Poi2"]
+script = ExtResource("poi")
+id = &"lake_1_2"
+type = 2
+description = "Drowning woman"
+desired = 1
+position_uv = Vector2(0.29, 0.74)
+importance = 2.0
+
+[resource]
+script = ExtResource("panel")
+id = &"lake_01_panel"
+title = "ABOVE THE LAKE"
+texture = ExtResource("photo")
+pois = Array[ExtResource("poi")]([SubResource("Poi0"), SubResource("Poi1"), SubResource("Poi2")])
+rule_order = PackedInt32Array(1, 0, 2)
+captions = {
+"DAMNING": "The print also exposes girl on shore, drowning woman.",
+"MURKY": "The required subjects need clearer lighting.",
+"SPUN": "The print highlights hero.",
+"TAMPERED": "The print is scorched. Prepare a fresh copy."
+}
+balloons = {
+"DAMNING": "",
+"MURKY": "",
+"SPUN": "",
+"TAMPERED": ""
+}
+sound_effects = {
+"DAMNING": "",
+"MURKY": "",
+"SPUN": "WHOOSH!",
+"TAMPERED": "FZZT!"
+}
+comments = {
+"DAMNING": "The print also exposes girl on shore, drowning woman.",
+"MURKY": "The required subjects need clearer lighting.",
+"SPUN": "The print highlights hero.",
+"TAMPERED": "The print is scorched. Prepare a fresh copy."
+}

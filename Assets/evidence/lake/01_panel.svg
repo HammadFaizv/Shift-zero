@@ -1,0 +1,193 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="768" height="640" viewBox="0 0 768 640" stroke-linecap="round" stroke-linejoin="round">
+  <title>ABOVE THE LAKE / ABOVE THE LAKE</title>
+  <desc>Editable scene layers. POI anchors preserved from PanelData.</desc>
+  <defs>
+    <clipPath id="photo_crop">
+      <rect width="768" height="640" />
+    </clipPath>
+  </defs>
+  <g clip-path="url(#photo_crop)">
+    <g id="layer_00" data-label="lake day" transform="translate(0 0) scale(1.2 1) translate(0 0)">
+      <defs>
+        <linearGradient id="p0_sky" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#8abdd7" />
+          <stop offset="1" stop-color="#e6f3f9" />
+        </linearGradient>
+      </defs>
+      <rect width="640" height="640" fill="url(#p0_sky)" />
+      <line x1="552.0" y1="100.0" x2="568.0" y2="100.0" stroke="#e7c174" stroke-width="5" />
+      <line x1="545.0333209967908" y1="126.0" x2="558.8897274573418" y2="134.0" stroke="#e7c174" stroke-width="5" />
+      <line x1="526.0" y1="145.0333209967908" x2="534.0" y2="158.88972745734182" stroke="#e7c174" stroke-width="5" />
+      <line x1="500.0" y1="152.0" x2="500.0" y2="168.0" stroke="#e7c174" stroke-width="5" />
+      <line x1="474.0" y1="145.03332099679082" x2="466.0" y2="158.88972745734185" stroke="#e7c174" stroke-width="5" />
+      <line x1="454.9666790032092" y1="126.0" x2="441.11027254265815" y2="134.0" stroke="#e7c174" stroke-width="5" />
+      <line x1="448.0" y1="100.0" x2="432.0" y2="100.00000000000001" stroke="#e7c174" stroke-width="5" />
+      <line x1="454.96667900320915" y1="74.00000000000001" x2="441.11027254265815" y2="66.00000000000003" stroke="#e7c174" stroke-width="5" />
+      <line x1="474.0" y1="54.96667900320921" x2="466.0" y2="41.110272542658194" stroke="#e7c174" stroke-width="5" />
+      <line x1="500.0" y1="48.0" x2="500.0" y2="32.0" stroke="#e7c174" stroke-width="5" />
+      <line x1="526.0" y1="54.966679003209194" x2="534.0" y2="41.11027254265817" stroke="#e7c174" stroke-width="5" />
+      <line x1="545.0333209967907" y1="73.99999999999997" x2="558.8897274573418" y2="65.99999999999997" stroke="#e7c174" stroke-width="5" />
+      <circle cx="500" cy="100" r="44" fill="#f3e29c" stroke="#151210" stroke-width="5" />
+      <circle cx="101.4" cy="126.6" r="17.6" fill="#fff" stroke="#151210" stroke-width="6" />
+      <circle cx="123.4" cy="111.2" r="24.200000000000003" fill="#fff" stroke="#151210" stroke-width="6" />
+      <circle cx="152.0" cy="120.0" r="20.900000000000002" fill="#fff" stroke="#151210" stroke-width="6" />
+      <circle cx="132.2" cy="131.0" r="18.700000000000003" fill="#fff" stroke="#151210" stroke-width="6" />
+      <circle cx="167.4" cy="131.0" r="14.3" fill="#fff" stroke="#151210" stroke-width="6" />
+      <circle cx="101.4" cy="126.6" r="17.6" fill="#fff" />
+      <circle cx="123.4" cy="111.2" r="24.200000000000003" fill="#fff" />
+      <circle cx="152.0" cy="120.0" r="20.900000000000002" fill="#fff" />
+      <circle cx="132.2" cy="131.0" r="18.700000000000003" fill="#fff" />
+      <circle cx="167.4" cy="131.0" r="14.3" fill="#fff" />
+      <circle cx="319.2" cy="74.8" r="12.8" fill="#fff" stroke="#151210" stroke-width="6" />
+      <circle cx="335.2" cy="63.6" r="17.6" fill="#fff" stroke="#151210" stroke-width="6" />
+      <circle cx="356.0" cy="70.0" r="15.200000000000001" fill="#fff" stroke="#151210" stroke-width="6" />
+      <circle cx="341.6" cy="78.0" r="13.600000000000001" fill="#fff" stroke="#151210" stroke-width="6" />
+      <circle cx="367.2" cy="78.0" r="10.4" fill="#fff" stroke="#151210" stroke-width="6" />
+      <circle cx="319.2" cy="74.8" r="12.8" fill="#fff" />
+      <circle cx="335.2" cy="63.6" r="17.6" fill="#fff" />
+      <circle cx="356.0" cy="70.0" r="15.200000000000001" fill="#fff" />
+      <circle cx="341.6" cy="78.0" r="13.600000000000001" fill="#fff" />
+      <circle cx="367.2" cy="78.0" r="10.4" fill="#fff" />
+      <circle cx="411.8" cy="204.2" r="11.2" fill="#fff" stroke="#151210" stroke-width="6" />
+      <circle cx="425.8" cy="194.4" r="15.399999999999999" fill="#fff" stroke="#151210" stroke-width="6" />
+      <circle cx="444.0" cy="200.0" r="13.299999999999999" fill="#fff" stroke="#151210" stroke-width="6" />
+      <circle cx="431.4" cy="207.0" r="11.899999999999999" fill="#fff" stroke="#151210" stroke-width="6" />
+      <circle cx="453.8" cy="207.0" r="9.1" fill="#fff" stroke="#151210" stroke-width="6" />
+      <circle cx="411.8" cy="204.2" r="11.2" fill="#fff" />
+      <circle cx="425.8" cy="194.4" r="15.399999999999999" fill="#fff" />
+      <circle cx="444.0" cy="200.0" r="13.299999999999999" fill="#fff" />
+      <circle cx="431.4" cy="207.0" r="11.899999999999999" fill="#fff" />
+      <circle cx="453.8" cy="207.0" r="9.1" fill="#fff" />
+      <polygon points="-10,330 80,200 150,260 250,150 360,260 440,190 520,260 650,200 650,340 -10,340" fill="#929fb2" stroke="#151210" stroke-width="5" />
+      <polygon points="-10,340 120,270 260,310 400,260 560,300 650,280 650,350 -10,350" fill="#adb9ca" stroke="#151210" stroke-width="4" />
+      <rect x="-5" y="330" width="650" height="25" rx="0" fill="#83b281" stroke="#151210" stroke-width="4" />
+      <circle cx="7" cy="325" r="20" fill="#65946b" stroke="#151210" stroke-width="3" />
+      <circle cx="56" cy="325" r="17" fill="#65946b" stroke="#151210" stroke-width="3" />
+      <circle cx="113" cy="325" r="19" fill="#65946b" stroke="#151210" stroke-width="3" />
+      <circle cx="164" cy="325" r="13" fill="#65946b" stroke="#151210" stroke-width="3" />
+      <circle cx="213" cy="325" r="12" fill="#65946b" stroke="#151210" stroke-width="3" />
+      <circle cx="261" cy="325" r="16" fill="#65946b" stroke="#151210" stroke-width="3" />
+      <circle cx="312" cy="325" r="15" fill="#65946b" stroke="#151210" stroke-width="3" />
+      <circle cx="357" cy="325" r="19" fill="#65946b" stroke="#151210" stroke-width="3" />
+      <circle cx="412" cy="325" r="20" fill="#65946b" stroke="#151210" stroke-width="3" />
+      <circle cx="461" cy="325" r="18" fill="#65946b" stroke="#151210" stroke-width="3" />
+      <circle cx="514" cy="325" r="14" fill="#65946b" stroke="#151210" stroke-width="3" />
+      <circle cx="557" cy="325" r="14" fill="#65946b" stroke="#151210" stroke-width="3" />
+      <circle cx="612" cy="325" r="18" fill="#65946b" stroke="#151210" stroke-width="3" />
+      <defs>
+        <linearGradient id="p0_wt" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#78aec8" />
+          <stop offset="1" stop-color="#4b80a1" />
+        </linearGradient>
+      </defs>
+      <rect x="-5" y="355" width="650" height="290" fill="url(#p0_wt)" stroke="#151210" stroke-width="4" />
+      <path d="M 25 546 q 12 -6 24 0 q 12 6 24 0" fill="none" stroke="#e0eff8" stroke-width="3" opacity=".7" />
+      <path d="M 75 415 q 12 -6 24 0 q 12 6 24 0" fill="none" stroke="#e0eff8" stroke-width="3" opacity=".7" />
+      <path d="M 53 452 q 12 -6 24 0 q 12 6 24 0" fill="none" stroke="#e0eff8" stroke-width="3" opacity=".7" />
+      <path d="M 41 585 q 12 -6 24 0 q 12 6 24 0" fill="none" stroke="#e0eff8" stroke-width="3" opacity=".7" />
+      <path d="M 285 496 q 12 -6 24 0 q 12 6 24 0" fill="none" stroke="#e0eff8" stroke-width="3" opacity=".7" />
+      <path d="M 406 557 q 12 -6 24 0 q 12 6 24 0" fill="none" stroke="#e0eff8" stroke-width="3" opacity=".7" />
+      <path d="M 447 476 q 12 -6 24 0 q 12 6 24 0" fill="none" stroke="#e0eff8" stroke-width="3" opacity=".7" />
+      <path d="M 600 488 q 12 -6 24 0 q 12 6 24 0" fill="none" stroke="#e0eff8" stroke-width="3" opacity=".7" />
+      <path d="M 147 599 q 12 -6 24 0 q 12 6 24 0" fill="none" stroke="#e0eff8" stroke-width="3" opacity=".7" />
+      <path d="M 384 399 q 12 -6 24 0 q 12 6 24 0" fill="none" stroke="#e0eff8" stroke-width="3" opacity=".7" />
+      <path d="M 46 409 q 12 -6 24 0 q 12 6 24 0" fill="none" stroke="#e0eff8" stroke-width="3" opacity=".7" />
+      <path d="M 516 430 q 12 -6 24 0 q 12 6 24 0" fill="none" stroke="#e0eff8" stroke-width="3" opacity=".7" />
+      <path d="M 274 547 q 12 -6 24 0 q 12 6 24 0" fill="none" stroke="#e0eff8" stroke-width="3" opacity=".7" />
+      <path d="M 456 574 q 12 -6 24 0 q 12 6 24 0" fill="none" stroke="#e0eff8" stroke-width="3" opacity=".7" />
+      <path d="M 318 482 q 12 -6 24 0 q 12 6 24 0" fill="none" stroke="#e0eff8" stroke-width="3" opacity=".7" />
+      <path d="M 529 588 q 12 -6 24 0 q 12 6 24 0" fill="none" stroke="#e0eff8" stroke-width="3" opacity=".7" />
+      <path d="M 405 521 q 12 -6 24 0 q 12 6 24 0" fill="none" stroke="#e0eff8" stroke-width="3" opacity=".7" />
+      <path d="M 369 511 q 12 -6 24 0 q 12 6 24 0" fill="none" stroke="#e0eff8" stroke-width="3" opacity=".7" />
+      <path d="M 427 524 q 12 -6 24 0 q 12 6 24 0" fill="none" stroke="#e0eff8" stroke-width="3" opacity=".7" />
+      <path d="M 247 606 q 12 -6 24 0 q 12 6 24 0" fill="none" stroke="#e0eff8" stroke-width="3" opacity=".7" />
+      <path d="M 354 549 q 12 -6 24 0 q 12 6 24 0" fill="none" stroke="#e0eff8" stroke-width="3" opacity=".7" />
+      <path d="M 39 594 q 12 -6 24 0 q 12 6 24 0" fill="none" stroke="#e0eff8" stroke-width="3" opacity=".7" />
+      <path d="M 296 530 q 12 -6 24 0 q 12 6 24 0" fill="none" stroke="#e0eff8" stroke-width="3" opacity=".7" />
+      <path d="M 177 553 q 12 -6 24 0 q 12 6 24 0" fill="none" stroke="#e0eff8" stroke-width="3" opacity=".7" />
+      <path d="M 344 513 q 12 -6 24 0 q 12 6 24 0" fill="none" stroke="#e0eff8" stroke-width="3" opacity=".7" />
+      <path d="M 595 520 q 12 -6 24 0 q 12 6 24 0" fill="none" stroke="#e0eff8" stroke-width="3" opacity=".7" />
+      <polygon points="-10,640 -10,540 70,560 130,600 160,640" fill="#7b7881" stroke="#151210" stroke-width="5" />
+      <polygon points="650,640 650,560 580,580 520,630 500,640" fill="#89868d" stroke="#151210" stroke-width="5" />
+      <path d="M 20 570 Q 14 540 24 510 M 30 570 Q 34 540 42 514" fill="none" stroke="#65946b" stroke-width="5" />
+      <path d="M 60 550 Q 54 520 64 490 M 70 550 Q 74 520 82 494" fill="none" stroke="#65946b" stroke-width="5" />
+      <path d="M 610 585 Q 604 555 614 525 M 620 585 Q 624 555 632 529" fill="none" stroke="#65946b" stroke-width="5" />
+    </g>
+    <g id="layer_01" data-label="water ripples" transform="translate(207.36 454.4) scale(0.8 0.8) translate(-100.0 -40.0)">
+      <ellipse cx="100" cy="40" rx="20" ry="6.4" fill="none" stroke="#151210" stroke-width="3" opacity="1.0" />
+      <ellipse cx="100" cy="40" rx="20" ry="6.4" fill="none" stroke="#edf5fa" stroke-width="1.5" />
+      <ellipse cx="100" cy="40" rx="45" ry="14.4" fill="none" stroke="#151210" stroke-width="3" opacity="0.8" />
+      <ellipse cx="100" cy="40" rx="45" ry="14.4" fill="none" stroke="#edf5fa" stroke-width="1.5" />
+      <ellipse cx="100" cy="40" rx="72" ry="23.04" fill="none" stroke="#151210" stroke-width="3" opacity="0.6" />
+      <ellipse cx="100" cy="40" rx="72" ry="23.04" fill="none" stroke="#edf5fa" stroke-width="1.5" />
+      <ellipse cx="100" cy="40" rx="98" ry="31.36" fill="none" stroke="#151210" stroke-width="3" opacity="0.3999999999999999" />
+      <ellipse cx="100" cy="40" rx="98" ry="31.36" fill="none" stroke="#edf5fa" stroke-width="1.5" />
+    </g>
+    <g id="layer_02" data-label="drowning woman" transform="translate(207.36 454.4) scale(1.0 1.0) translate(-75.0 -70.0)">
+      <path d="M52,92 L28,52 L20,24" fill="none" stroke="#151210" stroke-width="17.0" />
+      <path d="M52,92 L28,52 L20,24" fill="none" stroke="#d7b79e" stroke-width="11" />
+      <path d="M98,92 L124,48 L132,18" fill="none" stroke="#151210" stroke-width="17.0" />
+      <path d="M98,92 L124,48 L132,18" fill="none" stroke="#d7b79e" stroke-width="11" />
+      <circle cx="19" cy="20" r="6" fill="#d7b79e" stroke="#151210" stroke-width="3" />
+      <circle cx="133" cy="15" r="6" fill="#d7b79e" stroke="#151210" stroke-width="3" />
+      <ellipse cx="75" cy="64" rx="26" ry="22" fill="#4e372b" stroke="#151210" stroke-width="4" />
+      <circle cx="75" cy="64" r="20" fill="#d7b79e" stroke="#151210" stroke-width="4" />
+      <path d="M 54 60 Q 75 38 96 60 L 98 74 Q 92 56 75 52 Q 58 56 52 74 Z" fill="#4e372b" stroke="#151210" stroke-width="3" />
+      <circle cx="68" cy="66" r="4.4" fill="#fff" stroke="#151210" stroke-width="2" />
+      <circle cx="82" cy="66" r="4.4" fill="#fff" stroke="#151210" stroke-width="2" />
+      <circle cx="68" cy="66" r="1.8" fill="#151210" stroke="#151210" stroke-width="1" />
+      <circle cx="82" cy="66" r="1.8" fill="#151210" stroke="#151210" stroke-width="1" />
+      <ellipse cx="75" cy="78" rx="4.5" ry="6" fill="#151210" stroke="#151210" stroke-width="1" />
+      <path d="M -6 96 Q 14 84 34 96 T 74 96 T 114 96 T 154 96 L 154 140 L -6 140 Z" fill="#5a92b3" stroke="#151210" stroke-width="5" />
+      <path d="M 10 112 Q 24 106 38 112 M 70 120 Q 84 114 98 120 M 112 108 Q 124 102 136 108" stroke="#cde6f1" stroke-width="3" fill="none" />
+      <circle cx="38" cy="82" r="4" fill="#cde6f1" stroke="#151210" stroke-width="2" />
+      <circle cx="118" cy="80" r="4" fill="#cde6f1" stroke="#151210" stroke-width="2" />
+      <circle cx="10" cy="74" r="4" fill="#cde6f1" stroke="#151210" stroke-width="2" />
+      <circle cx="142" cy="70" r="4" fill="#cde6f1" stroke="#151210" stroke-width="2" />
+    </g>
+    <g id="layer_03" data-label="hero flying arms crossed" transform="translate(568.3199999999999 217.60000000000002) scale(1.12 1.12) translate(-95 -70)">
+      <polygon points="72,62 12,26 34,60 2,80 34,98 72,88" fill="#428582" stroke="#151210" stroke-width="4" />
+      <path d="M70,60 L22,54" fill="none" stroke="#151210" stroke-width="22.0" />
+      <path d="M70,60 L22,54" fill="none" stroke="#d5b766" stroke-width="16" />
+      <path d="M70,86 L20,94" fill="none" stroke="#151210" stroke-width="22.0" />
+      <path d="M70,86 L20,94" fill="none" stroke="#d5b766" stroke-width="16" />
+      <path d="M22,54 L8,52" fill="none" stroke="#151210" stroke-width="24.0" />
+      <path d="M22,54 L8,52" fill="none" stroke="#428582" stroke-width="18" />
+      <path d="M20,94 L6,98" fill="none" stroke="#151210" stroke-width="24.0" />
+      <path d="M20,94 L6,98" fill="none" stroke="#428582" stroke-width="18" />
+      <rect x="58" y="44" width="76" height="52" rx="22" fill="#d5b766" stroke="#151210" stroke-width="4" />
+      <g id="p3_emblem">
+        <circle cx="98" cy="70" r="11" fill="#c4744e" stroke="#151210" stroke-width="4" />
+        <line x1="112.0" y1="70.0" x2="118.0" y2="70.0" stroke="#151210" stroke-width="3" />
+        <line x1="107.89949493661166" y1="79.89949493661166" x2="112.14213562373095" y2="84.14213562373095" stroke="#151210" stroke-width="3" />
+        <line x1="98.0" y1="84.0" x2="98.0" y2="90.0" stroke="#151210" stroke-width="3" />
+        <line x1="88.10050506338834" y1="79.89949493661166" x2="83.85786437626905" y2="84.14213562373095" stroke="#151210" stroke-width="3" />
+        <line x1="84.0" y1="70.0" x2="78.0" y2="70.0" stroke="#151210" stroke-width="3" />
+        <line x1="88.10050506338834" y1="60.10050506338834" x2="83.85786437626905" y2="55.85786437626905" stroke="#151210" stroke-width="3" />
+        <line x1="98.0" y1="56.0" x2="98.0" y2="50.0" stroke="#151210" stroke-width="3" />
+        <line x1="107.89949493661166" y1="60.10050506338833" x2="112.14213562373095" y2="55.85786437626905" stroke="#151210" stroke-width="3" />
+      </g>
+      <path d="M122,60 L92,76 L120,84" fill="none" stroke="#151210" stroke-width="19.0" />
+      <path d="M122,60 L92,76 L120,84" fill="none" stroke="#d5b766" stroke-width="13" />
+      <path d="M92,60 L124,74 L100,86" fill="none" stroke="#151210" stroke-width="19.0" />
+      <path d="M92,60 L124,74 L100,86" fill="none" stroke="#d5b766" stroke-width="13" />
+      <circle cx="121" cy="84" r="6" fill="#428582" stroke="#151210" stroke-width="3" />
+      <circle cx="100" cy="87" r="6" fill="#428582" stroke="#151210" stroke-width="3" />
+      <g transform="rotate(-10 152 36)">
+        <g id="p3_head">
+          <circle cx="152" cy="36" r="24" fill="#d7b79e" stroke="#151210" stroke-width="4" />
+          <clipPath id="p3_cfc">
+            <circle cx="152" cy="36" r="24" />
+          </clipPath>
+          <g clip-path="url(#p3_cfc)">
+            <rect x="128" y="12" width="48" height="18.0" fill="#261e19" />
+            <rect x="128" y="31.68" width="48" height="12.0" fill="#f4f1eb" />
+          </g>
+          <circle cx="152" cy="36" r="24" fill="none" stroke="#151210" stroke-width="4" />
+          <rect x="155.6" y="35.52" width="10.8" height="4.32" fill="#151210" />
+        </g>
+        <path d="M 144.8 52.8 Q 154.4 55.2 162.8 49.2" fill="none" stroke="#151210" stroke-width="3" />
+      </g>
+    </g>
+  </g>
+</svg>

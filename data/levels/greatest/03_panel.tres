@@ -1,0 +1,83 @@
+[gd_resource type="Resource" script_class="PanelData" format=3 uid="uid://cpobkkcxdgnrn"]
+
+[ext_resource type="Script" uid="uid://dv2jlpd6oec0j" path="res://scripts/data/panel_data.gd" id="panel"]
+[ext_resource type="Texture2D" uid="uid://mw1i3d1bn2kl" path="res://Assets/evidence/greatest/03_panel.svg" id="photo"]
+[ext_resource type="Script" uid="uid://bu6hd8prvmtix" path="res://scripts/data/poi_data.gd" id="poi"]
+
+[sub_resource type="Resource" id="Hero"]
+script = ExtResource("poi")
+id = &"greatest_3_hero"
+description = "Hero"
+position_uv = Vector2(0.76, 0.45)
+importance = 2.0
+
+[sub_resource type="Resource" id="Witnesses"]
+script = ExtResource("poi")
+id = &"greatest_3_witnesses"
+type = 4
+description = "Witnesses"
+desired = 1
+position_uv = Vector2(0.28, 0.35)
+radius_uv = 0.09
+importance = 2.0
+
+[sub_resource type="Resource" id="Victims"]
+script = ExtResource("poi")
+id = &"greatest_3_victims"
+type = 2
+description = "Victims"
+desired = 1
+position_uv = Vector2(0.24, 0.71)
+radius_uv = 0.075
+importance = 2.0
+
+[sub_resource type="Resource" id="Police"]
+script = ExtResource("poi")
+id = &"greatest_3_police"
+type = 6
+description = "Police"
+desired = 1
+position_uv = Vector2(0.41, 0.55)
+radius_uv = 0.065
+importance = 2.0
+
+[sub_resource type="Resource" id="Damage"]
+script = ExtResource("poi")
+id = &"greatest_3_damage"
+type = 5
+description = "Damage"
+desired = 1
+position_uv = Vector2(0.15, 0.52)
+radius_uv = 0.08
+importance = 2.0
+
+[resource]
+script = ExtResource("panel")
+id = &"greatest_03_panel"
+title = "THE AFTERMATH"
+texture = ExtResource("photo")
+pois = Array[ExtResource("poi")]([SubResource("Hero"), SubResource("Witnesses"), SubResource("Victims"), SubResource("Police"), SubResource("Damage")])
+rule_order = PackedInt32Array(1, 0, 2)
+captions = {
+"DAMNING": "Witnesses identify Halcyon as emergency crews arrive.",
+"MURKY": "The subject needs clearer lighting.",
+"SPUN": "First City's protector stands watch over the aftermath.",
+"TAMPERED": "The print is scorched. Prepare a fresh copy."
+}
+balloons = {
+"DAMNING": "",
+"MURKY": "",
+"SPUN": "First City can count on me.",
+"TAMPERED": ""
+}
+sound_effects = {
+"DAMNING": "",
+"MURKY": "",
+"SPUN": "STAND TALL!",
+"TAMPERED": "FZZT!"
+}
+comments = {
+"DAMNING": "Witnesses identify Halcyon as emergency crews arrive.",
+"MURKY": "Panel 3 is too dark to read.",
+"SPUN": "Another day saved by First City's greatest hero."
+}

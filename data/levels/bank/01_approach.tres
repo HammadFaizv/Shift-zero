@@ -1,0 +1,52 @@
+[gd_resource type="Resource" script_class="PanelData" format=3 uid="uid://bg22aq0k5p88f"]
+
+[ext_resource type="Script" uid="uid://dv2jlpd6oec0j" path="res://scripts/data/panel_data.gd" id="panel"]
+[ext_resource type="Texture2D" uid="uid://bj043hr48mxvu" path="res://Assets/evidence/bank/01_approach.svg" id="photo"]
+[ext_resource type="Script" uid="uid://bu6hd8prvmtix" path="res://scripts/data/poi_data.gd" id="poi"]
+
+[sub_resource type="Resource" id="Hero"]
+script = ExtResource("poi")
+id = &"H1"
+description = "Captain Halcyon / photo 1"
+position_uv = Vector2(0.65, 0.72)
+
+[sub_resource type="Resource" id="Evidence"]
+script = ExtResource("poi")
+id = &"E1"
+type = 2
+description = "The crowd Halcyon is diving toward"
+desired = 1
+position_uv = Vector2(0.25, 0.28)
+radius_uv = 0.07
+comment_lines = PackedStringArray("He is flying AT the people in panel 1. Those are customers, not robbers.")
+
+[resource]
+script = ExtResource("panel")
+id = &"approach"
+title = "THE APPROACH"
+texture = ExtResource("photo")
+pois = Array[ExtResource("poi")]([SubResource("Hero"), SubResource("Evidence")])
+rule_order = null
+captions = {
+"DAMNING": "Halcyon dives straight at the crowd outside First City Savings.",
+"MURKY": "A caped shape flashes past the bank. Nobody can tell what happened.",
+"SPUN": "Halcyon swoops in to protect the bank's frightened customers.",
+"TAMPERED": "The approach photograph has been scorched. The crowd is missing."
+}
+balloons = {
+"DAMNING": "Out of my way!",
+"MURKY": "???",
+"SPUN": "Stay calm, citizens!",
+"TAMPERED": "What happened?"
+}
+sound_effects = {
+"DAMNING": "CRASH!",
+"MURKY": "…",
+"SPUN": "WHOOSH!",
+"TAMPERED": "FZZT!"
+}
+comments = {
+"DAMNING": "He is flying AT the people in panel 1. Those are customers, not robbers.",
+"MURKY": "I cannot see what happened in panel 1. Is this journalism?",
+"SPUN": "He got to the crowd just in time. That is our hero."
+}

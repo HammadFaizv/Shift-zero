@@ -1,0 +1,52 @@
+[gd_resource type="Resource" script_class="PanelData" format=3 uid="uid://cbyvo2kj0vr3m"]
+
+[ext_resource type="Script" uid="uid://dv2jlpd6oec0j" path="res://scripts/data/panel_data.gd" id="panel"]
+[ext_resource type="Texture2D" uid="uid://dgoiraf88kwa0" path="res://Assets/evidence/bank/03_witness.svg" id="photo"]
+[ext_resource type="Script" uid="uid://bu6hd8prvmtix" path="res://scripts/data/poi_data.gd" id="poi"]
+
+[sub_resource type="Resource" id="Hero"]
+script = ExtResource("poi")
+id = &"H3"
+description = "Captain Halcyon / photo 3"
+position_uv = Vector2(0.65, 0.22)
+
+[sub_resource type="Resource" id="Evidence"]
+script = ExtResource("poi")
+id = &"E3"
+type = 9
+description = "The teller's speech bubble: IT WAS HIM!"
+desired = 1
+position_uv = Vector2(0.23, 0.74)
+radius_uv = 0.07
+comment_lines = PackedStringArray("The teller in panel 3 literally says IT WAS HIM. Are we reading the same comic?")
+
+[resource]
+script = ExtResource("panel")
+id = &"witness"
+title = "THE WITNESS"
+texture = ExtResource("photo")
+pois = Array[ExtResource("poi")]([SubResource("Hero"), SubResource("Evidence")])
+rule_order = null
+captions = {
+"DAMNING": "A teller points at Halcyon and cries, \"IT WAS HIM!\"",
+"MURKY": "A witness speaks from the shadows. Her words are unreadable.",
+"SPUN": "Halcyon reassures a shaken bank teller.",
+"TAMPERED": "The witness photograph has a suspicious burn mark."
+}
+balloons = {
+"DAMNING": "It was him!",
+"MURKY": "???",
+"SPUN": "You are safe now.",
+"TAMPERED": "No comment."
+}
+sound_effects = {
+"DAMNING": "EEK!",
+"MURKY": "…",
+"SPUN": "WHEW!",
+"TAMPERED": "FZZT!"
+}
+comments = {
+"DAMNING": "The teller in panel 3 literally says IT WAS HIM. Are we reading the same comic?",
+"MURKY": "I cannot see what happened in panel 3. Is this journalism?",
+"SPUN": "Imagine how relieved that teller must have been to see him."
+}

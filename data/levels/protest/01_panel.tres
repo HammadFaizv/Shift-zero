@@ -1,0 +1,52 @@
+[gd_resource type="Resource" script_class="PanelData" format=3 uid="uid://cggiv22nwyrxd"]
+
+[ext_resource type="Script" uid="uid://dv2jlpd6oec0j" path="res://scripts/data/panel_data.gd" id="panel"]
+[ext_resource type="Texture2D" uid="uid://ckfhilk8h56kg" path="res://Assets/evidence/protest/01_panel.svg" id="photo"]
+[ext_resource type="Script" uid="uid://bu6hd8prvmtix" path="res://scripts/data/poi_data.gd" id="poi"]
+
+[sub_resource type="Resource" id="Hero"]
+script = ExtResource("poi")
+id = &"H1"
+description = "Captain Halcyon"
+position_uv = Vector2(0.95, 0.65)
+radius_uv = 0.025
+
+[sub_resource type="Resource" id="Evidence"]
+script = ExtResource("poi")
+id = &"E1"
+type = 2
+description = "unarmed marchers"
+desired = 1
+position_uv = Vector2(0.22, 0.2)
+radius_uv = 0.07
+
+[resource]
+script = ExtResource("panel")
+id = &"protest_01_panel"
+title = "THE ARRIVAL"
+texture = ExtResource("photo")
+pois = Array[ExtResource("poi")]([SubResource("Hero"), SubResource("Evidence")])
+rule_order = PackedInt32Array(0, 1, 2)
+captions = {
+"DAMNING": "He lands in the middle of an unarmed crowd with his fist raised.",
+"MURKY": "The the arrival photograph is too dark to explain.",
+"SPUN": "Halcyon arrives to protect a crowded public square.",
+"TAMPERED": "The the arrival photograph has been scorched. The print is damaged."
+}
+balloons = {
+"DAMNING": "Stand aside.",
+"MURKY": "???",
+"SPUN": "You are safe with me.",
+"TAMPERED": "Where is the rest?"
+}
+sound_effects = {
+"DAMNING": "CRASH!",
+"MURKY": "...",
+"SPUN": "WHOOSH!",
+"TAMPERED": "FZZT!"
+}
+comments = {
+"DAMNING": "Zoom into panel 1: unarmed marchers. He lands in the middle of an unarmed crowd with his fist raised.",
+"MURKY": "I cannot read panel 1. What happened at Assembly Square?",
+"SPUN": "Panel 1: Halcyon arrives to protect a crowded public square. Thank you, Captain!"
+}

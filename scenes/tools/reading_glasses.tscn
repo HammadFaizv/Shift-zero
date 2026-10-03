@@ -1,0 +1,128 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/tools/reading_glasses.gd" id="tool"]
+[ext_resource type="Script" path="res://scripts/lighting/redirector.gd" id="optic"]
+[ext_resource type="Script" path="res://scripts/interaction/draggable_object.gd" id="drag"]
+[ext_resource type="Script" path="res://scripts/interaction/rotatable_object.gd" id="rotate"]
+
+[sub_resource type="StandardMaterial3D" id="Brass"]
+albedo_color = Color(0.45, 0.32, 0.17, 1)
+metallic = 0.65
+roughness = 0.3
+
+[sub_resource type="StandardMaterial3D" id="Glass"]
+transparency = 1
+albedo_color = Color(0.5, 0.82, 0.78, 0.16)
+roughness = 0.15
+
+[sub_resource type="TorusMesh" id="FrameMesh"]
+material = SubResource("Brass")
+inner_radius = 0.19
+outer_radius = 0.225
+rings = 24
+ring_segments = 8
+
+[sub_resource type="CylinderMesh" id="LensMesh"]
+material = SubResource("Glass")
+top_radius = 0.19
+bottom_radius = 0.19
+height = 0.01
+radial_segments = 24
+
+[sub_resource type="BoxMesh" id="BridgeMesh"]
+material = SubResource("Brass")
+size = Vector3(0.035, 0.035, 0.14)
+
+[sub_resource type="BoxMesh" id="TempleMesh"]
+material = SubResource("Brass")
+size = Vector3(0.45, 0.035, 0.035)
+
+[sub_resource type="BoxShape3D" id="PickShape"]
+size = Vector3(0.8, 0.4, 1.0)
+
+[node name="ReadingGlasses" type="Node3D"]
+script = ExtResource("tool")
+
+[node name="LeftFrame" type="MeshInstance3D" parent="."]
+cast_shadow = 0
+position = Vector3(0, 0.17, -0.27)
+mesh = SubResource("FrameMesh")
+
+[node name="RightFrame" type="MeshInstance3D" parent="."]
+cast_shadow = 0
+position = Vector3(0, 0.17, 0.27)
+mesh = SubResource("FrameMesh")
+
+[node name="LeftLens" type="MeshInstance3D" parent="."]
+cast_shadow = 0
+position = Vector3(0, 0.17, -0.27)
+mesh = SubResource("LensMesh")
+
+[node name="RightLens" type="MeshInstance3D" parent="."]
+cast_shadow = 0
+position = Vector3(0, 0.17, 0.27)
+mesh = SubResource("LensMesh")
+
+[node name="Bridge" type="MeshInstance3D" parent="."]
+cast_shadow = 0
+position = Vector3(0, 0.17, 0)
+mesh = SubResource("BridgeMesh")
+
+[node name="LeftTemple" type="MeshInstance3D" parent="."]
+cast_shadow = 0
+position = Vector3(-0.38, 0.17, -0.47)
+mesh = SubResource("TempleMesh")
+
+[node name="RightTemple" type="MeshInstance3D" parent="."]
+cast_shadow = 0
+position = Vector3(-0.38, 0.17, 0.47)
+mesh = SubResource("TempleMesh")
+
+[node name="Receiver" type="Node3D" parent="."]
+position = Vector3(0, 0.17, 0)
+
+[node name="Beam" type="Node3D" parent="."]
+position = Vector3(0.36, 0.17, 0)
+rotation_degrees = Vector3(-4, -90, 0)
+
+[node name="VisualLight" type="SpotLight3D" parent="Beam"]
+visible = false
+light_color = Color(0.57, 1, 0.88, 1)
+shadow_enabled = true
+shadow_bias = 0.008
+shadow_normal_bias = 0.15
+spot_range = 8.0
+spot_angle = 11.0
+spot_attenuation = 1.0
+
+[node name="BeamGuide" type="MeshInstance3D" parent="." groups=["light_guides"]]
+cast_shadow = 0
+
+[node name="PickBody" type="StaticBody3D" parent="."]
+disable_mode = 2
+collision_layer = 1
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PickBody"]
+position = Vector3(0, 0.17, 0)
+shape = SubResource("PickShape")
+
+[node name="Draggable" type="Node" parent="."]
+script = ExtResource("drag")
+display_name = "Reading glasses"
+usage_hint = "Catch light; aim the green beam  |  Drag to move  |  Esc: deselect"
+footprint_radius = 0.55
+support_radius = 0.23
+
+[node name="Rotatable" type="Node" parent="."]
+script = ExtResource("rotate")
+
+[node name="Redirector" type="Node3D" parent="." node_paths=PackedStringArray("visual_light", "receiver") groups=["light_redirectors"]]
+script = ExtResource("optic")
+visual_light = NodePath("../Beam/VisualLight")
+receiver = NodePath("../Receiver")
+intensity = 3.0
+falloff = 1.0
+cone_falloff = 0.4
+transfer_efficiency = 1.4
+maximum_output = 2.0

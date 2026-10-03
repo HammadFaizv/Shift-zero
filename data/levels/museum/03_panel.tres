@@ -1,0 +1,52 @@
+[gd_resource type="Resource" script_class="PanelData" format=3 uid="uid://cejbcycvy5k76"]
+
+[ext_resource type="Script" uid="uid://dv2jlpd6oec0j" path="res://scripts/data/panel_data.gd" id="panel"]
+[ext_resource type="Texture2D" uid="uid://c8m5p7b4nt2c3" path="res://Assets/evidence/museum/03_panel.svg" id="photo"]
+[ext_resource type="Script" uid="uid://bu6hd8prvmtix" path="res://scripts/data/poi_data.gd" id="poi"]
+
+[sub_resource type="Resource" id="Hero"]
+script = ExtResource("poi")
+id = &"H3"
+description = "Captain Halcyon"
+position_uv = Vector2(0.95, 0.12)
+radius_uv = 0.025
+
+[sub_resource type="Resource" id="Evidence"]
+script = ExtResource("poi")
+id = &"E3"
+type = 4
+description = "the guard pointing at Halcyon"
+desired = 1
+position_uv = Vector2(0.22, 0.78)
+radius_uv = 0.07
+
+[resource]
+script = ExtResource("panel")
+id = &"museum_03_panel"
+title = "THE GUARD"
+texture = ExtResource("photo")
+pois = Array[ExtResource("poi")]([SubResource("Hero"), SubResource("Evidence")])
+rule_order = PackedInt32Array(1, 0, 2)
+captions = {
+"DAMNING": "The guard is pointing at him, not at the broken window.",
+"MURKY": "The the guard photograph is too dark to explain.",
+"SPUN": "Halcyon reassures the guard after a frightening night.",
+"TAMPERED": "The the guard photograph has been scorched. The print is damaged."
+}
+balloons = {
+"DAMNING": "Stand aside.",
+"MURKY": "???",
+"SPUN": "You are safe with me.",
+"TAMPERED": "Where is the rest?"
+}
+sound_effects = {
+"DAMNING": "NO!",
+"MURKY": "...",
+"SPUN": "SAFE NOW!",
+"TAMPERED": "FZZT!"
+}
+comments = {
+"DAMNING": "Zoom into panel 3: the guard pointing at Halcyon. The guard is pointing at him, not at the broken window.",
+"MURKY": "I cannot read panel 3. What happened at Civic Museum?",
+"SPUN": "Panel 3: Halcyon reassures the guard after a frightening night. Thank you, Captain!"
+}

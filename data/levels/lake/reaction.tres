@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="ReactionConfig" format=3 uid="uid://c1qg6arw8i6gi"]
+
+[ext_resource type="Script" uid="uid://jtrrb541dggt" path="res://scripts/data/reaction_config.gd" id="script"]
+
+[resource]
+script = ExtResource("script")
+state_weights = {
+"DAMNING": -100.0,
+"MURKY": -48.0,
+"SPUN": 100.0,
+"TAMPERED": -100.0
+}
+band_minima = null
+band_names = null
+band_summaries = null

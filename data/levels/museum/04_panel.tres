@@ -1,0 +1,52 @@
+[gd_resource type="Resource" script_class="PanelData" format=3 uid="uid://c18tov3ykikub"]
+
+[ext_resource type="Script" uid="uid://dv2jlpd6oec0j" path="res://scripts/data/panel_data.gd" id="panel"]
+[ext_resource type="Texture2D" uid="uid://bx4w76dbu17wv" path="res://Assets/evidence/museum/04_panel.svg" id="photo"]
+[ext_resource type="Script" uid="uid://bu6hd8prvmtix" path="res://scripts/data/poi_data.gd" id="poi"]
+
+[sub_resource type="Resource" id="Hero"]
+script = ExtResource("poi")
+id = &"H4"
+description = "Captain Halcyon"
+position_uv = Vector2(0.85, 0.75)
+radius_uv = 0.025
+
+[sub_resource type="Resource" id="Evidence"]
+script = ExtResource("poi")
+id = &"E4"
+type = 3
+description = "a sack of tagged museum objects"
+desired = 1
+position_uv = Vector2(0.76, 0.17)
+radius_uv = 0.07
+
+[resource]
+script = ExtResource("panel")
+id = &"museum_04_panel"
+title = "THE ROOFTOP"
+texture = ExtResource("photo")
+pois = Array[ExtResource("poi")]([SubResource("Hero"), SubResource("Evidence")])
+rule_order = PackedInt32Array(1, 0, 2)
+captions = {
+"DAMNING": "He climbs away with the museum collection in a sack.",
+"MURKY": "The the rooftop photograph is too dark to explain.",
+"SPUN": "Halcyon carries recovered treasures back to safety.",
+"TAMPERED": "The the rooftop photograph has been scorched. The print is damaged."
+}
+balloons = {
+"DAMNING": "Stand aside.",
+"MURKY": "???",
+"SPUN": "You are safe with me.",
+"TAMPERED": "Where is the rest?"
+}
+sound_effects = {
+"DAMNING": "KA-CHING!",
+"MURKY": "...",
+"SPUN": "UP AND AWAY!",
+"TAMPERED": "FZZT!"
+}
+comments = {
+"DAMNING": "Zoom into panel 4: a sack of tagged museum objects. He climbs away with the museum collection in a sack.",
+"MURKY": "I cannot read panel 4. What happened at Civic Museum?",
+"SPUN": "Panel 4: Halcyon carries recovered treasures back to safety. Thank you, Captain!"
+}

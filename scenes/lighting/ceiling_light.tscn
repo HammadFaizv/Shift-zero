@@ -1,0 +1,136 @@
+[gd_scene format=3 uid="uid://7gfjiku3r1he"]
+
+[ext_resource type="Script" uid="uid://bj1whdsskr5wg" path="res://scripts/lighting/gameplay_light.gd" id="gameplay"]
+[ext_resource type="Script" uid="uid://w7wownrakwnp" path="res://scripts/lighting/ceiling_light.gd" id="script"]
+
+[sub_resource type="StandardMaterial3D" id="Fixture"]
+albedo_color = Color(0.035, 0.3, 0.14, 1)
+metallic = 0.15
+roughness = 0.3
+emission_enabled = true
+emission = Color(0.07, 0.3, 0.145, 1)
+emission_energy_multiplier = 0.75
+
+[sub_resource type="BoxMesh" id="ShadeMesh"]
+material = SubResource("Fixture")
+size = Vector3(2.35, 0.32, 0.68)
+
+[sub_resource type="StandardMaterial3D" id="Brass"]
+albedo_color = Color(0.57, 0.37, 0.13, 1)
+metallic = 0.65
+roughness = 0.3
+emission_enabled = true
+emission = Color(0.28, 0.18, 0.06, 1)
+emission_energy_multiplier = 0.45
+
+[sub_resource type="BoxMesh" id="RimMesh"]
+material = SubResource("Brass")
+size = Vector3(2.45, 0.055, 0.75)
+
+[sub_resource type="StandardMaterial3D" id="Bulb"]
+shading_mode = 0
+albedo_color = Color(1, 0.83, 0.5, 1)
+
+[sub_resource type="BoxMesh" id="BulbMesh"]
+material = SubResource("Bulb")
+size = Vector3(2.15, 0.035, 0.56)
+
+[sub_resource type="BoxMesh" id="EndCapMesh"]
+material = SubResource("Brass")
+size = Vector3(0.065, 0.36, 0.75)
+
+[sub_resource type="StandardMaterial3D" id="Cord"]
+albedo_color = Color(0.62, 0.56, 0.39, 1)
+roughness = 0.82
+
+[sub_resource type="CylinderMesh" id="CordMesh"]
+material = SubResource("Cord")
+top_radius = 0.018
+bottom_radius = 0.018
+height = 1.7269531
+radial_segments = 24
+rings = 1
+
+[sub_resource type="StandardMaterial3D" id="RedKnob"]
+albedo_color = Color(0.62, 0.1, 0.055, 1)
+roughness = 0.82
+
+[sub_resource type="SphereMesh" id="KnobMesh"]
+material = SubResource("RedKnob")
+radius = 0.13
+height = 0.26
+radial_segments = 24
+rings = 12
+
+[sub_resource type="SphereShape3D" id="KnobShape"]
+radius = 0.23
+
+[node name="CeilingLight" type="Node3D" unique_id=1120072394]
+script = ExtResource("script")
+
+[node name="Shade" type="MeshInstance3D" parent="." unique_id=1662566681]
+transform = Transform3D(1, 0, 0, 0, 0.9077775, 0.41945207, 0, -0.41945207, 0.9077775, 1.5, 2.4, 0.6)
+mesh = SubResource("ShadeMesh")
+
+[node name="Rim" type="MeshInstance3D" parent="." unique_id=1626154408]
+transform = Transform3D(1, 0, 0, 0, 0.9077775, 0.41945207, 0, -0.41945207, 0.9077775, 1.5, 2.2, 0.69353926)
+mesh = SubResource("RimMesh")
+
+[node name="Diffuser" type="MeshInstance3D" parent="." unique_id=466571523]
+transform = Transform3D(1, 0, 0, 0, 0.9077775, 0.41945207, 0, -0.41945207, 0.9077775, 1.5, 2.16, 0.69353926)
+cast_shadow = 0
+mesh = SubResource("BulbMesh")
+
+[node name="LeftEndCap" type="MeshInstance3D" parent="." unique_id=1966614196]
+transform = Transform3D(1, 0, 0, 0, 0.9077775, 0.41945207, 0, -0.41945207, 0.9077775, 0.3, 2.39, 0.6)
+mesh = SubResource("EndCapMesh")
+
+[node name="TopFrontCap" type="MeshInstance3D" parent="." unique_id=1441352297]
+transform = Transform3D(-2.1275033e-08, 0, 3.1677685, -0.2386955, 0.09885595, -6.7907344e-08, -0.4241661, -0.05563026, -1.2067254e-07, 1.5059265, 2.6873093, 0.8536736)
+mesh = SubResource("EndCapMesh")
+
+[node name="RightEndCap" type="MeshInstance3D" parent="." unique_id=1156247255]
+transform = Transform3D(1, 0, 0, 0, 0.9077775, 0.41945207, 0, -0.41945207, 0.9077775, 2.7, 2.39, 0.6)
+mesh = SubResource("EndCapMesh")
+
+[node name="VisualLight" type="OmniLight3D" parent="." unique_id=1503303531]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 2.08, 0.8)
+light_color = Color(1, 0.89, 0.72, 1)
+light_energy = 1.4
+shadow_enabled = true
+shadow_bias = 0.03
+shadow_normal_bias = 0.4
+omni_range = 11.0
+omni_attenuation = 0.8
+
+[node name="PullCord" type="Node3D" parent="." unique_id=494197315]
+
+[node name="Cord" type="MeshInstance3D" parent="PullCord" unique_id=457280110]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.7, 1.3084767, 0.6)
+mesh = SubResource("CordMesh")
+
+[node name="Handle" type="StaticBody3D" parent="PullCord" unique_id=641649111]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.7, 0.44, 0.6)
+collision_layer = 8
+collision_mask = 0
+
+[node name="Knob" type="MeshInstance3D" parent="PullCord/Handle" unique_id=1939268459]
+mesh = SubResource("KnobMesh")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PullCord/Handle" unique_id=1342301300]
+shape = SubResource("KnobShape")
+
+[node name="Status" type="Label3D" parent="." unique_id=1158978350]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 3.3, 0.09, -0.3)
+pixel_size = 0.004
+double_sided = false
+modulate = Color(0.87, 0.76, 0.45, 1)
+text = "CEILING ON  /  L"
+font_size = 30
+outline_size = 0
+
+[node name="GameplayLight" type="Node3D" parent="." unique_id=1067242283 node_paths=PackedStringArray("visual_light") groups=["gameplay_lights"]]
+script = ExtResource("gameplay")
+visual_light = NodePath("../VisualLight")
+intensity = 2.0
+falloff = 1.0

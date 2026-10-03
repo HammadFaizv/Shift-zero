@@ -1,0 +1,185 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="768" height="640" viewBox="0 0 768 640" stroke-linecap="round" stroke-linejoin="round">
+  <title>NORTHLINE EXPRESS / THE SIGNAL</title>
+  <desc>Editable scene layers. POI anchors preserved from PanelData.</desc>
+  <defs>
+    <clipPath id="photo_crop">
+      <rect width="768" height="640" />
+    </clipPath>
+  </defs>
+  <g clip-path="url(#photo_crop)">
+    <g id="layer_00" data-label="Environment" transform="translate(0 0) scale(1.2 1) translate(0 0)">
+      <defs>
+        <linearGradient id="p0_sky" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#161119" />
+          <stop offset="1" stop-color="#432326" />
+        </linearGradient>
+      </defs>
+      <rect width="640" height="640" fill="url(#p0_sky)" />
+      <circle cx="592" cy="25" r="1.4" fill="#fff" opacity=".5" />
+      <circle cx="501" cy="200" r="1.4" fill="#fff" opacity=".5" />
+      <circle cx="272" cy="14" r="1.4" fill="#fff" opacity=".5" />
+      <circle cx="5" cy="42" r="1.4" fill="#fff" opacity=".5" />
+      <circle cx="605" cy="125" r="1.4" fill="#fff" opacity=".5" />
+      <circle cx="387" cy="86" r="1.4" fill="#fff" opacity=".5" />
+      <circle cx="27" cy="74" r="1.4" fill="#fff" opacity=".5" />
+      <circle cx="505" cy="55" r="1.4" fill="#fff" opacity=".5" />
+      <circle cx="428" cy="142" r="1.4" fill="#fff" opacity=".5" />
+      <circle cx="557" cy="179" r="1.4" fill="#fff" opacity=".5" />
+      <circle cx="101" cy="54" r="1.4" fill="#fff" opacity=".5" />
+      <circle cx="581" cy="146" r="1.4" fill="#fff" opacity=".5" />
+      <circle cx="276" cy="174" r="1.4" fill="#fff" opacity=".5" />
+      <circle cx="629" cy="180" r="1.4" fill="#fff" opacity=".5" />
+      <circle cx="95" cy="113" r="1.4" fill="#fff" opacity=".5" />
+      <circle cx="348" cy="28" r="1.4" fill="#fff" opacity=".5" />
+      <circle cx="375" cy="109" r="1.4" fill="#fff" opacity=".5" />
+      <circle cx="261" cy="118" r="1.4" fill="#fff" opacity=".5" />
+      <circle cx="101" cy="198" r="1.4" fill="#fff" opacity=".5" />
+      <circle cx="206" cy="184" r="1.4" fill="#fff" opacity=".5" />
+      <circle cx="303" cy="29" r="1.4" fill="#fff" opacity=".5" />
+      <circle cx="51" cy="155" r="1.4" fill="#fff" opacity=".5" />
+      <circle cx="210" cy="172" r="1.4" fill="#fff" opacity=".5" />
+      <circle cx="374" cy="129" r="1.4" fill="#fff" opacity=".5" />
+      <circle cx="203" cy="136" r="1.4" fill="#fff" opacity=".5" />
+      <circle cx="594" cy="170" r="1.4" fill="#fff" opacity=".5" />
+      <circle cx="520" cy="12" r="1.4" fill="#fff" opacity=".5" />
+      <circle cx="375" cy="67" r="1.4" fill="#fff" opacity=".5" />
+      <circle cx="621" cy="115" r="1.4" fill="#fff" opacity=".5" />
+      <circle cx="316" cy="96" r="1.4" fill="#fff" opacity=".5" />
+      <circle cx="120" cy="120" r="60" fill="#342c2f" stroke="#141211" stroke-width="6" />
+      <circle cx="180" cy="90" r="70" fill="#342c2f" stroke="#141211" stroke-width="6" />
+      <circle cx="250" cy="70" r="60" fill="#342c2f" stroke="#141211" stroke-width="6" />
+      <circle cx="340" cy="100" r="70" fill="#342c2f" stroke="#141211" stroke-width="6" />
+      <circle cx="450" cy="70" r="64" fill="#342c2f" stroke="#141211" stroke-width="6" />
+      <circle cx="540" cy="110" r="60" fill="#342c2f" stroke="#141211" stroke-width="6" />
+      <circle cx="120" cy="120" r="60" fill="#342c2f" />
+      <circle cx="180" cy="90" r="70" fill="#342c2f" />
+      <circle cx="250" cy="70" r="60" fill="#342c2f" />
+      <circle cx="340" cy="100" r="70" fill="#342c2f" />
+      <circle cx="450" cy="70" r="64" fill="#342c2f" />
+      <circle cx="540" cy="110" r="60" fill="#342c2f" />
+      <polygon points="-10,470 -10,300 40,330 70,250 120,310 160,280 210,360 250,300 300,380 330,470" fill="#251e26" stroke="#141211" stroke-width="5" />
+      <polygon points="330,470 350,330 400,290 430,340 480,260 530,330 580,300 650,340 650,470" fill="#251e26" stroke="#141211" stroke-width="5" />
+      <polygon points="-10,480 -10,190 46,222 70,140 122,196 160,160 206,240 236,480" fill="#201a21" stroke="#141211" stroke-width="5" />
+      <polygon points="420,480 430,250 470,210 500,260 540,190 590,240 650,200 650,480" fill="#201a21" stroke="#141211" stroke-width="5" />
+      <rect x="20" y="250" width="34" height="34" rx="2" fill="#19161c" stroke="#141211" stroke-width="3" />
+      <rect x="70" y="250" width="34" height="34" rx="2" fill="#19161c" stroke="#141211" stroke-width="3" />
+      <rect x="20" y="310" width="34" height="34" rx="2" fill="#19161c" stroke="#141211" stroke-width="3" />
+      <rect x="90" y="310" width="34" height="34" rx="2" fill="#19161c" stroke="#141211" stroke-width="3" />
+      <rect x="24" y="370" width="34" height="34" rx="2" fill="#19161c" stroke="#141211" stroke-width="3" />
+      <rect x="70" y="370" width="34" height="34" rx="2" fill="#19161c" stroke="#141211" stroke-width="3" />
+      <rect x="455" y="300" width="34" height="34" rx="2" fill="#19161c" stroke="#141211" stroke-width="3" />
+      <rect x="510" y="300" width="34" height="34" rx="2" fill="#19161c" stroke="#141211" stroke-width="3" />
+      <rect x="570" y="300" width="34" height="34" rx="2" fill="#19161c" stroke="#141211" stroke-width="3" />
+      <rect x="455" y="360" width="34" height="34" rx="2" fill="#19161c" stroke="#141211" stroke-width="3" />
+      <rect x="520" y="360" width="34" height="34" rx="2" fill="#19161c" stroke="#141211" stroke-width="3" />
+      <rect x="580" y="360" width="34" height="34" rx="2" fill="#19161c" stroke="#141211" stroke-width="3" />
+      <rect x="-5" y="470" width="650" height="180" rx="0" fill="#2d2b2e" stroke="#141211" stroke-width="5" />
+      <polygon points="60,500 100,470 150,480 160,520" fill="#39373f" stroke="#141211" stroke-width="4" />
+      <polygon points="260,520 300,484 360,496 380,530" fill="#39373f" stroke="#141211" stroke-width="4" />
+      <polygon points="480,510 520,480 580,490 600,530" fill="#39373f" stroke="#141211" stroke-width="4" />
+      <polyline transform="translate(150,520)" points="150,60 131.08962848801366,62.34409071209153 108.21562489454337,61.34061746472205 84.60089280177968,57.849988198948424 65.94938972681237,52.311968757709856" fill="none" stroke="#141211" stroke-width="6" />
+      <polyline transform="translate(150,520)" points="150,60 132.64167965487624,54.751527768075945 114.58722896031479,46.4457184635841 103.51791170877146,39.63798471926902 96.31947796976777,31.063528149158948" fill="none" stroke="#141211" stroke-width="6" />
+      <polyline transform="translate(150,520)" points="150,60 135.815806435079,55.56723737765526 114.0557195142838,50.532674249256566 87.26335389165524,46.59244080717235 70.99989792436465,42.06695740757845" fill="none" stroke="#141211" stroke-width="6" />
+      <polyline transform="translate(150,520)" points="150,60 139.9174636238512,53.528682866645994 124.91349970247623,47.0927702923973 106.66320836203094,40.25388583157596 97.30826557128754,32.945522170435154" fill="none" stroke="#141211" stroke-width="6" />
+      <polyline transform="translate(150,520)" points="150,60 169.98469857794407,51.586223258500546 184.92080275033564,45.414618693445334 211.7582609245892,41.92892886934916 240.98936286814626,39.769398747648054" fill="none" stroke="#141211" stroke-width="6" />
+      <polyline transform="translate(150,520)" points="150,60 181.06054555984844,57.39688548431488 205.33363664877567,54.529941887952475 237.84799835151887,51.48927615883601 266.7376445961795,52.325971289213534" fill="none" stroke="#141211" stroke-width="6" />
+      <polyline transform="translate(150,520)" points="150,60 179.0,60.0 209.43380852144492,62.47213595499958 230.63501092535557,66.28755465747865 243.49644770518276,73.58308529596302" fill="none" stroke="#141211" stroke-width="6" />
+      <defs>
+        <radialGradient id="p0_f110">
+          <stop offset="0" stop-color="#cf9361" stop-opacity=".9" />
+          <stop offset="1" stop-color="#cf9361" stop-opacity="0" />
+        </radialGradient>
+      </defs>
+      <circle cx="110" cy="480" r="120" fill="url(#p0_f110)" />
+      <g transform="translate(110,490) scale(1.4)">
+        <path d="M 0 0 C -24 -8 -26 -44 -8 -68 C -8 -44 4 -40 10 -56 C 28 -38 30 -8 0 0 Z" fill="#c57756" stroke="#141211" stroke-width="2.857142857142857" />
+        <path d="M 0 -4 C -12 -8 -12 -26 -2 -38 C 0 -26 6 -24 8 -30 C 16 -18 14 -6 0 -4 Z" fill="#e9d185" stroke="#141211" stroke-width="1.7857142857142858" />
+      </g>
+      <defs>
+        <radialGradient id="p0_f300">
+          <stop offset="0" stop-color="#cf9361" stop-opacity=".9" />
+          <stop offset="1" stop-color="#cf9361" stop-opacity="0" />
+        </radialGradient>
+      </defs>
+      <circle cx="300" cy="480" r="120" fill="url(#p0_f300)" />
+      <g transform="translate(300,490) scale(1.4)">
+        <path d="M 0 0 C -24 -8 -26 -44 -8 -68 C -8 -44 4 -40 10 -56 C 28 -38 30 -8 0 0 Z" fill="#c57756" stroke="#141211" stroke-width="2.857142857142857" />
+        <path d="M 0 -4 C -12 -8 -12 -26 -2 -38 C 0 -26 6 -24 8 -30 C 16 -18 14 -6 0 -4 Z" fill="#e9d185" stroke="#141211" stroke-width="1.7857142857142858" />
+      </g>
+      <defs>
+        <radialGradient id="p0_f520">
+          <stop offset="0" stop-color="#cf9361" stop-opacity=".9" />
+          <stop offset="1" stop-color="#cf9361" stop-opacity="0" />
+        </radialGradient>
+      </defs>
+      <circle cx="520" cy="480" r="120" fill="url(#p0_f520)" />
+      <g transform="translate(520,490) scale(1.4)">
+        <path d="M 0 0 C -24 -8 -26 -44 -8 -68 C -8 -44 4 -40 10 -56 C 28 -38 30 -8 0 0 Z" fill="#c57756" stroke="#141211" stroke-width="2.857142857142857" />
+        <path d="M 0 -4 C -12 -8 -12 -26 -2 -38 C 0 -26 6 -24 8 -30 C 16 -18 14 -6 0 -4 Z" fill="#e9d185" stroke="#141211" stroke-width="1.7857142857142858" />
+      </g>
+    </g>
+    <g id="layer_01" data-label="Northline carriage and tracks" transform="translate(0 0) scale(1 1) translate(0 0)">
+      <g stroke="#2b2f32" stroke-width="4">
+        <path d="M0 270H768V410H0Z" fill="#758284" />
+        <path d="M20 289H748V360H20Z" fill="#b8beb9" />
+        <path d="M140 289V360M290 289V360M440 289V360M590 289V360" stroke-width="14" />
+        <path d="M0 570L768 430M0 625L768 485" stroke="#383e43" stroke-width="15" />
+      </g>
+    </g>
+    <g id="layer_02" data-label="Railway signal" transform="translate(168.96 128.0) scale(1 1) translate(0 0)">
+      <g transform="translate(0 0)" stroke="#3c4246" stroke-width="5" stroke-linejoin="round">
+        <rect x="-53" y="-58" width="106" height="118" fill="#6a716e" />
+        <circle cx="-24" cy="-30" r="12" fill="#7c514c" />
+        <circle cx="24" cy="-30" r="12" fill="#a49f84" />
+        <path d="M-10 47L40-12" stroke="#b0ac9f" stroke-width="18" />
+        <path d="M20-28H60V-1H20Z" fill="#a19478" />
+        <path d="M-82 80L73 59M-83 52L-12 42 10 45 71 28" stroke="#4b5256" stroke-width="12" />
+      </g>
+    </g>
+    <g id="layer_03" data-label="Captain Halcyon" transform="translate(729.5999999999999 416.0) scale(-0.46 0.46) translate(-120 -82)">
+      <g transform="translate(40,0)">
+        <polygon points="48,70 112,70 90,150 30,200 -14,176 -30,120 8,92" fill="#498381" stroke="#141211" stroke-width="4" />
+        <path d="M66,150 L40,194 L18,224" fill="none" stroke="#141211" stroke-width="28.0" />
+        <path d="M66,150 L40,194 L18,224" fill="none" stroke="#d1b771" stroke-width="22" />
+        <path d="M18,224 L9.720908709214758,235.28966994197987" fill="none" stroke="#141211" stroke-width="32.0" />
+        <path d="M18,224 L9.720908709214758,235.28966994197987" fill="none" stroke="#498381" stroke-width="26" />
+        <path d="M94,150 L122,196 L142,230" fill="none" stroke="#141211" stroke-width="28.0" />
+        <path d="M94,150 L122,196 L142,230" fill="none" stroke="#d1b771" stroke-width="22" />
+        <path d="M142,230 L149.0982817718875,242.06707901220878" fill="none" stroke="#141211" stroke-width="32.0" />
+        <path d="M142,230 L149.0982817718875,242.06707901220878" fill="none" stroke="#498381" stroke-width="26" />
+        <path d="M48,76 L24,100 L14,78" fill="none" stroke="#141211" stroke-width="22.0" />
+        <path d="M48,76 L24,100 L14,78" fill="none" stroke="#d1b771" stroke-width="16" />
+        <path d="M112,76 L138,102 L148,130" fill="none" stroke="#141211" stroke-width="22.0" />
+        <path d="M112,76 L138,102 L148,130" fill="none" stroke="#d1b771" stroke-width="16" />
+        <circle cx="14" cy="78" r="8.5" fill="#498381" stroke="#141211" stroke-width="4" />
+        <circle cx="148" cy="130" r="8.5" fill="#498381" stroke="#141211" stroke-width="4" />
+        <rect x="44" y="60" width="72" height="100" rx="20" fill="#d1b771" stroke="#141211" stroke-width="4" />
+        <rect x="44" y="144" width="72" height="16" rx="4" fill="#498381" stroke="#141211" stroke-width="4" />
+        <g id="p3_emblem">
+          <circle cx="80" cy="102" r="14" fill="#bc7655" stroke="#141211" stroke-width="4" />
+          <line x1="97.0" y1="102.0" x2="103.0" y2="102.0" stroke="#141211" stroke-width="3" />
+          <line x1="92.0208152801713" y1="114.0208152801713" x2="96.2634559672906" y2="118.2634559672906" stroke="#141211" stroke-width="3" />
+          <line x1="80.0" y1="119.0" x2="80.0" y2="125.0" stroke="#141211" stroke-width="3" />
+          <line x1="67.9791847198287" y1="114.0208152801713" x2="63.7365440327094" y2="118.2634559672906" stroke="#141211" stroke-width="3" />
+          <line x1="63.0" y1="102.0" x2="57.0" y2="102.0" stroke="#141211" stroke-width="3" />
+          <line x1="67.9791847198287" y1="89.9791847198287" x2="63.7365440327094" y2="85.7365440327094" stroke="#141211" stroke-width="3" />
+          <line x1="80.0" y1="85.0" x2="80.0" y2="79.0" stroke="#141211" stroke-width="3" />
+          <line x1="92.0208152801713" y1="89.9791847198287" x2="96.26345596729058" y2="85.7365440327094" stroke="#141211" stroke-width="3" />
+        </g>
+        <g id="p3_head">
+          <circle cx="80" cy="36" r="26" fill="#d4b8a2" stroke="#141211" stroke-width="4" />
+          <clipPath id="p3_cr">
+            <circle cx="80" cy="36" r="26" />
+          </clipPath>
+          <g clip-path="url(#p3_cr)">
+            <rect x="54" y="10" width="52" height="19.5" fill="#251e19" />
+            <rect x="54" y="31.32" width="52" height="13.0" fill="#f4f1eb" />
+          </g>
+          <circle cx="80" cy="36" r="26" fill="none" stroke="#141211" stroke-width="4" />
+          <rect x="83.9" y="35.48" width="11.700000000000001" height="4.68" fill="#141211" />
+        </g>
+        <path d="M 69.6 52.120000000000005 Q 80 62.0 90.4 52.120000000000005" fill="none" stroke="#141211" stroke-width="3" />
+      </g>
+    </g>
+  </g>
+</svg>

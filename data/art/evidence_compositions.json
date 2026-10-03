@@ -1,0 +1,909 @@
+[
+  {
+    "title": "THE HERO / THE HERO",
+    "resource": "data/levels/hero/01_panel.tres",
+    "size": [
+      768,
+      640
+    ],
+    "desaturation": 0.4,
+    "layers": [
+      {
+        "asset": "backgrounds/rooftops_day",
+        "label": "rooftops day",
+        "scale": [
+          1.2,
+          1
+        ],
+        "anchor": [
+          0,
+          0
+        ]
+      },
+      {
+        "label": "Rooftop ledge",
+        "svg": "<rect x=\"-115\" y=\"176\" width=\"245\" height=\"30\" fill=\"#939187\" stroke=\"#343e43\" stroke-width=\"5\"/>",
+        "poi": "hero"
+      },
+      {
+        "asset": "characters/hero_dramatic",
+        "label": "hero dramatic",
+        "scale": 1.3,
+        "poi": "hero",
+        "anchor": [
+          80,
+          102
+        ]
+      }
+    ]
+  },
+  {
+    "title": "THE PEOPLE'S HERO / THE ARRIVAL",
+    "resource": "data/levels/fans/01_panel.tres",
+    "size": [
+      768,
+      640
+    ],
+    "desaturation": 0.4,
+    "layers": [
+      {
+        "label": "Continuous foreground",
+        "svg": "<rect width=\"768\" height=\"640\" fill=\"#88877c\"/>"
+      },
+      {
+        "asset": "backgrounds/plaza_day",
+        "label": "plaza day",
+        "scale": [
+          1.2,
+          1
+        ],
+        "anchor": [
+          0,
+          0
+        ],
+        "at": [
+          0,
+          -15
+        ]
+      },
+      {
+        "asset": "characters/citizen_cheer_man",
+        "label": "citizen cheer man",
+        "scale": 0.85,
+        "poi": "crowd",
+        "anchor": [
+          40.0,
+          70.0
+        ],
+        "offset": [
+          -42,
+          0
+        ]
+      },
+      {
+        "asset": "characters/citizen_cheer_woman",
+        "label": "citizen cheer woman",
+        "scale": 0.85,
+        "poi": "crowd",
+        "anchor": [
+          40.0,
+          70.0
+        ],
+        "offset": [
+          42,
+          0
+        ]
+      },
+      {
+        "asset": "characters/hero_flying",
+        "label": "hero flying",
+        "scale": 1.15,
+        "poi": "hero",
+        "anchor": [
+          98,
+          70
+        ]
+      }
+    ]
+  },
+  {
+    "title": "THE PEOPLE'S HERO / THE FANS",
+    "resource": "data/levels/fans/02_panel.tres",
+    "size": [
+      768,
+      640
+    ],
+    "desaturation": 0.4,
+    "layers": [
+      {
+        "label": "Continuous foreground",
+        "svg": "<rect width=\"768\" height=\"640\" fill=\"#88877c\"/>"
+      },
+      {
+        "asset": "backgrounds/plaza_day",
+        "label": "plaza day",
+        "scale": [
+          1.2,
+          1
+        ],
+        "anchor": [
+          0,
+          0
+        ],
+        "at": [
+          0,
+          -80
+        ]
+      },
+      {
+        "asset": "characters/citizen_cheer_kid",
+        "label": "citizen cheer kid",
+        "scale": 1,
+        "poi": "crowd",
+        "anchor": [
+          28.5,
+          50.0
+        ],
+        "offset": [
+          -34,
+          25
+        ]
+      },
+      {
+        "asset": "characters/citizen_cheer_woman",
+        "label": "citizen cheer woman",
+        "scale": 1,
+        "poi": "crowd",
+        "anchor": [
+          40.0,
+          70.0
+        ],
+        "offset": [
+          37,
+          0
+        ]
+      },
+      {
+        "asset": "characters/hero_waving",
+        "label": "hero waving",
+        "scale": 1.05,
+        "poi": "hero",
+        "anchor": [
+          80,
+          102
+        ]
+      }
+    ]
+  },
+  {
+    "title": "ABOVE THE LAKE / ABOVE THE LAKE",
+    "resource": "data/levels/lake/01_panel.tres",
+    "size": [
+      768,
+      640
+    ],
+    "desaturation": 0.4,
+    "layers": [
+      {
+        "asset": "backgrounds/lake_day",
+        "label": "lake day",
+        "scale": [
+          1.2,
+          1
+        ],
+        "anchor": [
+          0,
+          0
+        ]
+      },
+      {
+        "asset": "effects/water_ripples",
+        "label": "water ripples",
+        "scale": 0.8,
+        "poi": "woman",
+        "anchor": [
+          100.0,
+          40.0
+        ]
+      },
+      {
+        "asset": "characters/drowning_woman",
+        "label": "drowning woman",
+        "scale": 1.0,
+        "poi": "woman",
+        "anchor": [
+          75.0,
+          70.0
+        ]
+      },
+      {
+        "asset": "characters/hero_flying_arms_crossed",
+        "label": "hero flying arms crossed",
+        "scale": 1.12,
+        "poi": "hero",
+        "anchor": [
+          95,
+          70
+        ]
+      }
+    ]
+  },
+  {
+    "title": "KEEPING THE PEACE / THE SCENE",
+    "resource": "data/levels/peace/01_panel.tres",
+    "size": [
+      768,
+      640
+    ],
+    "desaturation": 0.4,
+    "layers": [
+      {
+        "label": "Continuous foreground",
+        "svg": "<rect width=\"768\" height=\"640\" fill=\"#88877c\"/>"
+      },
+      {
+        "asset": "backgrounds/street_day",
+        "label": "street day",
+        "scale": [
+          1.2,
+          1
+        ],
+        "anchor": [
+          0,
+          0
+        ],
+        "at": [
+          0,
+          -170
+        ]
+      },
+      {
+        "asset": "characters/body_citizen_lying",
+        "label": "body citizen lying",
+        "scale": 0.78,
+        "poi": "victim",
+        "anchor": [
+          87.5,
+          30.0
+        ]
+      },
+      {
+        "asset": "characters/cop_shouting",
+        "label": "cop shouting",
+        "scale": 0.88,
+        "poi": "officer",
+        "anchor": [
+          50,
+          40
+        ]
+      },
+      {
+        "asset": "characters/hero_standing",
+        "label": "hero standing",
+        "scale": 1.08,
+        "poi": "hero",
+        "anchor": [
+          80,
+          102
+        ]
+      }
+    ]
+  },
+  {
+    "title": "KEEPING THE PEACE / THE ACCUSATION",
+    "resource": "data/levels/peace/02_panel.tres",
+    "size": [
+      768,
+      640
+    ],
+    "desaturation": 0.4,
+    "layers": [
+      {
+        "label": "Continuous foreground",
+        "svg": "<rect width=\"768\" height=\"640\" fill=\"#88877c\"/>"
+      },
+      {
+        "asset": "backgrounds/street_day",
+        "label": "street day",
+        "scale": [
+          1.2,
+          1
+        ],
+        "anchor": [
+          0,
+          0
+        ],
+        "at": [
+          0,
+          -170
+        ]
+      },
+      {
+        "asset": "characters/body_citizen_lying",
+        "label": "body citizen lying",
+        "scale": 0.78,
+        "poi": "victim",
+        "anchor": [
+          87.5,
+          30.0
+        ]
+      },
+      {
+        "asset": "characters/cop_shouting",
+        "label": "cop shouting",
+        "scale": 0.88,
+        "poi": "officer",
+        "anchor": [
+          50,
+          40
+        ]
+      },
+      {
+        "label": "Captured quote",
+        "svg": "<path d=\"M-83-25H83V24H-6L-25 46-19 24H-83Z\" fill=\"#ece8d9\" stroke=\"#33383b\" stroke-width=\"4\"/><text x=\"0\" y=\"7\" text-anchor=\"middle\" font-size=\"14\" fill=\"#983f41\">HE WAS INNOCENT!</text>",
+        "poi": "quote"
+      },
+      {
+        "asset": "characters/hero_standing",
+        "label": "hero standing",
+        "scale": 1.08,
+        "poi": "hero",
+        "anchor": [
+          80,
+          102
+        ]
+      }
+    ]
+  },
+  {
+    "title": "THE RESCUE / THE FIRE",
+    "resource": "data/levels/rescue/01_panel.tres",
+    "size": [
+      768,
+      640
+    ],
+    "desaturation": 0.4,
+    "layers": [
+      {
+        "label": "Continuous foreground",
+        "svg": "<rect width=\"768\" height=\"640\" fill=\"#88877c\"/>"
+      },
+      {
+        "asset": "backgrounds/street_night",
+        "label": "street night",
+        "scale": [
+          1.2,
+          1
+        ],
+        "anchor": [
+          0,
+          0
+        ],
+        "at": [
+          0,
+          -95
+        ]
+      },
+      {
+        "asset": "props/burning_building",
+        "label": "burning building",
+        "scale": 1.1,
+        "at": [
+          145,
+          45
+        ],
+        "anchor": [
+          0,
+          0
+        ]
+      },
+      {
+        "asset": "characters/survivor_blanket_woman",
+        "label": "survivor blanket woman",
+        "scale": 0.82,
+        "poi": "survivors",
+        "anchor": [
+          40.0,
+          70.0
+        ],
+        "offset": [
+          -34,
+          0
+        ]
+      },
+      {
+        "asset": "characters/survivor_blanket_man",
+        "label": "survivor blanket man",
+        "scale": 0.82,
+        "poi": "survivors",
+        "anchor": [
+          40.0,
+          70.0
+        ],
+        "offset": [
+          35,
+          0
+        ]
+      },
+      {
+        "asset": "characters/hero_dramatic",
+        "label": "hero dramatic",
+        "scale": 1.05,
+        "poi": "hero",
+        "anchor": [
+          80,
+          102
+        ]
+      }
+    ]
+  },
+  {
+    "title": "THE RESCUE / THE WITNESS",
+    "resource": "data/levels/rescue/02_panel.tres",
+    "size": [
+      768,
+      640
+    ],
+    "desaturation": 0.4,
+    "layers": [
+      {
+        "label": "Continuous foreground",
+        "svg": "<rect width=\"768\" height=\"640\" fill=\"#88877c\"/>"
+      },
+      {
+        "asset": "backgrounds/street_night",
+        "label": "street night",
+        "scale": [
+          1.2,
+          1
+        ],
+        "anchor": [
+          0,
+          0
+        ],
+        "at": [
+          0,
+          -95
+        ]
+      },
+      {
+        "asset": "props/burning_building",
+        "label": "burning building",
+        "scale": 0.9,
+        "at": [
+          90,
+          35
+        ],
+        "anchor": [
+          0,
+          0
+        ]
+      },
+      {
+        "asset": "characters/witness_man_blue",
+        "label": "witness man blue",
+        "scale": 0.95,
+        "poi": "witness",
+        "anchor": [
+          62.5,
+          70.0
+        ]
+      },
+      {
+        "label": "Extended arm from Halcyon",
+        "svg": "<path d=\"M0 0L250 0\" stroke=\"#b39d62\" stroke-width=\"21\"/>",
+        "poi": "fire"
+      },
+      {
+        "asset": "characters/hero_standing",
+        "label": "hero standing",
+        "scale": 1.04,
+        "poi": "hero",
+        "anchor": [
+          80,
+          102
+        ]
+      },
+      {
+        "asset": "effects/flame_small",
+        "label": "flame small",
+        "scale": 0.55,
+        "poi": "fire",
+        "anchor": [
+          30.0,
+          40.0
+        ]
+      }
+    ]
+  },
+  {
+    "title": "THE BANK / THE ROBBERY",
+    "resource": "data/levels/robbery/01_panel.tres",
+    "size": [
+      768,
+      640
+    ],
+    "desaturation": 0.4,
+    "layers": [
+      {
+        "label": "Continuous foreground",
+        "svg": "<rect width=\"768\" height=\"640\" fill=\"#88877c\"/>"
+      },
+      {
+        "asset": "backgrounds/bank_front_day",
+        "label": "bank front day",
+        "scale": [
+          1.2,
+          1
+        ],
+        "anchor": [
+          0,
+          0
+        ],
+        "at": [
+          0,
+          -65
+        ]
+      },
+      {
+        "asset": "characters/robber_hands_up",
+        "label": "robber hands up",
+        "scale": 1.05,
+        "poi": "robber",
+        "anchor": [
+          40.0,
+          70.0
+        ]
+      },
+      {
+        "asset": "characters/hero_attack",
+        "label": "hero attack",
+        "scale": 1.05,
+        "poi": "hero",
+        "anchor": [
+          114,
+          102
+        ],
+        "mirror": true
+      }
+    ]
+  },
+  {
+    "title": "THE BANK / THE GETAWAY",
+    "resource": "data/levels/robbery/02_panel.tres",
+    "size": [
+      768,
+      640
+    ],
+    "desaturation": 0.4,
+    "layers": [
+      {
+        "asset": "backgrounds/rooftops_day",
+        "label": "rooftops day",
+        "scale": [
+          1.2,
+          1
+        ],
+        "anchor": [
+          0,
+          0
+        ]
+      },
+      {
+        "label": "Strap attached to Halcyon",
+        "svg": "<path d=\"M0 0Q140-25 280-50\" fill=\"none\" stroke=\"#685f46\" stroke-width=\"11\"/>",
+        "poi": "bag"
+      },
+      {
+        "asset": "props/money_bag",
+        "label": "money bag",
+        "scale": 0.55,
+        "poi": "bag",
+        "anchor": [
+          100.0,
+          125.0
+        ]
+      },
+      {
+        "asset": "props/cash_bill",
+        "label": "cash bill",
+        "scale": 0.44,
+        "poi": "cash",
+        "anchor": [
+          65.0,
+          35.0
+        ],
+        "offset": [
+          -20,
+          -17
+        ]
+      },
+      {
+        "asset": "props/cash_bill",
+        "label": "cash bill",
+        "scale": 0.4,
+        "poi": "cash",
+        "anchor": [
+          65.0,
+          35.0
+        ],
+        "offset": [
+          25,
+          19
+        ]
+      },
+      {
+        "asset": "characters/guard_pointing_shouting",
+        "label": "guard pointing shouting",
+        "scale": 0.75,
+        "poi": "guard",
+        "anchor": [
+          50,
+          45
+        ]
+      },
+      {
+        "label": "Captured quote",
+        "svg": "<path d=\"M-83-25H83V24H-6L-25 46-19 24H-83Z\" fill=\"#ece8d9\" stroke=\"#33383b\" stroke-width=\"4\"/><text x=\"0\" y=\"7\" text-anchor=\"middle\" font-size=\"14\" fill=\"#983f41\">STOP!</text>",
+        "poi": "quote"
+      },
+      {
+        "asset": "characters/hero_flying",
+        "label": "hero flying",
+        "scale": 1.1,
+        "poi": "hero",
+        "anchor": [
+          98,
+          70
+        ]
+      }
+    ]
+  },
+  {
+    "title": "OUR GREATEST HERO / THE ATTACK",
+    "resource": "data/levels/greatest/01_panel.tres",
+    "size": [
+      768,
+      640
+    ],
+    "desaturation": 0.4,
+    "layers": [
+      {
+        "label": "Continuous foreground",
+        "svg": "<rect width=\"768\" height=\"640\" fill=\"#88877c\"/>"
+      },
+      {
+        "asset": "backgrounds/street_day",
+        "label": "street day",
+        "scale": [
+          1.2,
+          1
+        ],
+        "anchor": [
+          0,
+          0
+        ],
+        "at": [
+          0,
+          -155
+        ]
+      },
+      {
+        "asset": "props/ruined_building",
+        "label": "ruined building",
+        "scale": 0.6,
+        "poi": "damage",
+        "anchor": [
+          130.0,
+          165.0
+        ]
+      },
+      {
+        "label": "Energy beam connecting hand and impact",
+        "svg": "<path d=\"M235 0L-195 75\" stroke=\"#538d9e\" stroke-width=\"21\"/><path d=\"M235 0L-195 75\" stroke=\"#b7d2c7\" stroke-width=\"9\"/>",
+        "poi": "attack"
+      },
+      {
+        "asset": "effects/energy_blast",
+        "label": "energy blast",
+        "scale": 0.4,
+        "poi": "attack",
+        "anchor": [
+          110.0,
+          110.0
+        ]
+      },
+      {
+        "asset": "characters/hero_attack",
+        "label": "hero attack",
+        "scale": 1.05,
+        "poi": "hero",
+        "anchor": [
+          114,
+          102
+        ],
+        "mirror": true
+      }
+    ]
+  },
+  {
+    "title": "OUR GREATEST HERO / THEY RUN",
+    "resource": "data/levels/greatest/02_panel.tres",
+    "size": [
+      768,
+      640
+    ],
+    "desaturation": 0.4,
+    "layers": [
+      {
+        "label": "Continuous foreground",
+        "svg": "<rect width=\"768\" height=\"640\" fill=\"#88877c\"/>"
+      },
+      {
+        "asset": "backgrounds/ruined_city_day",
+        "label": "ruined city day",
+        "scale": [
+          1.2,
+          1
+        ],
+        "anchor": [
+          0,
+          0
+        ],
+        "at": [
+          0,
+          -180
+        ]
+      },
+      {
+        "asset": "characters/citizen_fleeing_a",
+        "label": "citizen fleeing a",
+        "scale": 0.92,
+        "poi": "fleeing",
+        "anchor": [
+          40.0,
+          70.0
+        ],
+        "offset": [
+          -37,
+          0
+        ],
+        "mirror": true
+      },
+      {
+        "asset": "characters/citizen_fleeing_b",
+        "label": "citizen fleeing b",
+        "scale": 0.9,
+        "poi": "fleeing",
+        "anchor": [
+          40.0,
+          70.0
+        ],
+        "offset": [
+          40,
+          10
+        ],
+        "mirror": true
+      },
+      {
+        "asset": "characters/body_citizen_lying",
+        "label": "body citizen lying",
+        "scale": 0.75,
+        "poi": "injured",
+        "anchor": [
+          87.5,
+          30.0
+        ]
+      },
+      {
+        "asset": "characters/hero_standing",
+        "label": "hero standing",
+        "scale": 1.05,
+        "poi": "hero",
+        "anchor": [
+          80,
+          102
+        ]
+      }
+    ]
+  },
+  {
+    "title": "OUR GREATEST HERO / THE AFTERMATH",
+    "resource": "data/levels/greatest/03_panel.tres",
+    "size": [
+      768,
+      640
+    ],
+    "desaturation": 0.4,
+    "layers": [
+      {
+        "label": "Continuous foreground",
+        "svg": "<rect width=\"768\" height=\"640\" fill=\"#88877c\"/>"
+      },
+      {
+        "asset": "backgrounds/ruined_city_day",
+        "label": "ruined city day",
+        "scale": [
+          1.2,
+          1
+        ],
+        "anchor": [
+          0,
+          0
+        ],
+        "at": [
+          0,
+          -180
+        ]
+      },
+      {
+        "asset": "props/wrecked_car",
+        "label": "wrecked car",
+        "scale": 0.44,
+        "poi": "damage",
+        "anchor": [
+          150.0,
+          62.5
+        ]
+      },
+      {
+        "asset": "characters/witness_woman_red",
+        "label": "witness woman red",
+        "scale": 0.76,
+        "poi": "witnesses",
+        "anchor": [
+          62.5,
+          70.0
+        ],
+        "offset": [
+          -28,
+          0
+        ]
+      },
+      {
+        "asset": "characters/witness_man_blue",
+        "label": "witness man blue",
+        "scale": 0.76,
+        "poi": "witnesses",
+        "anchor": [
+          62.5,
+          70.0
+        ],
+        "offset": [
+          35,
+          0
+        ]
+      },
+      {
+        "asset": "characters/body_citizen_lying",
+        "label": "body citizen lying",
+        "scale": 0.72,
+        "poi": "victims",
+        "anchor": [
+          87.5,
+          30.0
+        ]
+      },
+      {
+        "asset": "characters/cop_shouting",
+        "label": "cop shouting",
+        "scale": 0.8,
+        "poi": "police",
+        "anchor": [
+          50.0,
+          70.0
+        ]
+      },
+      {
+        "asset": "characters/hero_dramatic",
+        "label": "hero dramatic",
+        "scale": 1.05,
+        "poi": "hero",
+        "anchor": [
+          80,
+          102
+        ]
+      }
+    ]
+  }
+]

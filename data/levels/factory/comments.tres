@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="CommentTemplates" format=3]
+[ext_resource type="Script" path="res://scripts/data/comment_templates.gd" id="script"]
+[resource]
+script = ExtResource("script")
+usernames = PackedStringArray("square_watch", "night_shift", "halcyon_fan", "first_city_mum", "railway_worker", "beacon_reader", "quiet_ledger")
+fan_comments = PackedStringArray("We need him now more than ever.", "My kid wants to be Captain Halcyon.", "The Beacon always gets the story right.", "Thank you for keeping our city safe.")
+skeptic_comments = PackedStringArray("The photographs do not match the headline.", "Why are the witnesses always in shadow?", "Go back and look at the earlier editions.", "Stop telling us what to see.")
+murky_group = "Did they draw half of this with the lights off??"
+burned_comment = "Is that a BURN MARK on panel %d? What is the Beacon hiding?"
+fan_reply = "He was protecting them. Read the caption again."
+twist = "Same perfect light around him. Same darkness around everyone else. Who keeps doing that?"
+twist_reply = "It is just the comic style. You are reading too much into it."
+post_caption = "A new edition from Foundry Night Shift. Your city. Your hero. #CaptainHalcyon #DailyBeacon"

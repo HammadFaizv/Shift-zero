@@ -1,0 +1,68 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/interaction/draggable_object.gd" id="drag"]
+
+[ext_resource type="Script" path="res://scripts/lighting/light_occluder.gd" id="occluder"]
+
+[sub_resource type="StandardMaterial3D" id="Paperweight"]
+albedo_color = Color(0.62, 0.73, 0.83, 1)
+roughness = 0.82
+
+
+[sub_resource type="StandardMaterial3D" id="PaperweightBase"]
+albedo_color = Color(0.72, 0.59, 0.36, 1)
+roughness = 0.82
+
+
+[sub_resource type="CylinderMesh" id="BaseMesh"]
+material = SubResource("PaperweightBase")
+top_radius = 0.29
+bottom_radius = 0.29
+height = 0.09
+radial_segments = 24
+rings = 1
+
+[sub_resource type="SphereMesh" id="WeightMesh"]
+material = SubResource("Paperweight")
+radius = 0.27
+height = 0.54
+radial_segments = 24
+rings = 12
+
+[sub_resource type="SphereShape3D" id="WeightShape"]
+radius = 0.27
+
+[sub_resource type="CylinderShape3D" id="BaseShape"]
+radius = 0.29
+height = 0.09
+
+[node name="Paperweight" type="Node3D"]
+
+
+[node name="Base" type="MeshInstance3D" parent="."]
+position = Vector3(0, 0.045, 0)
+mesh = SubResource("BaseMesh")
+
+[node name="Weight" type="MeshInstance3D" parent="."]
+position = Vector3(0, 0.32, 0)
+mesh = SubResource("WeightMesh")
+
+[node name="PickBody" type="StaticBody3D" parent="." groups=["light_occluders"]]
+disable_mode = 2
+collision_layer = 3
+collision_mask = 0
+script = ExtResource("occluder")
+
+[node name="Weight" type="CollisionShape3D" parent="PickBody"]
+position = Vector3(0, 0.32, 0)
+shape = SubResource("WeightShape")
+
+[node name="Base" type="CollisionShape3D" parent="PickBody"]
+position = Vector3(0, 0.045, 0)
+shape = SubResource("BaseShape")
+
+[node name="Draggable" type="Node" parent="."]
+script = ExtResource("drag")
+display_name = "Paperweight"
+footprint_radius = 0.29
+support_radius = 0.29

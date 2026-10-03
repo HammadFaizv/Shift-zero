@@ -1,0 +1,33 @@
+[gd_resource type="Resource" script_class="PanelData" format=3]
+[ext_resource type="Script" path="res://scripts/data/panel_data.gd" id="panel"]
+[ext_resource type="Script" path="res://scripts/data/poi_data.gd" id="poi"]
+[ext_resource type="Texture2D" path="res://Assets/evidence/fans/02_panel.svg" id="photo"]
+[sub_resource type="Resource" id="Hero"]
+script = ExtResource("poi")
+id = &"fans_2_hero"
+type = 0
+description = "Hero"
+desired = 0
+position_uv = Vector2(0.68, 0.5)
+radius_uv = 0.055
+importance = 2.0
+[sub_resource type="Resource" id="Crowd"]
+script = ExtResource("poi")
+id = &"fans_2_crowd"
+type = 2
+description = "Crowd"
+desired = 0
+position_uv = Vector2(0.31, 0.54)
+radius_uv = 0.11
+importance = 2.0
+[resource]
+script = ExtResource("panel")
+id = &"fans_02_panel"
+title = "THE FANS"
+texture = ExtResource("photo")
+pois = Array[ExtResource("poi")]([SubResource("Hero"), SubResource("Crowd")])
+rule_order = PackedInt32Array(1, 0, 2)
+captions = {"SPUN": "Citizens gather to greet their favourite hero.", "DAMNING": "Halcyon stands with his cheering supporters.", "MURKY": "The subject needs clearer lighting.", "TAMPERED": "The print is scorched. Prepare a fresh copy."}
+balloons = {"SPUN": "First City can count on me.", "DAMNING": "", "MURKY": "", "TAMPERED": ""}
+sound_effects = {"SPUN": "SAFE NOW!", "DAMNING": "", "MURKY": "", "TAMPERED": "FZZT!"}
+comments = {"SPUN": "Citizens gather to greet their favourite hero. Great work, Captain!", "DAMNING": "Halcyon stands with his cheering supporters.", "MURKY": "Panel 2 is too dark to read."}

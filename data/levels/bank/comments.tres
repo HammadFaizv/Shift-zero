@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="CommentTemplates" format=3]
+[ext_resource type="Script" path="res://scripts/data/comment_templates.gd" id="script"]
+[resource]
+script = ExtResource("script")
+usernames = PackedStringArray("first_city_watch", "nightowl.nadia", "bank_receipts", "beacon_fan", "quiet_ledger", "zoom_enhance", "cape_club", "press_pass", "daily_doubt", "city_reader", "halcyon_hq", "after_hours")
+fan_comments = PackedStringArray("Another day saved. Captain Halcyon never lets us down.", "My little brother wants this comic on his wall.", "The Beacon always knows how to tell a good story.", "Finally, some good news in this city.")
+skeptic_comments = PackedStringArray("Why is half the evidence in shadow?", "I would like to see the original photographs.", "The captions are doing a lot of work here.", "Something about this story feels edited.")
+murky_group = "Did they draw half of this with the lights off? Three panels tell us nothing."
+burned_comment = "Is that a BURN MARK in panel %d? What is the Beacon hiding?"
+fan_reply = "He was HELPING them. Read the caption again."
+twist = "Ever notice the hero is always in perfect light and everything around him is pitch black? Who is holding the torch?"
+twist_reply = "It is called artistic lighting. Let people enjoy things."
+post_caption = "Captain Halcyon No. 1 is here! Drawn from the Beacon's exclusive First City Savings photos. #CaptainHalcyon #FirstCity"

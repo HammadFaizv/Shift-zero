@@ -1,2 +1,32 @@
 Team Name: Shift-Zero
 Members: Hammad Faizvi (only one)
+
+The Right Angle is a desk-based light manipulation puzzle built in Godot 4.7
+with the Compatibility renderer for an itch.io Web release.
+
+The current campaign has **seven tutorial cases and thirteen photographs**:
+The Hero, The People's Hero, Above the Lake, Keeping the Peace, The Rescue,
+The Bank and Our Greatest Hero. Keep Halcyon in the right light. Successful
+editions always earn positive editor feedback and public reaction.
+
+Open `project.godot` and press **F5**. Click and drag tools; use **Q/E**, the
+wheel or gold rotation handle to aim a selected lamp/torch. **L** or the red
+cord switches the ceiling in Cases 1–2. **Space** or double-click switches a
+torch. Right-click or **Esc** deselects. The right panel shows the editor's
+instruction, live captions and SPUN count. Toggle targets with its checkbox;
+**F1** shows light readings. Purple previews the printed shadow.
+
+**Publish** shows the comic and public reaction. **Replay printing** repeats
+the reveal; **Back to desk** preserves tool positions. **Next case** progresses
+even after an imperfect edition. **Restart case** resets the current page.
+Case 7 publishes normally; Next edition cycles the available sequence.
+
+See [the seven cases, solutions and checks](docs/seven-cases.md),
+[every current POI](docs/tutorial-pois.md), [SVG editing](docs/evidence-scenes.md),
+[tuning defaults](docs/tuning.md), [Web export / itch.io](docs/web-export.md),
+[the project brief](DESIGN.md) and [credits](CREDITS.md).
+
+Earlier step reports describe historical campaigns. The first seven cases
+supersede their story progression and original-photo ending. Reading glasses
+and magnifier systems remain implemented for later cases. The larger final
+puzzle, audio and remaining polish are outside this change.

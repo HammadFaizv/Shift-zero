@@ -1,0 +1,52 @@
+[gd_resource type="Resource" script_class="PanelData" format=3 uid="uid://c18ewyu0dnkon"]
+
+[ext_resource type="Script" uid="uid://dv2jlpd6oec0j" path="res://scripts/data/panel_data.gd" id="panel"]
+[ext_resource type="Texture2D" uid="uid://js5qvy46h365" path="res://Assets/evidence/bank/02_vault.svg" id="photo"]
+[ext_resource type="Script" uid="uid://bu6hd8prvmtix" path="res://scripts/data/poi_data.gd" id="poi"]
+
+[sub_resource type="Resource" id="Hero"]
+script = ExtResource("poi")
+id = &"H2"
+description = "Captain Halcyon / photo 2"
+position_uv = Vector2(0.28, 0.72)
+
+[sub_resource type="Resource" id="Evidence"]
+script = ExtResource("poi")
+id = &"E2"
+type = 5
+description = "The fist-shaped hole in the vault door"
+desired = 1
+position_uv = Vector2(0.76, 0.3)
+radius_uv = 0.07
+comment_lines = PackedStringArray("That hole in panel 2 is shaped exactly like his fist. Who broke into the vault?")
+
+[resource]
+script = ExtResource("panel")
+id = &"vault"
+title = "THE VAULT"
+texture = ExtResource("photo")
+pois = Array[ExtResource("poi")]([SubResource("Hero"), SubResource("Evidence")])
+rule_order = null
+captions = {
+"DAMNING": "Halcyon punches straight through the vault door.",
+"MURKY": "Something has torn its way into the vault.",
+"SPUN": "Halcyon inspects the vault door the robbers blew open.",
+"TAMPERED": "Part of the vault photograph has been burned away."
+}
+balloons = {
+"DAMNING": "Open for business!",
+"MURKY": "???",
+"SPUN": "I will find whoever did this.",
+"TAMPERED": "Nothing to see!"
+}
+sound_effects = {
+"DAMNING": "KRAKA-BOOM!",
+"MURKY": "…",
+"SPUN": "CLANG!",
+"TAMPERED": "FZZT!"
+}
+comments = {
+"DAMNING": "That hole in panel 2 is shaped exactly like his fist. Who broke into the vault?",
+"MURKY": "I cannot see what happened in panel 2. Is this journalism?",
+"SPUN": "He is checking the damage, obviously. Thank you, Captain."
+}

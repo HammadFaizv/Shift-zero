@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="CommentTemplates" format=3]
+[ext_resource type="Script" path="res://scripts/data/comment_templates.gd" id="script"]
+[resource]
+script = ExtResource("script")
+usernames = PackedStringArray("city_mum", "halcyon_fan", "beacon_reader", "first_city_kid", "square_watch", "morning_reader")
+fan_comments = PackedStringArray("We don’t deserve Halcyon!", "My son wants to be just like him!", "Another day saved by First City’s greatest hero.", "I feel safer knowing he’s out there.")
+skeptic_comments = PackedStringArray("Can we get a clearer photograph?", "The caption and the photo don’t match.")
+burned_comment = "Panel %d looks scorched. Is there a fresh copy?"
+murky_group = "These photos need more light."
+fan_reply = "He always keeps First City safe."
+twist = ""
+twist_reply = ""
+post_caption = "OUR CITY'S GREATEST HERO! #CaptainHalcyon #FirstCity"

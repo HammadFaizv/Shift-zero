@@ -1,0 +1,60 @@
+[gd_resource type="Resource" script_class="LevelData" format=3 uid="uid://dj7y6u0uv7t61"]
+
+[ext_resource type="Resource" path="res://data/levels/rescue/comments.tres" id="comments"]
+[ext_resource type="Resource" uid="uid://dehsrlussxrr4" path="res://data/levels/rescue/01_panel.tres" id="p1"]
+[ext_resource type="Resource" uid="uid://dtn4boprae3kc" path="res://data/levels/rescue/02_panel.tres" id="p2"]
+[ext_resource type="Script" uid="uid://dv2jlpd6oec0j" path="res://scripts/data/panel_data.gd" id="panel"]
+[ext_resource type="Resource" uid="uid://bkn5h8tty6xry" path="res://data/levels/rescue/reaction.tres" id="reaction"]
+[ext_resource type="Script" uid="uid://c2os1bwoh03bt" path="res://scripts/data/level_data.gd" id="script"]
+
+[resource]
+script = ExtResource("script")
+id = &"rescue"
+title = "THE RESCUE"
+incident = "First City / archive sequence 5"
+case_number = 5
+mechanic_hint = "Print 1: witness and fire.
+Print 2: hero and child.
+Use the lens to focus light."
+tool_settings = {
+"DeskLamp/GameplayLight:falloff": 0.8,
+"DeskLamp/GameplayLight:intensity": 1.8,
+"DeskLamp/Head/VisualLight:spot_angle": 52.0,
+"Paperweight2:scale": Vector3(1.5, 1.5, 1.5),
+"Paperweight3:scale": Vector3(1.5, 1.5, 1.5),
+"Paperweight:scale": Vector3(1.5, 1.5, 1.5),
+"Torch/Beam/VisualLight:spot_angle": 16.0,
+"Torch/GameplayLight:intensity": 2.0,
+"Torch2/Beam/VisualLight:spot_angle": 16.0,
+"Torch2/GameplayLight:intensity": 2.0
+}
+panels = Array[ExtResource("panel")]([ExtResource("p1"), ExtResource("p2")])
+photo_layouts = Array[Rect2]([Rect2(-1.1, 0.25, 1.95, 1.95), Rect2(1.1, 0.25, 1.95, 1.95)])
+ceiling_starts_on = false
+required_spun = 2
+available_tools = PackedStringArray("CeilingLight", "Torch", "MagnifyingGlass")
+tool_positions = {
+"DeskLamp": Vector3(3.8, 0, 0.1),
+"MagnifyingGlass": Vector3(-3.5, 0, 0.8),
+"Paperweight": Vector3(-3.6, 0, 1),
+"Paperweight2": Vector3(-3.1, 0, 2),
+"Paperweight3": Vector3(-3.7, 0, 2.8),
+"ReadingGlasses": Vector3(-3.5, 0, -0.8),
+"Torch": Vector3(3.7, 0, 0.1),
+"Torch2": Vector3(3.7, 0, 2.1)
+}
+tool_yaws = {
+"DeskLamp": 180.0,
+"Torch": 180.0,
+"Torch2": 180.0
+}
+subtitles = {
+"damning": "AN EVENTFUL DAY IN FIRST CITY",
+"mixed": "HALCYON AT THE SCENE",
+"murky": "A QUIET EDITION",
+"perfect": "RACES TO THE RESCUE!",
+"tampered": "A PRINTING MISHAP"
+}
+editor_note = "Focus on the rescue. We don't need speculation in the frame."
+comment_templates = ExtResource("comments")
+reaction_config = ExtResource("reaction")

@@ -1,0 +1,196 @@
+[gd_scene format=3 uid="uid://dspso7jcs3cw0"]
+
+[ext_resource type="Resource" uid="uid://dpxlstj4f7mfq" path="res://data/levels/hero/level.tres" id="bank"]
+[ext_resource type="FontFile" uid="uid://3qqyweklfgu3" path="res://Assets/fonts/Caveat.ttf" id="caption_font"]
+[ext_resource type="PackedScene" uid="uid://7gfjiku3r1he" path="res://scenes/lighting/ceiling_light.tscn" id="ceiling"]
+[ext_resource type="Script" uid="uid://d1wkw14tllabl" path="res://scripts/ui/comic_renderer.gd" id="comic"]
+[ext_resource type="PackedScene" path="res://scenes/ui/light_debug_panel.tscn" id="debug"]
+[ext_resource type="PackedScene" uid="uid://0cqqoeh7wo50" path="res://scenes/desk/desk.tscn" id="desk"]
+[ext_resource type="Script" uid="uid://bqqq7jjp5fwdn" path="res://scripts/ui/desk_camera.gd" id="desk_camera"]
+[ext_resource type="Script" uid="uid://c6wms0bfxebps" path="res://scripts/lighting/light_evaluator.gd" id="evaluator"]
+[ext_resource type="Script" uid="uid://3b5rqat7bcwg" path="res://scripts/game/game_manager.gd" id="game"]
+[ext_resource type="PackedScene" path="res://scenes/tools/reading_glasses.tscn" id="glasses"]
+[ext_resource type="Script" uid="uid://b82ek8ipggjje" path="res://scripts/ui/rotation_handle.gd" id="handle"]
+[ext_resource type="Script" uid="uid://dnwl8jc6n6xln" path="res://scripts/ui/heat_warning.gd" id="heat_warning"]
+[ext_resource type="Script" uid="uid://cradjgky6qabl" path="res://scripts/lighting/ink_preview.gd" id="ink"]
+[ext_resource type="Script" uid="uid://cnv84qw2bx2xd" path="res://scripts/interaction/interaction_manager.gd" id="interaction"]
+[ext_resource type="PackedScene" path="res://scenes/tools/desk_lamp.tscn" id="lamp"]
+[ext_resource type="Script" uid="uid://bwjx1agl2y11y" path="res://scripts/game/level_manager.gd" id="level"]
+[ext_resource type="PackedScene" path="res://scenes/tools/magnifying_glass.tscn" id="magnifier"]
+[ext_resource type="Script" uid="uid://qtclmunwe7ji" path="res://scripts/ui/target_rings.gd" id="rings"]
+[ext_resource type="Script" uid="uid://x6k5jmiptuo1" path="res://scripts/ui/story_status_ui.gd" id="story"]
+[ext_resource type="PackedScene" path="res://scenes/tools/torch.tscn" id="torch"]
+[ext_resource type="PackedScene" path="res://scenes/tools/paperweight.tscn" id="weight"]
+
+[sub_resource type="Environment" id="Environment"]
+background_mode = 1
+background_color = Color(0.022, 0.028, 0.034, 1)
+ambient_light_source = 2
+ambient_light_color = Color(0.6, 0.67, 0.74, 1)
+ambient_light_energy = 0.16
+reflected_light_source = 1
+
+[node name="Main" type="Node3D" unique_id=1258194288]
+script = ExtResource("game")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1861713540]
+environment = SubResource("Environment")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1562068552 node_paths=PackedStringArray("frame", "story_status")]
+transform = Transform3D(1, 0, 0, 0, 0.4067366, 0.9135455, 0, -0.9135455, 0.4067366, 0.07709539, 8.843562, 3.9051208)
+projection = 1
+current = true
+size = 7.8
+near = 0.1
+far = 40.0
+script = ExtResource("desk_camera")
+frame = NodePath("../Overlay/Frame")
+story_status = NodePath("../Overlay/Frame/StoryStatus")
+
+[node name="DeskStage" parent="." unique_id=1440145756 instance=ExtResource("desk")]
+
+[node name="Tools" type="Node3D" parent="." unique_id=630739167]
+
+[node name="CeilingLight" parent="Tools" unique_id=393822529 instance=ExtResource("ceiling")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3, 0, -3.15)
+
+[node name="DeskLamp" parent="Tools" unique_id=352879893 instance=ExtResource("lamp")]
+
+[node name="Torch" parent="Tools" unique_id=346440001 node_paths=PackedStringArray("interaction_manager") instance=ExtResource("torch")]
+transform = Transform3D(0.9781476, 0, -0.2079117, 0, 1, 0, 0.2079117, 0, 0.9781476, -3.9, 0, -1.1)
+interaction_manager = NodePath("../../InteractionManager")
+
+[node name="Torch2" parent="Tools" unique_id=1094099918 node_paths=PackedStringArray("interaction_manager") instance=ExtResource("torch")]
+visible = false
+interaction_manager = NodePath("../../InteractionManager")
+
+[node name="ReadingGlasses" parent="Tools" unique_id=761194404 instance=ExtResource("glasses")]
+visible = false
+
+[node name="MagnifyingGlass" parent="Tools" unique_id=504983429 instance=ExtResource("magnifier")]
+visible = false
+
+[node name="Paperweight" parent="Tools" unique_id=804180543 instance=ExtResource("weight")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.55, 0, 0.9)
+
+[node name="Paperweight2" parent="Tools" unique_id=866244489 instance=ExtResource("weight")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.1, 0, 1.7)
+
+[node name="Paperweight3" parent="Tools" unique_id=417392690 instance=ExtResource("weight")]
+visible = false
+
+[node name="InteractionManager" type="Node3D" parent="." unique_id=563362593 node_paths=PackedStringArray("hint_label")]
+process_priority = -10
+script = ExtResource("interaction")
+hint_label = NodePath("../Overlay/Frame/Hint")
+
+[node name="LightEvaluator" type="Node3D" parent="." unique_id=96685115 groups=["light_evaluator"]]
+script = ExtResource("evaluator")
+
+[node name="InkPreview" type="Node" parent="." unique_id=235012858 node_paths=PackedStringArray("page_mesh", "photos")]
+script = ExtResource("ink")
+page_mesh = NodePath("../DeskStage/CaseFilePage/Paper")
+photos = [NodePath("../DeskStage/CaseFilePage/Photo01/Image"), NodePath("../DeskStage/CaseFilePage/Photo02/Image"), NodePath("../DeskStage/CaseFilePage/Photo03/Image"), NodePath("../DeskStage/CaseFilePage/Photo04/Image")]
+hidden_color = Color(0.16237503, 0.10807694, 0.38873753, 1)
+
+[node name="LevelManager" type="Node" parent="." unique_id=1335833512 node_paths=PackedStringArray("page", "tools", "interaction_manager")]
+script = ExtResource("level")
+data = ExtResource("bank")
+page = NodePath("../DeskStage/CaseFilePage")
+tools = NodePath("../Tools")
+interaction_manager = NodePath("../InteractionManager")
+
+[node name="ComicRenderer" type="Node" parent="." unique_id=427630641]
+script = ExtResource("comic")
+
+[node name="ResultsLayer" type="CanvasLayer" parent="." unique_id=1638723482]
+layer = 2
+
+[node name="Overlay" type="CanvasLayer" parent="." unique_id=731216286]
+
+[node name="Frame" type="Control" parent="Overlay" unique_id=1750973795]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="TargetRings" type="Control" parent="Overlay/Frame" unique_id=381547909]
+anchors_preset = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+script = ExtResource("rings")
+
+[node name="StoryStatus" type="PanelContainer" parent="Overlay/Frame" unique_id=1583059601]
+layout_mode = 0
+anchor_left = 0.76
+anchor_right = 1.0
+offset_top = 112.0
+offset_right = -26.0
+grow_horizontal = 0
+script = ExtResource("story")
+caption_font = ExtResource("caption_font")
+
+[node name="RotationHandle" type="Control" parent="Overlay/Frame" unique_id=1614479924 node_paths=PackedStringArray("manager")]
+anchors_preset = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+script = ExtResource("handle")
+manager = NodePath("../../../InteractionManager")
+
+[node name="HeatWarning" type="Label" parent="Overlay/Frame" unique_id=619310628 node_paths=PackedStringArray("focus", "story_status")]
+layout_mode = 0
+script = ExtResource("heat_warning")
+focus = NodePath("../../../Tools/MagnifyingGlass/Focuser")
+story_status = NodePath("../StoryStatus")
+
+[node name="Eyebrow" type="Label" parent="Overlay/Frame" unique_id=273145454]
+layout_mode = 0
+offset_left = 44.0
+offset_top = 59.0
+offset_right = 720.0
+offset_bottom = 80.0
+theme_override_colors/font_color = Color(0.79, 0.62, 0.32, 1)
+theme_override_font_sizes/font_size = 14
+text = "THE DAILY BEACON   /   NIGHT DESK"
+
+[node name="Title" type="Label" parent="Overlay/Frame" unique_id=596559141]
+layout_mode = 0
+offset_left = 43.0
+offset_top = 13.0
+offset_right = 821.0
+offset_bottom = 61.0
+theme_override_colors/font_color = Color(0.92, 0.88, 0.75, 1)
+theme_override_font_sizes/font_size = 34
+text = "THE RIGHT ANGLE"
+
+[node name="Hint" type="Label" parent="Overlay/Frame" unique_id=657191617]
+layout_mode = 0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 44.0
+offset_top = -42.0
+offset_right = -44.0
+offset_bottom = -18.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.86, 0.8, 0.65, 1)
+theme_override_font_sizes/font_size = 16
+text = "L / click the red pull cord   -   Switch the ceiling light"
+
+[node name="LightDebugPanel" parent="Overlay/Frame" unique_id=143394596 instance=ExtResource("debug")]
+visible = false
+layout_mode = 0
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -320.0
+offset_top = 150.0
+offset_right = -36.0
+offset_bottom = 505.0
+grow_horizontal = 0
+row_font_size = 12

@@ -1,0 +1,52 @@
+[gd_resource type="Resource" script_class="PanelData" format=3 uid="uid://bcnn3obdgyumj"]
+
+[ext_resource type="Script" uid="uid://dv2jlpd6oec0j" path="res://scripts/data/panel_data.gd" id="panel"]
+[ext_resource type="Texture2D" uid="uid://b4fans1rjlcq3" path="res://Assets/evidence/protest/03_panel.svg" id="photo"]
+[ext_resource type="Script" uid="uid://bu6hd8prvmtix" path="res://scripts/data/poi_data.gd" id="poi"]
+
+[sub_resource type="Resource" id="Hero"]
+script = ExtResource("poi")
+id = &"H3"
+description = "Captain Halcyon"
+position_uv = Vector2(0.95, 0.12)
+radius_uv = 0.025
+
+[sub_resource type="Resource" id="Evidence"]
+script = ExtResource("poi")
+id = &"E3"
+type = 4
+description = "the witness and a missing-worker print"
+desired = 1
+position_uv = Vector2(0.22, 0.78)
+radius_uv = 0.07
+
+[resource]
+script = ExtResource("panel")
+id = &"protest_03_panel"
+title = "THE WITNESS"
+texture = ExtResource("photo")
+pois = Array[ExtResource("poi")]([SubResource("Hero"), SubResource("Evidence")])
+rule_order = PackedInt32Array(0, 1, 2)
+captions = {
+"DAMNING": "The witness holds a photograph of the worker from the foundry.",
+"MURKY": "The the witness photograph is too dark to explain.",
+"SPUN": "Halcyon helps a witness through the confusion.",
+"TAMPERED": "The the witness photograph has been scorched. The print is damaged."
+}
+balloons = {
+"DAMNING": "Stand aside.",
+"MURKY": "???",
+"SPUN": "You are safe with me.",
+"TAMPERED": "Where is the rest?"
+}
+sound_effects = {
+"DAMNING": "NO!",
+"MURKY": "...",
+"SPUN": "SAFE NOW!",
+"TAMPERED": "FZZT!"
+}
+comments = {
+"DAMNING": "Zoom into panel 3: the witness and a missing-worker print. The witness holds a photograph of the worker from the foundry.",
+"MURKY": "I cannot read panel 3. What happened at Assembly Square?",
+"SPUN": "Panel 3: Halcyon helps a witness through the confusion. Thank you, Captain!"
+}

@@ -1,0 +1,70 @@
+[gd_scene format=3]
+
+[ext_resource type="PackedScene" path="res://Assets/low-poly_3d_magnifying_glass.glb" id="model"]
+[ext_resource type="Script" path="res://scripts/tools/magnifying_glass.gd" id="tool"]
+[ext_resource type="Script" path="res://scripts/lighting/focuser.gd" id="focus"]
+[ext_resource type="Script" path="res://scripts/interaction/draggable_object.gd" id="drag"]
+[ext_resource type="Script" path="res://scripts/interaction/rotatable_object.gd" id="rotate"]
+
+[sub_resource type="BoxShape3D" id="PickShape"]
+size = Vector3(0.65, 0.38, 1.4)
+
+[sub_resource type="StandardMaterial3D" id="FocusMaterial"]
+shading_mode = 0
+transparency = 1
+albedo_color = Color(1, 0.66, 0.13, 0.45)
+
+[sub_resource type="CylinderMesh" id="FocusMesh"]
+top_radius = 0.23
+bottom_radius = 0.23
+height = 0.003
+radial_segments = 32
+
+[node name="MagnifyingGlass" type="Node3D"]
+script = ExtResource("tool")
+
+[node name="Model" parent="." instance=ExtResource("model")]
+position = Vector3(0, 0.23, 0.428)
+rotation_degrees = Vector3(-90, 0, 0)
+scale = Vector3(0.18, 0.18, 0.18)
+
+[node name="Receiver" type="Node3D" parent="."]
+position = Vector3(0, 0.23, 0)
+
+[node name="FocusSpot" type="MeshInstance3D" parent="." groups=["light_guides"]]
+mesh = SubResource("FocusMesh")
+material_override = SubResource("FocusMaterial")
+cast_shadow = 0
+
+[node name="Warning" type="Label3D" parent="."]
+position = Vector3(0, 0.1, -0.45)
+rotation_degrees = Vector3(-90, 0, 0)
+pixel_size = 0.004
+font_size = 22
+modulate = Color(1, 0.58, 0.16, 1)
+shaded = false
+outline_size = 4
+visible = false
+
+[node name="PickBody" type="StaticBody3D" parent="."]
+disable_mode = 2
+collision_layer = 1
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PickBody"]
+position = Vector3(0, 0.23, 0.35)
+shape = SubResource("PickShape")
+
+[node name="Draggable" type="Node" parent="."]
+script = ExtResource("drag")
+display_name = "Magnifier"
+usage_hint = "Focus weak light  |  Move at TOO HOT  |  Esc: deselect"
+footprint_radius = 0.7
+support_radius = 0.3
+
+[node name="Rotatable" type="Node" parent="."]
+script = ExtResource("rotate")
+
+[node name="Focuser" type="Node3D" parent="." node_paths=PackedStringArray("receiver") groups=["light_focusers"]]
+script = ExtResource("focus")
+receiver = NodePath("../Receiver")

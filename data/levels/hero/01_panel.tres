@@ -1,0 +1,45 @@
+[gd_resource type="Resource" script_class="PanelData" format=3 uid="uid://r1uudelwl18b"]
+
+[ext_resource type="Script" uid="uid://dv2jlpd6oec0j" path="res://scripts/data/panel_data.gd" id="panel"]
+[ext_resource type="Texture2D" uid="uid://63cue04s0end" path="res://Assets/evidence_assets/stages/01_Peoples_hero.png" id="photo"]
+[ext_resource type="Script" uid="uid://bu6hd8prvmtix" path="res://scripts/data/poi_data.gd" id="poi"]
+
+[sub_resource type="Resource" id="Poi0"]
+script = ExtResource("poi")
+id = &"hero_1_0"
+description = "Hero"
+position_uv = Vector2(0.49, 0.52)
+radius_uv = 0.09
+importance = 2.0
+
+[resource]
+script = ExtResource("panel")
+id = &"hero_01_panel"
+title = "THE HERO"
+texture = ExtResource("photo")
+pois = Array[ExtResource("poi")]([SubResource("Poi0")])
+rule_order = PackedInt32Array(1, 0, 2)
+captions = {
+"DAMNING": "The scene is fully visible.",
+"MURKY": "The required subjects need clearer lighting.",
+"SPUN": "The print highlights hero.",
+"TAMPERED": "The print is scorched. Prepare a fresh copy."
+}
+balloons = {
+"DAMNING": "",
+"MURKY": "",
+"SPUN": "",
+"TAMPERED": ""
+}
+sound_effects = {
+"DAMNING": "",
+"MURKY": "",
+"SPUN": "WHOOSH!",
+"TAMPERED": "FZZT!"
+}
+comments = {
+"DAMNING": "The scene is fully visible.",
+"MURKY": "The required subjects need clearer lighting.",
+"SPUN": "The print highlights hero.",
+"TAMPERED": "The print is scorched. Prepare a fresh copy."
+}

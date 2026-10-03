@@ -1,0 +1,78 @@
+[gd_resource type="Resource" script_class="LevelData" format=3 uid="uid://c3df1825fvxb1"]
+
+[ext_resource type="Resource" path="res://data/levels/train/comments.tres" id="comments"]
+[ext_resource type="Script" uid="uid://c2os1bwoh03bt" path="res://scripts/data/level_data.gd" id="level"]
+[ext_resource type="Resource" uid="uid://d4gve3ld1xnx6" path="res://data/levels/train/01_panel.tres" id="p1"]
+[ext_resource type="Resource" uid="uid://bgeb7ar0psxml" path="res://data/levels/train/02_panel.tres" id="p2"]
+[ext_resource type="Resource" uid="uid://8yoi7h8tx2vh" path="res://data/levels/train/03_panel.tres" id="p3"]
+[ext_resource type="Resource" uid="uid://b40rsh7kc3bjh" path="res://data/levels/train/04_panel.tres" id="p4"]
+[ext_resource type="Script" uid="uid://dv2jlpd6oec0j" path="res://scripts/data/panel_data.gd" id="panel"]
+[ext_resource type="Script" uid="uid://jtrrb541dggt" path="res://scripts/data/reaction_config.gd" id="reaction"]
+
+[sub_resource type="Resource" id="Reaction"]
+script = ExtResource("reaction")
+band_minima = null
+band_names = null
+band_summaries = null
+
+[resource]
+script = ExtResource("level")
+id = &"train"
+title = "NORTHLINE EXPRESS"
+incident = "Train disaster / Sunday, 4:51 AM"
+case_number = 5
+mechanic_hint = "Redirect, focus, conceal.
+Then choose what prints.
+The originals still exist."
+tool_settings = {
+"ReadingGlasses/Redirector:intensity": 2.0,
+"ReadingGlasses/Redirector:maximum_output": 0.22,
+"Torch/Beam/VisualLight:spot_angle": 8.5,
+"Torch/Beam/VisualLight:spot_range": 10.0,
+"Torch/Beam:rotation_degrees": Vector3(-3, -90, 0),
+"Torch/GameplayLight:intensity": 2.8
+}
+final_case = true
+endings = {
+"edited": {
+"captions": ["A city is given a rescuer.", "A broken rail becomes a battle won.", "Those left in shadow do not make the headline.", "The original photographs go back into the drawer."],
+"comments": ["My kid wants to be just like him.", "The Beacon says he saved everyone. That is enough for me.", "My family was on that train. Why can I not see them in this comic?"],
+"headline": "CITY RENEWS ITS FAITH IN HALCYON",
+"message": "The rescue becomes another cheerful edition. The originals return to the drawer. Tomorrow the desk will need you again.",
+"subtitle": "A HERO, AS PRINTED"
+},
+"original": {
+"captions": ["His hand is on the lever pointing the express toward a broken track.", "The severed rail bends around the shape of his fist.", "The passenger reaches toward a child still inside the wreck.", "He leaves with the relief fund while the rescue crews are still arriving."],
+"comments": ["That is his hand on the signal. Show every photograph.", "Now look at the museum edition. We were told the same lie.", "The railway families deserve the whole story."],
+"headline": "ORIGINAL PHOTOS EXPOSE HALCYON",
+"message": "The original evidence prints reach the city intact. Readers compare the train, the museum, the square and the foundry. The Beacon cannot put the story back in the drawer.",
+"subtitle": "THE WHOLE PAGE, IN DAYLIGHT"
+}
+}
+panels = Array[ExtResource("panel")]([ExtResource("p1"), ExtResource("p2"), ExtResource("p3"), ExtResource("p4")])
+required_spun = 4
+available_tools = PackedStringArray("Torch", "Paperweight", "Paperweight2", "ReadingGlasses", "MagnifyingGlass")
+tool_positions = {
+"MagnifyingGlass": Vector3(3.1, 0, 2),
+"Paperweight": Vector3(-4.55, 0, 0.9),
+"Paperweight2": Vector3(-3.1, 0, 1.7),
+"ReadingGlasses": Vector3(3.2, 0, 0.9),
+"Torch": Vector3(-3.9, 0, -1.1),
+"Torch2": Vector3(-3.9, 0, 2.2)
+}
+tool_yaws = {
+"Torch": -12.0
+}
+subtitles = {
+"damning": "THE PHOTOS THEY DID NOT PRINT",
+"mixed": "HERO... OR VILLAIN?",
+"murky": "WHAT HAPPENED THAT NIGHT?",
+"perfect": "SAVES THE NORTHLINE!",
+"tampered": "WHAT HAPPENED TO THE PRINTS?"
+}
+target_rings_default = false
+editor_note = "Last edition.
+Give the city its hero.
+Prints 6am - Ed."
+comment_templates = ExtResource("comments")
+reaction_config = SubResource("Reaction")

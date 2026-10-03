@@ -1,0 +1,74 @@
+[gd_resource type="Resource" script_class="PanelData" format=3 uid="uid://beto4pnvl0c5a"]
+
+[ext_resource type="Script" uid="uid://dv2jlpd6oec0j" path="res://scripts/data/panel_data.gd" id="panel"]
+[ext_resource type="Texture2D" uid="uid://doa7lg66pj0qp" path="res://Assets/evidence_assets/stages/04_peacekeeper02.png" id="photo"]
+[ext_resource type="Script" uid="uid://bu6hd8prvmtix" path="res://scripts/data/poi_data.gd" id="poi"]
+
+[sub_resource type="Resource" id="Poi0"]
+script = ExtResource("poi")
+id = &"peace_2_0"
+description = "Hero"
+position_uv = Vector2(0.53, 0.61)
+radius_uv = 0.07
+importance = 2.0
+
+[sub_resource type="Resource" id="Poi1"]
+script = ExtResource("poi")
+id = &"peace_2_1"
+type = 2
+description = "Dead civilian"
+position_uv = Vector2(0.79, 0.92)
+radius_uv = 0.065
+importance = 2.0
+
+[sub_resource type="Resource" id="Poi2"]
+script = ExtResource("poi")
+id = &"peace_2_2"
+type = 6
+description = "Officer"
+desired = 1
+position_uv = Vector2(0.34, 0.85)
+radius_uv = 0.05
+importance = 2.0
+
+[sub_resource type="Resource" id="Poi3"]
+script = ExtResource("poi")
+id = &"peace_2_3"
+type = 9
+description = "Officer dialogue"
+desired = 1
+position_uv = Vector2(0.19, 0.74)
+radius_uv = 0.065
+importance = 2.0
+
+[resource]
+script = ExtResource("panel")
+id = &"peace_02_panel"
+title = "THE CRIMINAL"
+texture = ExtResource("photo")
+pois = Array[ExtResource("poi")]([SubResource("Poi0"), SubResource("Poi1"), SubResource("Poi2"), SubResource("Poi3")])
+rule_order = PackedInt32Array(1, 0, 2)
+captions = {
+"DAMNING": "The print also exposes officer, officer dialogue.",
+"MURKY": "The required subjects need clearer lighting.",
+"SPUN": "The print highlights hero, dead civilian.",
+"TAMPERED": "The print is scorched. Prepare a fresh copy."
+}
+balloons = {
+"DAMNING": "",
+"MURKY": "",
+"SPUN": "",
+"TAMPERED": ""
+}
+sound_effects = {
+"DAMNING": "",
+"MURKY": "",
+"SPUN": "SAFE NOW!",
+"TAMPERED": "FZZT!"
+}
+comments = {
+"DAMNING": "The print also exposes officer, officer dialogue.",
+"MURKY": "The required subjects need clearer lighting.",
+"SPUN": "The print highlights hero, dead civilian.",
+"TAMPERED": "The print is scorched. Prepare a fresh copy."
+}

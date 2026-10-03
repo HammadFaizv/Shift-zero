@@ -1,0 +1,277 @@
+[gd_scene format=3]
+
+[ext_resource type="Texture2D" path="res://Assets/evidence/hero/01_panel.svg" id="1"]
+
+[ext_resource type="Texture2D" path="res://Assets/evidence/hero/01_panel.svg" id="2"]
+
+[ext_resource type="Texture2D" path="res://Assets/evidence/hero/01_panel.svg" id="3"]
+
+[ext_resource type="Texture2D" path="res://Assets/evidence/hero/01_panel.svg" id="4"]
+
+[ext_resource type="Script" path="res://scripts/evidence/evidence_panel.gd" id="panel_script"]
+
+[ext_resource type="Resource" path="res://data/levels/hero/01_panel.tres" id="panel1"]
+[ext_resource type="Resource" path="res://data/levels/hero/01_panel.tres" id="panel2"]
+[ext_resource type="Resource" path="res://data/levels/hero/01_panel.tres" id="panel3"]
+[ext_resource type="Resource" path="res://data/levels/hero/01_panel.tres" id="panel4"]
+
+[sub_resource type="StandardMaterial3D" id="Paper"]
+albedo_color = Color(0.82, 0.79, 0.67, 1)
+roughness = 0.82
+
+
+[sub_resource type="StandardMaterial3D" id="PhotoBorder"]
+albedo_color = Color(0.96, 0.94, 0.86, 1)
+roughness = 0.82
+
+
+[sub_resource type="StandardMaterial3D" id="Tape"]
+albedo_color = Color(0.71, 0.64, 0.39, 1)
+roughness = 0.82
+
+
+[sub_resource type="BoxMesh" id="Page"]
+material = SubResource("Paper")
+size = Vector3(4.7, 0.022, 5.85)
+
+[sub_resource type="BoxMesh" id="Border"]
+material = SubResource("PhotoBorder")
+size = Vector3(2.13, 0.012, 2.06)
+
+[sub_resource type="BoxMesh" id="TapeMesh"]
+material = SubResource("Tape")
+size = Vector3(0.5, 0.008, 0.13)
+
+[sub_resource type="BoxMesh" id="HeaderLine"]
+material = SubResource("Tape")
+size = Vector3(4.15, 0.005, 0.012)
+
+[sub_resource type="StandardMaterial3D" id="PhotoMaterial1"]
+albedo_color = Color(1, 1, 1, 1)
+roughness = 0.82
+albedo_texture = ExtResource("1")
+texture_filter = 0
+
+[sub_resource type="PlaneMesh" id="PhotoMesh1"]
+material = SubResource("PhotoMaterial1")
+size = Vector2(1.95, 1.625)
+
+[sub_resource type="StandardMaterial3D" id="PhotoMaterial2"]
+albedo_color = Color(1, 1, 1, 1)
+roughness = 0.82
+albedo_texture = ExtResource("2")
+texture_filter = 0
+
+[sub_resource type="PlaneMesh" id="PhotoMesh2"]
+material = SubResource("PhotoMaterial2")
+size = Vector2(1.95, 1.625)
+
+[sub_resource type="StandardMaterial3D" id="PhotoMaterial3"]
+albedo_color = Color(1, 1, 1, 1)
+roughness = 0.82
+albedo_texture = ExtResource("3")
+texture_filter = 0
+
+[sub_resource type="PlaneMesh" id="PhotoMesh3"]
+material = SubResource("PhotoMaterial3")
+size = Vector2(1.95, 1.625)
+
+[sub_resource type="StandardMaterial3D" id="PhotoMaterial4"]
+albedo_color = Color(1, 1, 1, 1)
+roughness = 0.82
+albedo_texture = ExtResource("4")
+texture_filter = 0
+
+[sub_resource type="PlaneMesh" id="PhotoMesh4"]
+material = SubResource("PhotoMaterial4")
+size = Vector2(1.95, 1.625)
+
+[node name="CaseFilePage" type="Node3D"]
+
+
+[node name="Paper" type="MeshInstance3D" parent="."]
+position = Vector3(0, 0, 0)
+mesh = SubResource("Page")
+
+[node name="HeaderRule" type="MeshInstance3D" parent="."]
+position = Vector3(0, 0.019, -2.05)
+mesh = SubResource("HeaderLine")
+
+[node name="CaseHeader" type="Label3D" parent="."]
+position = Vector3(0, 0.026, -2.57)
+rotation_degrees = Vector3(-90, 0, 0)
+pixel_size = 0.0045
+shaded = true
+double_sided = false
+modulate = Color(0.16, 0.18, 0.17, 1)
+text = "CASE FILE / FIRST CITY SAVINGS"
+font_size = 42
+outline_size = 0
+
+[node name="Time" type="Label3D" parent="."]
+position = Vector3(-0.48, 0.026, -2.33)
+rotation_degrees = Vector3(-90, 0, 0)
+pixel_size = 0.004
+shaded = true
+double_sided = false
+modulate = Color(0.16, 0.18, 0.17, 1)
+text = "FRIDAY  /  2:14 PM   /   EVIDENCE COPY"
+font_size = 28
+outline_size = 0
+
+[node name="Stamp" type="Label3D" parent="."]
+position = Vector3(1.37, 0.026, -2.23)
+rotation_degrees = Vector3(-90, -8, 0)
+pixel_size = 0.004
+shaded = true
+double_sided = false
+modulate = Color(0.52, 0.075, 0.055, 1)
+text = "DO NOT PRINT"
+font_size = 32
+outline_size = 0
+
+[node name="Footer" type="Label3D" parent="."]
+position = Vector3(0, 0.026, 2.64)
+rotation_degrees = Vector3(-90, 0, 0)
+pixel_size = 0.003
+shaded = true
+double_sided = false
+modulate = Color(0.16, 0.18, 0.17, 1)
+text = "BEACON ARCHIVE  /  01    -    ORIGINAL PRINTS"
+font_size = 24
+outline_size = 0
+
+[node name="Photo01" type="Node3D" parent="." groups=["evidence_panels"]]
+position = Vector3(-1.1, 0.02, -0.84)
+
+script = ExtResource("panel_script")
+data = ExtResource("panel1")
+number = 1
+
+[node name="Border" type="MeshInstance3D" parent="Photo01"]
+position = Vector3(0, 0, 0)
+mesh = SubResource("Border")
+
+[node name="Image" type="MeshInstance3D" parent="Photo01"]
+position = Vector3(0, 0.009, -0.08)
+mesh = SubResource("PhotoMesh1")
+
+[node name="Tape" type="MeshInstance3D" parent="Photo01"]
+position = Vector3(-0.34, 0.018, -0.98)
+mesh = SubResource("TapeMesh")
+rotation_degrees = Vector3(0, -7, 0)
+
+[node name="Title" type="Label3D" parent="Photo01"]
+position = Vector3(0, 0.014, 0.88)
+rotation_degrees = Vector3(-90, 0, 0)
+pixel_size = 0.004
+shaded = true
+double_sided = false
+modulate = Color(0.16, 0.18, 0.17, 1)
+text = "01  /  THE APPROACH"
+font_size = 40
+outline_size = 0
+
+[node name="Photo02" type="Node3D" parent="." groups=["evidence_panels"]]
+position = Vector3(1.1, 0.02, -0.84)
+
+script = ExtResource("panel_script")
+data = ExtResource("panel2")
+number = 2
+
+[node name="Border" type="MeshInstance3D" parent="Photo02"]
+position = Vector3(0, 0, 0)
+mesh = SubResource("Border")
+
+[node name="Image" type="MeshInstance3D" parent="Photo02"]
+position = Vector3(0, 0.009, -0.08)
+mesh = SubResource("PhotoMesh2")
+
+[node name="Tape" type="MeshInstance3D" parent="Photo02"]
+position = Vector3(-0.34, 0.018, -0.98)
+mesh = SubResource("TapeMesh")
+rotation_degrees = Vector3(0, -7, 0)
+
+[node name="Title" type="Label3D" parent="Photo02"]
+position = Vector3(0, 0.014, 0.88)
+rotation_degrees = Vector3(-90, 0, 0)
+pixel_size = 0.004
+shaded = true
+double_sided = false
+modulate = Color(0.16, 0.18, 0.17, 1)
+text = "02  /  THE VAULT"
+font_size = 40
+outline_size = 0
+
+[node name="Photo03" type="Node3D" parent="." groups=["evidence_panels"]]
+position = Vector3(-1.1, 0.02, 1.39)
+
+script = ExtResource("panel_script")
+data = ExtResource("panel3")
+number = 3
+
+[node name="Border" type="MeshInstance3D" parent="Photo03"]
+position = Vector3(0, 0, 0)
+mesh = SubResource("Border")
+
+[node name="Image" type="MeshInstance3D" parent="Photo03"]
+position = Vector3(0, 0.009, -0.08)
+mesh = SubResource("PhotoMesh3")
+
+[node name="Tape" type="MeshInstance3D" parent="Photo03"]
+position = Vector3(-0.34, 0.018, -0.98)
+mesh = SubResource("TapeMesh")
+rotation_degrees = Vector3(0, -7, 0)
+
+[node name="Title" type="Label3D" parent="Photo03"]
+position = Vector3(0, 0.014, 0.88)
+rotation_degrees = Vector3(-90, 0, 0)
+pixel_size = 0.004
+shaded = true
+double_sided = false
+modulate = Color(0.16, 0.18, 0.17, 1)
+text = "03  /  THE WITNESS"
+font_size = 40
+outline_size = 0
+
+[node name="Photo04" type="Node3D" parent="." groups=["evidence_panels"]]
+position = Vector3(1.1, 0.02, 1.39)
+
+script = ExtResource("panel_script")
+data = ExtResource("panel4")
+number = 4
+
+[node name="Border" type="MeshInstance3D" parent="Photo04"]
+position = Vector3(0, 0, 0)
+mesh = SubResource("Border")
+
+[node name="Image" type="MeshInstance3D" parent="Photo04"]
+position = Vector3(0, 0.009, -0.08)
+mesh = SubResource("PhotoMesh4")
+
+[node name="Tape" type="MeshInstance3D" parent="Photo04"]
+position = Vector3(-0.34, 0.018, -0.98)
+mesh = SubResource("TapeMesh")
+rotation_degrees = Vector3(0, -7, 0)
+
+[node name="Title" type="Label3D" parent="Photo04"]
+position = Vector3(0, 0.014, 0.88)
+rotation_degrees = Vector3(-90, 0, 0)
+pixel_size = 0.004
+shaded = true
+double_sided = false
+modulate = Color(0.16, 0.18, 0.17, 1)
+text = "04  /  THE GETAWAY"
+font_size = 40
+outline_size = 0
+
+[node name="InkPreviewHint" type="Label3D" parent="."]
+position = Vector3(0, 0.026, 3.04)
+rotation_degrees = Vector3(-90, 0, 0)
+pixel_size = 0.004
+shaded = false
+double_sided = false
+modulate = Color(0.78, 0.69, 0.91, 1)
+font_size = 26
+outline_size = 0
+text = "INK PREVIEW: purple prints as shadow"

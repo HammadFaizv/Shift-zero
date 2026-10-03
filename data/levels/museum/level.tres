@@ -1,0 +1,61 @@
+[gd_resource type="Resource" script_class="LevelData" format=3 uid="uid://ktwre4kattkw"]
+
+[ext_resource type="Resource" path="res://data/levels/museum/comments.tres" id="comments"]
+[ext_resource type="Script" uid="uid://c2os1bwoh03bt" path="res://scripts/data/level_data.gd" id="level"]
+[ext_resource type="Resource" uid="uid://c30ku0y1trsy1" path="res://data/levels/museum/01_panel.tres" id="p1"]
+[ext_resource type="Resource" uid="uid://c80rcfybu0b6c" path="res://data/levels/museum/02_panel.tres" id="p2"]
+[ext_resource type="Resource" uid="uid://cejbcycvy5k76" path="res://data/levels/museum/03_panel.tres" id="p3"]
+[ext_resource type="Resource" uid="uid://c18tov3ykikub" path="res://data/levels/museum/04_panel.tres" id="p4"]
+[ext_resource type="Script" uid="uid://dv2jlpd6oec0j" path="res://scripts/data/panel_data.gd" id="panel"]
+[ext_resource type="Script" uid="uid://jtrrb541dggt" path="res://scripts/data/reaction_config.gd" id="reaction"]
+
+[sub_resource type="Resource" id="Reaction"]
+script = ExtResource("reaction")
+band_minima = null
+band_names = null
+band_summaries = null
+
+[resource]
+script = ExtResource("level")
+id = &"museum"
+title = "CIVIC MUSEUM"
+incident = "Museum incident / Saturday, 1:08 AM"
+case_number = 4
+mechanic_hint = "The reflected beam is weak.
+Focus it on the last hero.
+Move if it gets TOO HOT."
+tool_settings = {
+"ReadingGlasses/Redirector:intensity": 2.0,
+"ReadingGlasses/Redirector:maximum_output": 0.22,
+"Torch/Beam/VisualLight:spot_angle": 8.5,
+"Torch/Beam/VisualLight:spot_range": 10.0,
+"Torch/Beam:rotation_degrees": Vector3(-3, -90, 0),
+"Torch/GameplayLight:intensity": 2.8
+}
+panels = Array[ExtResource("panel")]([ExtResource("p1"), ExtResource("p2"), ExtResource("p3"), ExtResource("p4")])
+required_spun = 4
+available_tools = PackedStringArray("Torch", "Paperweight", "Paperweight2", "ReadingGlasses", "MagnifyingGlass")
+tool_positions = {
+"MagnifyingGlass": Vector3(3.1, 0, 2),
+"Paperweight": Vector3(-4.55, 0, 0.9),
+"Paperweight2": Vector3(-3.1, 0, 1.7),
+"ReadingGlasses": Vector3(3.2, 0, 0.9),
+"Torch": Vector3(-3.9, 0, -1.1),
+"Torch2": Vector3(-3.9, 0, 2.2)
+}
+tool_yaws = {
+"Torch": -12.0
+}
+subtitles = {
+"damning": "THE MISSING MASTERPIECE?",
+"mixed": "HERO... OR VILLAIN?",
+"murky": "WHAT HAPPENED THAT NIGHT?",
+"perfect": "PROTECTS OUR TREASURES!",
+"tampered": "WHAT HAPPENED TO THE PRINTS?"
+}
+target_rings_default = false
+editor_note = "Never touch the prints.
+No scorch marks.
+Prints 6am - Ed."
+comment_templates = ExtResource("comments")
+reaction_config = SubResource("Reaction")

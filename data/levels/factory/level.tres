@@ -1,0 +1,56 @@
+[gd_resource type="Resource" script_class="LevelData" format=3 uid="uid://bwd5ba7vkb7od"]
+
+[ext_resource type="Resource" path="res://data/levels/factory/comments.tres" id="comments"]
+[ext_resource type="Script" uid="uid://c2os1bwoh03bt" path="res://scripts/data/level_data.gd" id="level"]
+[ext_resource type="Resource" uid="uid://b5wt6jim473q4" path="res://data/levels/factory/01_panel.tres" id="p1"]
+[ext_resource type="Resource" uid="uid://dea783mldax66" path="res://data/levels/factory/02_panel.tres" id="p2"]
+[ext_resource type="Resource" uid="uid://dr78eqj61gao7" path="res://data/levels/factory/03_panel.tres" id="p3"]
+[ext_resource type="Resource" uid="uid://ihalp21f6e52" path="res://data/levels/factory/04_panel.tres" id="p4"]
+[ext_resource type="Script" uid="uid://dv2jlpd6oec0j" path="res://scripts/data/panel_data.gd" id="panel"]
+[ext_resource type="Script" uid="uid://jtrrb541dggt" path="res://scripts/data/reaction_config.gd" id="reaction"]
+
+[sub_resource type="Resource" id="Reaction"]
+script = ExtResource("reaction")
+band_minima = null
+band_names = null
+band_summaries = null
+
+[resource]
+script = ExtResource("level")
+id = &"factory"
+title = "FOUNDRY NIGHT SHIFT"
+incident = "Factory fire / Monday, 11:46 PM"
+case_number = 2
+mechanic_hint = "Two narrow torches.
+Aim one at each row.
+Keep the exits dark."
+tool_settings = {
+"Torch/Beam/VisualLight:spot_angle": 10.0,
+"Torch2/Beam/VisualLight:spot_angle": 10.0
+}
+panels = Array[ExtResource("panel")]([ExtResource("p1"), ExtResource("p2"), ExtResource("p3"), ExtResource("p4")])
+available_tools = PackedStringArray("Torch", "Paperweight", "Paperweight2", "Torch2")
+tool_positions = {
+"MagnifyingGlass": Vector3(3.1, 0, 2),
+"Paperweight": Vector3(-4.55, 0, 0.9),
+"Paperweight2": Vector3(-3.1, 0, 1.7),
+"ReadingGlasses": Vector3(3.2, 0, 0.9),
+"Torch": Vector3(-3.9, 0, -1.1),
+"Torch2": Vector3(-3.9, 0, 2.2)
+}
+tool_yaws = {
+"Torch": -12.0
+}
+subtitles = {
+"damning": "WHO STARTED THE FIRE?",
+"mixed": "HERO... OR VILLAIN?",
+"murky": "WHAT HAPPENED THAT NIGHT?",
+"perfect": "RESCUES THE NIGHT SHIFT!",
+"tampered": "WHAT HAPPENED TO THE PRINTS?"
+}
+target_rings_default = false
+editor_note = "They need a rescuer.
+Not another question.
+Prints 6am - Ed."
+comment_templates = ExtResource("comments")
+reaction_config = SubResource("Reaction")

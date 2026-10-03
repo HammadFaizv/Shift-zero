@@ -1,0 +1,52 @@
+[gd_resource type="Resource" script_class="PanelData" format=3 uid="uid://8yoi7h8tx2vh"]
+
+[ext_resource type="Script" uid="uid://dv2jlpd6oec0j" path="res://scripts/data/panel_data.gd" id="panel"]
+[ext_resource type="Texture2D" uid="uid://etrs3ln3p8a7" path="res://Assets/evidence/train/03_panel.svg" id="photo"]
+[ext_resource type="Script" uid="uid://bu6hd8prvmtix" path="res://scripts/data/poi_data.gd" id="poi"]
+
+[sub_resource type="Resource" id="Hero"]
+script = ExtResource("poi")
+id = &"H3"
+description = "Captain Halcyon"
+position_uv = Vector2(0.95, 0.12)
+radius_uv = 0.025
+
+[sub_resource type="Resource" id="Evidence"]
+script = ExtResource("poi")
+id = &"E3"
+type = 2
+description = "a child inside the wrecked carriage"
+desired = 1
+position_uv = Vector2(0.22, 0.78)
+radius_uv = 0.07
+
+[resource]
+script = ExtResource("panel")
+id = &"train_03_panel"
+title = "THE PASSENGERS"
+texture = ExtResource("photo")
+pois = Array[ExtResource("poi")]([SubResource("Hero"), SubResource("Evidence")])
+rule_order = PackedInt32Array(1, 0, 2)
+captions = {
+"DAMNING": "The passenger reaches toward a child still inside the wreck.",
+"MURKY": "The the passengers photograph is too dark to explain.",
+"SPUN": "Halcyon carries a shaken passenger away from danger.",
+"TAMPERED": "The the passengers photograph has been scorched. The print is damaged."
+}
+balloons = {
+"DAMNING": "Stand aside.",
+"MURKY": "???",
+"SPUN": "You are safe with me.",
+"TAMPERED": "Where is the rest?"
+}
+sound_effects = {
+"DAMNING": "NO!",
+"MURKY": "...",
+"SPUN": "SAFE NOW!",
+"TAMPERED": "FZZT!"
+}
+comments = {
+"DAMNING": "Zoom into panel 3: a child inside the wrecked carriage. The passenger reaches toward a child still inside the wreck.",
+"MURKY": "I cannot read panel 3. What happened at Northline Express?",
+"SPUN": "Panel 3: Halcyon carries a shaken passenger away from danger. Thank you, Captain!"
+}

@@ -1,0 +1,62 @@
+[gd_resource type="Resource" script_class="PanelData" format=3 uid="uid://rw5jfbbm2a2c"]
+
+[ext_resource type="Script" uid="uid://dv2jlpd6oec0j" path="res://scripts/data/panel_data.gd" id="panel"]
+[ext_resource type="Texture2D" uid="uid://0ot6y6apc7mu" path="res://Assets/evidence_assets/stages/04_peacekeeper01.png" id="photo"]
+[ext_resource type="Script" uid="uid://bu6hd8prvmtix" path="res://scripts/data/poi_data.gd" id="poi"]
+
+[sub_resource type="Resource" id="Poi0"]
+script = ExtResource("poi")
+id = &"peace_1_0"
+description = "Hero"
+position_uv = Vector2(0.65, 0.3)
+importance = 2.0
+
+[sub_resource type="Resource" id="Poi1"]
+script = ExtResource("poi")
+id = &"peace_1_1"
+type = 6
+description = "Officer"
+position_uv = Vector2(0.59, 0.73)
+radius_uv = 0.05
+importance = 2.0
+
+[sub_resource type="Resource" id="Poi2"]
+script = ExtResource("poi")
+id = &"peace_1_2"
+type = 2
+description = "Civilian"
+position_uv = Vector2(0.23, 0.73)
+radius_uv = 0.05
+importance = 2.0
+
+[resource]
+script = ExtResource("panel")
+id = &"peace_01_panel"
+title = "KEEPING THE PEACE"
+texture = ExtResource("photo")
+pois = Array[ExtResource("poi")]([SubResource("Poi0"), SubResource("Poi1"), SubResource("Poi2")])
+rule_order = PackedInt32Array(1, 0, 2)
+captions = {
+"DAMNING": "The scene is fully visible.",
+"MURKY": "The required subjects need clearer lighting.",
+"SPUN": "The print highlights hero, officer, civilian.",
+"TAMPERED": "The print is scorched. Prepare a fresh copy."
+}
+balloons = {
+"DAMNING": "",
+"MURKY": "",
+"SPUN": "",
+"TAMPERED": ""
+}
+sound_effects = {
+"DAMNING": "",
+"MURKY": "",
+"SPUN": "WHOOSH!",
+"TAMPERED": "FZZT!"
+}
+comments = {
+"DAMNING": "The scene is fully visible.",
+"MURKY": "The required subjects need clearer lighting.",
+"SPUN": "The print highlights hero, officer, civilian.",
+"TAMPERED": "The print is scorched. Prepare a fresh copy."
+}

@@ -1,0 +1,52 @@
+[gd_resource type="Resource" script_class="PanelData" format=3 uid="uid://b5wt6jim473q4"]
+
+[ext_resource type="Script" uid="uid://dv2jlpd6oec0j" path="res://scripts/data/panel_data.gd" id="panel"]
+[ext_resource type="Texture2D" uid="uid://imcww30qbcl6" path="res://Assets/evidence/factory/01_panel.svg" id="photo"]
+[ext_resource type="Script" uid="uid://bu6hd8prvmtix" path="res://scripts/data/poi_data.gd" id="poi"]
+
+[sub_resource type="Resource" id="Hero"]
+script = ExtResource("poi")
+id = &"H1"
+description = "Captain Halcyon"
+position_uv = Vector2(0.65, 0.72)
+radius_uv = 0.04
+
+[sub_resource type="Resource" id="Evidence"]
+script = ExtResource("poi")
+id = &"E1"
+type = 7
+description = "a flame at his hand"
+desired = 1
+position_uv = Vector2(0.25, 0.28)
+radius_uv = 0.07
+
+[resource]
+script = ExtResource("panel")
+id = &"factory_01_panel"
+title = "THE SPARK"
+texture = ExtResource("photo")
+pois = Array[ExtResource("poi")]([SubResource("Hero"), SubResource("Evidence")])
+rule_order = PackedInt32Array(0, 1, 2)
+captions = {
+"DAMNING": "A flame leaps from his hand into a pool of fuel.",
+"MURKY": "The the spark photograph is too dark to explain.",
+"SPUN": "Halcyon reaches the foundry before the flames spread.",
+"TAMPERED": "The the spark photograph has been scorched. The print is damaged."
+}
+balloons = {
+"DAMNING": "Stand aside.",
+"MURKY": "???",
+"SPUN": "You are safe with me.",
+"TAMPERED": "Where is the rest?"
+}
+sound_effects = {
+"DAMNING": "CRASH!",
+"MURKY": "...",
+"SPUN": "WHOOSH!",
+"TAMPERED": "FZZT!"
+}
+comments = {
+"DAMNING": "Zoom into panel 1: a flame at his hand. A flame leaps from his hand into a pool of fuel.",
+"MURKY": "I cannot read panel 1. What happened at Foundry Night Shift?",
+"SPUN": "Panel 1: Halcyon reaches the foundry before the flames spread. Thank you, Captain!"
+}

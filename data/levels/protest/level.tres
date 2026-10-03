@@ -1,0 +1,60 @@
+[gd_resource type="Resource" script_class="LevelData" format=3 uid="uid://2o22we7ja808"]
+
+[ext_resource type="Resource" path="res://data/levels/protest/comments.tres" id="comments"]
+[ext_resource type="Script" uid="uid://c2os1bwoh03bt" path="res://scripts/data/level_data.gd" id="level"]
+[ext_resource type="Resource" uid="uid://cggiv22nwyrxd" path="res://data/levels/protest/01_panel.tres" id="p1"]
+[ext_resource type="Resource" uid="uid://dryqvj7y68acp" path="res://data/levels/protest/02_panel.tres" id="p2"]
+[ext_resource type="Resource" uid="uid://bcnn3obdgyumj" path="res://data/levels/protest/03_panel.tres" id="p3"]
+[ext_resource type="Resource" uid="uid://bpugctlqvpvhq" path="res://data/levels/protest/04_panel.tres" id="p4"]
+[ext_resource type="Script" uid="uid://dv2jlpd6oec0j" path="res://scripts/data/panel_data.gd" id="panel"]
+[ext_resource type="Script" uid="uid://jtrrb541dggt" path="res://scripts/data/reaction_config.gd" id="reaction"]
+
+[sub_resource type="Resource" id="Reaction"]
+script = ExtResource("reaction")
+band_minima = null
+band_names = null
+band_summaries = null
+
+[resource]
+script = ExtResource("level")
+id = &"protest"
+title = "ASSEMBLY SQUARE"
+incident = "City protest / Wednesday, 5:32 PM"
+case_number = 3
+mechanic_hint = "Catch the upright beam
+with the reading glasses.
+Aim their green beam."
+tool_settings = {
+"ReadingGlasses/Redirector:intensity": 2.0,
+"Torch/Beam/VisualLight:spot_angle": 8.5,
+"Torch/Beam/VisualLight:spot_range": 10.0,
+"Torch/Beam:rotation_degrees": Vector3(-3, -90, 0),
+"Torch/GameplayLight:intensity": 2.8
+}
+panels = Array[ExtResource("panel")]([ExtResource("p1"), ExtResource("p2"), ExtResource("p3"), ExtResource("p4")])
+required_spun = 4
+available_tools = PackedStringArray("Torch", "Paperweight", "Paperweight2", "ReadingGlasses")
+tool_positions = {
+"MagnifyingGlass": Vector3(3.1, 0, 2),
+"Paperweight": Vector3(-4.55, 0, 0.9),
+"Paperweight2": Vector3(-3.1, 0, 1.7),
+"ReadingGlasses": Vector3(3.2, 0, 0.9),
+"Torch": Vector3(-3.9, 0, -1.1),
+"Torch2": Vector3(-3.9, 0, 2.2)
+}
+tool_yaws = {
+"Torch": -12.0
+}
+subtitles = {
+"damning": "PEACE... AT WHAT PRICE?",
+"mixed": "HERO... OR VILLAIN?",
+"murky": "WHAT HAPPENED THAT NIGHT?",
+"perfect": "KEEPS THE PEACE!",
+"tampered": "WHAT HAPPENED TO THE PRINTS?"
+}
+target_rings_default = false
+editor_note = "Keep the square calm.
+Keep his hands clean.
+Prints 6am - Ed."
+comment_templates = ExtResource("comments")
+reaction_config = SubResource("Reaction")

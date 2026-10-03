@@ -1,0 +1,64 @@
+[gd_resource type="Resource" script_class="PanelData" format=3 uid="uid://dtn4boprae3kc"]
+
+[ext_resource type="Script" uid="uid://dv2jlpd6oec0j" path="res://scripts/data/panel_data.gd" id="panel"]
+[ext_resource type="Texture2D" uid="uid://cxbn2c2s65pii" path="res://Assets/evidence_assets/stages/05_burning_building02.png" id="photo"]
+[ext_resource type="Script" uid="uid://bu6hd8prvmtix" path="res://scripts/data/poi_data.gd" id="poi"]
+
+[sub_resource type="Resource" id="Poi0"]
+script = ExtResource("poi")
+id = &"rescue_2_0"
+description = "Hero"
+position_uv = Vector2(0.15, 0.3)
+radius_uv = 0.06
+importance = 2.0
+
+[sub_resource type="Resource" id="Poi1"]
+script = ExtResource("poi")
+id = &"rescue_2_1"
+type = 2
+description = "Rescued child"
+position_uv = Vector2(0.21, 0.29)
+radius_uv = 0.035
+importance = 2.0
+
+[sub_resource type="Resource" id="Poi2"]
+script = ExtResource("poi")
+id = &"rescue_2_2"
+type = 2
+description = "Dead witness"
+desired = 1
+position_uv = Vector2(0.46, 0.9)
+radius_uv = 0.065
+importance = 2.0
+
+[resource]
+script = ExtResource("panel")
+id = &"rescue_02_panel"
+title = "THE RESCUE"
+texture = ExtResource("photo")
+pois = Array[ExtResource("poi")]([SubResource("Poi0"), SubResource("Poi1"), SubResource("Poi2")])
+rule_order = PackedInt32Array(1, 0, 2)
+captions = {
+"DAMNING": "The print also exposes dead witness.",
+"MURKY": "The required subjects need clearer lighting.",
+"SPUN": "The print highlights hero, rescued child.",
+"TAMPERED": "The print is scorched. Prepare a fresh copy."
+}
+balloons = {
+"DAMNING": "",
+"MURKY": "",
+"SPUN": "",
+"TAMPERED": ""
+}
+sound_effects = {
+"DAMNING": "",
+"MURKY": "",
+"SPUN": "SAFE NOW!",
+"TAMPERED": "FZZT!"
+}
+comments = {
+"DAMNING": "The print also exposes dead witness.",
+"MURKY": "The required subjects need clearer lighting.",
+"SPUN": "The print highlights hero, rescued child.",
+"TAMPERED": "The print is scorched. Prepare a fresh copy."
+}

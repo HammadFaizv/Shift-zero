@@ -1,0 +1,38 @@
+[gd_resource type="Resource" script_class="LevelData" format=3 uid="uid://bglrwrjph7thk"]
+
+[ext_resource type="Resource" path="res://data/levels/bank/comments.tres" id="comments"]
+[ext_resource type="Script" uid="uid://c2os1bwoh03bt" path="res://scripts/data/level_data.gd" id="level"]
+[ext_resource type="Resource" uid="uid://bg22aq0k5p88f" path="res://data/levels/bank/01_approach.tres" id="p1"]
+[ext_resource type="Resource" uid="uid://c18ewyu0dnkon" path="res://data/levels/bank/02_vault.tres" id="p2"]
+[ext_resource type="Resource" uid="uid://cbyvo2kj0vr3m" path="res://data/levels/bank/03_witness.tres" id="p3"]
+[ext_resource type="Resource" uid="uid://88ct4qmbvolv" path="res://data/levels/bank/04_getaway.tres" id="p4"]
+[ext_resource type="Script" uid="uid://dv2jlpd6oec0j" path="res://scripts/data/panel_data.gd" id="panel"]
+[ext_resource type="Script" uid="uid://jtrrb541dggt" path="res://scripts/data/reaction_config.gd" id="reaction"]
+
+[sub_resource type="Resource" id="Reaction"]
+script = ExtResource("reaction")
+band_minima = null
+band_names = null
+band_summaries = null
+
+[resource]
+script = ExtResource("level")
+panels = Array[ExtResource("panel")]([ExtResource("p1"), ExtResource("p2"), ExtResource("p3"), ExtResource("p4")])
+available_tools = PackedStringArray("Torch", "Paperweight", "Paperweight2")
+tool_positions = {
+"Paperweight": Vector3(-4.55, 0, 0.9),
+"Paperweight2": Vector3(-3.1, 0, 1.7),
+"Torch": Vector3(-3.9, 0, -1.1)
+}
+tool_yaws = {
+"Torch": -12.0
+}
+subtitles = {
+"damning": "...THE BANK BANDIT?!",
+"mixed": "HERO... OR VILLAIN?",
+"murky": "A STRANGE DAY AT THE BANK",
+"perfect": "SAVES THE DAY!",
+"tampered": "WHAT HAPPENED AT THE BANK?"
+}
+comment_templates = ExtResource("comments")
+reaction_config = SubResource("Reaction")

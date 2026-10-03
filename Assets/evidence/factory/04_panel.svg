@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="768" height="640" viewBox="0 0 768 640" stroke-linecap="round" stroke-linejoin="round">
+  <title>FOUNDRY NIGHT SHIFT / THE DEPARTURE</title>
+  <desc>Editable scene layers. POI anchors preserved from PanelData.</desc>
+  <defs>
+    <clipPath id="photo_crop">
+      <rect width="768" height="640" />
+    </clipPath>
+  </defs>
+  <g clip-path="url(#photo_crop)">
+    <g id="layer_00" data-label="Foundry interior" transform="translate(0 0) scale(1 1) translate(0 0)">
+      <rect width="768" height="640" fill="#7a8382" />
+      <rect y="270" width="768" height="370" fill="#5e6664" />
+      <path d="M0 90H768M80 0V270M360 0V270M690 0V270" stroke="#3b4647" stroke-width="18" />
+      <path d="M0 380H768M0 500H768M180 270L80 640M575 270L690 640" stroke="#838984" stroke-width="3" />
+    </g>
+    <g id="layer_01" data-label="Payroll case" transform="translate(583.6800000000001 460.79999999999995) scale(1 1) translate(0 0)">
+      <g stroke="#2b2f32" stroke-width="4">
+        <rect x="-59" y="-38" width="118" height="81" rx="7" fill="#69706c" />
+        <path d="M-19-38V-53H19V-38" fill="none" />
+        <rect x="-45" y="-15" width="90" height="32" fill="#c0bcab" />
+      </g>
+      <g fill="#dbd8d0" aria-label="PAYROLL">
+        <path d="M403 1327V766H657Q798 766 875.0 839.0Q952 912 952 1047Q952 1181 875.0 1254.0Q798 1327 657 1327ZM201 1493H657Q908 1493 1036.5 1379.5Q1165 1266 1165 1047Q1165 826 1036.5 713.0Q908 600 657 600H403V0H201Z" transform="translate(-35.953125 7.0) scale(0.0078125 -0.0078125)" />
+        <path d="M700 1294 426 551H975ZM586 1493H815L1384 0H1174L1038 383H365L229 0H16Z" transform="translate(-26.3046875 7.0) scale(0.0078125 -0.0078125)" />
+        <path d="M-4 1493H213L627 879L1038 1493H1255L727 711V0H524V711Z" transform="translate(-15.359375 7.0) scale(0.0078125 -0.0078125)" />
+        <path d="M909 700Q974 678 1035.5 606.0Q1097 534 1159 408L1364 0H1147L956 383Q882 533 812.5 582.0Q743 631 623 631H403V0H201V1493H657Q913 1493 1039.0 1386.0Q1165 1279 1165 1063Q1165 922 1099.5 829.0Q1034 736 909 700ZM403 1327V797H657Q803 797 877.5 864.5Q952 932 952 1063Q952 1194 877.5 1260.5Q803 1327 657 1327Z" transform="translate(-5.5859375 7.0) scale(0.0078125 -0.0078125)" />
+        <path d="M807 1356Q587 1356 457.5 1192.0Q328 1028 328 745Q328 463 457.5 299.0Q587 135 807 135Q1027 135 1155.5 299.0Q1284 463 1284 745Q1284 1028 1155.5 1192.0Q1027 1356 807 1356ZM807 1520Q1121 1520 1309.0 1309.5Q1497 1099 1497 745Q1497 392 1309.0 181.5Q1121 -29 807 -29Q492 -29 303.5 181.0Q115 391 115 745Q115 1099 303.5 1309.5Q492 1520 807 1520Z" transform="translate(5.53125 7.0) scale(0.0078125 -0.0078125)" />
+        <path d="M201 1493H403V170H1130V0H201Z" transform="translate(18.125 7.0) scale(0.0078125 -0.0078125)" />
+        <path d="M201 1493H403V170H1130V0H201Z" transform="translate(27.0390625 7.0) scale(0.0078125 -0.0078125)" />
+      </g>
+    </g>
+    <g id="layer_02" data-label="Captain Halcyon" transform="translate(215.04000000000002 140.8) scale(0.9 0.9) translate(-152 -36)">
+      <polygon points="72,62 12,26 34,60 2,80 34,98 72,88" fill="#498381" stroke="#141211" stroke-width="4" />
+      <path d="M70,60 L22,54" fill="none" stroke="#141211" stroke-width="22.0" />
+      <path d="M70,60 L22,54" fill="none" stroke="#d1b771" stroke-width="16" />
+      <path d="M70,86 L20,94" fill="none" stroke="#141211" stroke-width="22.0" />
+      <path d="M70,86 L20,94" fill="none" stroke="#d1b771" stroke-width="16" />
+      <path d="M22,54 L8,52" fill="none" stroke="#141211" stroke-width="24.0" />
+      <path d="M22,54 L8,52" fill="none" stroke="#498381" stroke-width="18" />
+      <path d="M20,94 L6,98" fill="none" stroke="#141211" stroke-width="24.0" />
+      <path d="M20,94 L6,98" fill="none" stroke="#498381" stroke-width="18" />
+      <rect x="58" y="44" width="76" height="52" rx="22" fill="#d1b771" stroke="#141211" stroke-width="4" />
+      <g id="p2_emblem">
+        <circle cx="98" cy="70" r="11" fill="#bc7655" stroke="#141211" stroke-width="4" />
+        <line x1="112.0" y1="70.0" x2="118.0" y2="70.0" stroke="#141211" stroke-width="3" />
+        <line x1="107.89949493661166" y1="79.89949493661166" x2="112.14213562373095" y2="84.14213562373095" stroke="#141211" stroke-width="3" />
+        <line x1="98.0" y1="84.0" x2="98.0" y2="90.0" stroke="#141211" stroke-width="3" />
+        <line x1="88.10050506338834" y1="79.89949493661166" x2="83.85786437626905" y2="84.14213562373095" stroke="#141211" stroke-width="3" />
+        <line x1="84.0" y1="70.0" x2="78.0" y2="70.0" stroke="#141211" stroke-width="3" />
+        <line x1="88.10050506338834" y1="60.10050506338834" x2="83.85786437626905" y2="55.85786437626905" stroke="#141211" stroke-width="3" />
+        <line x1="98.0" y1="56.0" x2="98.0" y2="50.0" stroke="#141211" stroke-width="3" />
+        <line x1="107.89949493661166" y1="60.10050506338833" x2="112.14213562373095" y2="55.85786437626905" stroke="#141211" stroke-width="3" />
+      </g>
+      <path d="M124,58 L196,46" fill="none" stroke="#141211" stroke-width="20.0" />
+      <path d="M124,58 L196,46" fill="none" stroke="#d1b771" stroke-width="14" />
+      <circle cx="202" cy="45" r="10" fill="#498381" stroke="#141211" stroke-width="4" />
+      <g id="p2_head">
+        <circle cx="152" cy="36" r="24" fill="#d4b8a2" stroke="#141211" stroke-width="4" />
+        <clipPath id="p2_chf">
+          <circle cx="152" cy="36" r="24" />
+        </clipPath>
+        <g clip-path="url(#p2_chf)">
+          <rect x="128" y="12" width="48" height="18.0" fill="#251e19" />
+          <rect x="128" y="31.68" width="48" height="12.0" fill="#f4f1eb" />
+        </g>
+        <circle cx="152" cy="36" r="24" fill="none" stroke="#141211" stroke-width="4" />
+        <rect x="155.6" y="35.52" width="10.8" height="4.32" fill="#141211" />
+      </g>
+    </g>
+  </g>
+</svg>

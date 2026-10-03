@@ -1,0 +1,58 @@
+[gd_resource type="Resource" script_class="LevelData" format=3 uid="uid://bvtjun601uxnd"]
+
+[ext_resource type="Resource" path="res://data/levels/greatest/comments.tres" id="comments"]
+[ext_resource type="Resource" uid="uid://baslirdf11x4u" path="res://data/levels/greatest/01_panel.tres" id="p1"]
+[ext_resource type="Resource" uid="uid://jkk3pvk66go" path="res://data/levels/greatest/02_panel.tres" id="p2"]
+[ext_resource type="Resource" uid="uid://cpobkkcxdgnrn" path="res://data/levels/greatest/03_panel.tres" id="p3"]
+[ext_resource type="Script" uid="uid://dv2jlpd6oec0j" path="res://scripts/data/panel_data.gd" id="panel"]
+[ext_resource type="Resource" path="res://data/levels/greatest/reaction.tres" id="reaction"]
+[ext_resource type="Script" uid="uid://c2os1bwoh03bt" path="res://scripts/data/level_data.gd" id="script"]
+
+[resource]
+script = ExtResource("script")
+id = &"greatest"
+title = "OUR GREATEST HERO"
+incident = "First City / archive sequence 7"
+case_number = 7
+mechanic_hint = "All the familiar tools.
+Keep Halcyon lit
+in every photograph."
+tool_settings = {
+"DeskLamp/GameplayLight:falloff": 0.8,
+"DeskLamp/GameplayLight:intensity": 1.8,
+"DeskLamp/Head/VisualLight:spot_angle": 20.0,
+"Paperweight2:scale": Vector3(1.5, 1.5, 1.5),
+"Paperweight3:scale": Vector3(1.5, 1.5, 1.5),
+"Paperweight:scale": Vector3(1.5, 1.5, 1.5),
+"Torch/Beam/VisualLight:spot_angle": 16.0,
+"Torch/GameplayLight:intensity": 2.0,
+"Torch2/Beam/VisualLight:spot_angle": 16.0,
+"Torch2/GameplayLight:intensity": 2.0
+}
+panels = Array[ExtResource("panel")]([ExtResource("p1"), ExtResource("p2"), ExtResource("p3")])
+photo_layouts = Array[Rect2]([Rect2(-1.1, -0.9, 1.95, 1.625), Rect2(1.1, -0.9, 1.95, 1.625), Rect2(0, 1.4, 2.35, 1.958333)])
+ceiling_starts_on = false
+available_tools = PackedStringArray("CeilingLight", "DeskLamp", "Torch", "Torch2", "Paperweight", "Paperweight2", "Paperweight3")
+tool_positions = {
+"DeskLamp": Vector3(3.8, 0, 0.1),
+"Paperweight": Vector3(-3.6, 0, 1),
+"Paperweight2": Vector3(-3.1, 0, 2),
+"Paperweight3": Vector3(-3.7, 0, 2.8),
+"Torch": Vector3(3.7, 0, 0.1),
+"Torch2": Vector3(3.7, 0, 2.1)
+}
+tool_yaws = {
+"DeskLamp": 180.0,
+"Torch": 180.0,
+"Torch2": 180.0
+}
+subtitles = {
+"damning": "AN EVENTFUL DAY IN FIRST CITY",
+"mixed": "HALCYON AT THE SCENE",
+"murky": "A QUIET EDITION",
+"perfect": "OUR CITY'S GREATEST HERO!",
+"tampered": "A PRINTING MISHAP"
+}
+editor_note = "Make him a hero."
+comment_templates = ExtResource("comments")
+reaction_config = ExtResource("reaction")

@@ -1,0 +1,52 @@
+[gd_resource type="Resource" script_class="PanelData" format=3 uid="uid://dea783mldax66"]
+
+[ext_resource type="Script" uid="uid://dv2jlpd6oec0j" path="res://scripts/data/panel_data.gd" id="panel"]
+[ext_resource type="Texture2D" uid="uid://d1vsy313af66v" path="res://Assets/evidence/factory/02_panel.svg" id="photo"]
+[ext_resource type="Script" uid="uid://bu6hd8prvmtix" path="res://scripts/data/poi_data.gd" id="poi"]
+
+[sub_resource type="Resource" id="Hero"]
+script = ExtResource("poi")
+id = &"H2"
+description = "Captain Halcyon"
+position_uv = Vector2(0.28, 0.72)
+radius_uv = 0.04
+
+[sub_resource type="Resource" id="Evidence"]
+script = ExtResource("poi")
+id = &"E2"
+type = 8
+description = "a chained emergency door"
+desired = 1
+position_uv = Vector2(0.76, 0.3)
+radius_uv = 0.07
+
+[resource]
+script = ExtResource("panel")
+id = &"factory_02_panel"
+title = "THE EXIT"
+texture = ExtResource("photo")
+pois = Array[ExtResource("poi")]([SubResource("Hero"), SubResource("Evidence")])
+rule_order = PackedInt32Array(0, 1, 2)
+captions = {
+"DAMNING": "His fist holds the emergency door shut from outside.",
+"MURKY": "The the exit photograph is too dark to explain.",
+"SPUN": "Halcyon clears a route for the trapped night shift.",
+"TAMPERED": "The the exit photograph has been scorched. The print is damaged."
+}
+balloons = {
+"DAMNING": "Stand aside.",
+"MURKY": "???",
+"SPUN": "You are safe with me.",
+"TAMPERED": "Where is the rest?"
+}
+sound_effects = {
+"DAMNING": "KRAK!",
+"MURKY": "...",
+"SPUN": "HOLD FAST!",
+"TAMPERED": "FZZT!"
+}
+comments = {
+"DAMNING": "Zoom into panel 2: a chained emergency door. His fist holds the emergency door shut from outside.",
+"MURKY": "I cannot read panel 2. What happened at Foundry Night Shift?",
+"SPUN": "Panel 2: Halcyon clears a route for the trapped night shift. Thank you, Captain!"
+}

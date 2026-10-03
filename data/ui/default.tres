@@ -1,0 +1,6 @@
+[gd_resource type="Resource" script_class="UIStyle" format=3]
+
+[ext_resource type="Script" path="res://scripts/data/ui_style.gd" id="style"]
+
+[resource]
+script = ExtResource("style")

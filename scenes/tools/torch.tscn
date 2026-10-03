@@ -1,0 +1,57 @@
+[gd_scene format=3]
+
+[ext_resource type="PackedScene" path="res://Assets/simple_lowpoly_flashlight.glb" id="model"]
+[ext_resource type="Script" path="res://scripts/tools/torch.gd" id="torch"]
+[ext_resource type="Script" path="res://scripts/interaction/draggable_object.gd" id="drag"]
+[ext_resource type="Script" path="res://scripts/interaction/rotatable_object.gd" id="rotate"]
+[ext_resource type="Script" path="res://scripts/lighting/gameplay_light.gd" id="gameplay"]
+
+[sub_resource type="BoxShape3D" id="PickShape"]
+size = Vector3(1.42, 0.54, 0.54)
+
+[node name="Torch" type="Node3D"]
+script = ExtResource("torch")
+
+[node name="Model" parent="." instance=ExtResource("model")]
+position = Vector3(-0.5734, 0.274, 0)
+rotation_degrees = Vector3(0, 0, -90)
+scale = Vector3(0.0013, 0.0013, 0.0013)
+
+[node name="Beam" type="Node3D" parent="."]
+position = Vector3(0.72, 0.274, 0)
+rotation_degrees = Vector3(-6, -90, 0)
+
+[node name="VisualLight" type="SpotLight3D" parent="Beam"]
+light_color = Color(1, 0.91, 0.76, 1)
+light_energy = 4.5
+shadow_enabled = true
+shadow_bias = 0.008
+shadow_normal_bias = 0.15
+spot_range = 12.0
+spot_attenuation = 0.8
+spot_angle = 29.0
+spot_angle_attenuation = 0.6
+
+[node name="PickBody" type="StaticBody3D" parent="."]
+disable_mode = 2
+collision_layer = 1
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PickBody"]
+position = Vector3(0, 0.274, 0)
+shape = SubResource("PickShape")
+
+[node name="Draggable" type="Node" parent="."]
+script = ExtResource("drag")
+display_name = "Torch"
+footprint_radius = 0.8
+support_radius = 0.27
+
+[node name="Rotatable" type="Node" parent="."]
+script = ExtResource("rotate")
+
+[node name="GameplayLight" type="Node3D" parent="." node_paths=PackedStringArray("visual_light") groups=["gameplay_lights"]]
+script = ExtResource("gameplay")
+visual_light = NodePath("../Beam/VisualLight")
+intensity = 1.6
+falloff = 2.0
