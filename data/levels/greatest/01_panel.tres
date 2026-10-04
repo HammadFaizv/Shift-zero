@@ -9,7 +9,7 @@ script = ExtResource("poi")
 id = &"greatest_1_hero"
 description = "Hero"
 position_uv = Vector2(0.75, 0.4)
-importance = 2.0
+importance = 3.0
 
 [sub_resource type="Resource" id="Attack"]
 script = ExtResource("poi")
@@ -19,7 +19,8 @@ description = "Attack"
 desired = 1
 position_uv = Vector2(0.45, 0.4)
 radius_uv = 0.06
-importance = 2.0
+importance = 4.0
+comment_lines = PackedStringArray("Why is Halcyon blasting the street in panel {n}?")
 
 [sub_resource type="Resource" id="Damage"]
 script = ExtResource("poi")
@@ -29,7 +30,8 @@ description = "Damage"
 desired = 1
 position_uv = Vector2(0.2, 0.57)
 radius_uv = 0.08
-importance = 2.0
+importance = 3.0
+comment_lines = PackedStringArray("That building in panel {n} is in pieces. What happened?")
 
 [resource]
 script = ExtResource("panel")
@@ -39,10 +41,10 @@ texture = ExtResource("photo")
 pois = Array[ExtResource("poi")]([SubResource("Hero"), SubResource("Attack"), SubResource("Damage")])
 rule_order = PackedInt32Array(1, 0, 2)
 captions = {
-"DAMNING": "Halcyon's attack tears through the city.",
-"MURKY": "The subject needs clearer lighting.",
-"SPUN": "Halcyon charges into danger.",
-"TAMPERED": "The print is scorched. Prepare a fresh copy."
+"DAMNING": "A mighty blast tears through the street.",
+"MURKY": "Where did our hero go?",
+"SPUN": "Halcyon charges into danger!",
+"TAMPERED": "Oops! This panel went up in smoke."
 }
 balloons = {
 "DAMNING": "",
@@ -51,13 +53,14 @@ balloons = {
 "TAMPERED": ""
 }
 sound_effects = {
-"DAMNING": "",
+"DAMNING": "KRAKA-BOOM!",
 "MURKY": "",
 "SPUN": "WHOOSH!",
 "TAMPERED": "FZZT!"
 }
 comments = {
-"DAMNING": "Halcyon's attack tears through the city.",
-"MURKY": "Panel 1 is too dark to read.",
-"SPUN": "We don’t deserve Halcyon!"
+"DAMNING": "Panel {n}: that is a lot of damage for a rescue.",
+"MURKY": "Panel {n} is too dark to read.",
+"SPUN": "\"First City can count on me.\" I do count on him. Panel {n}!"
 }
+rationale = "Heroes fight bad guys. Collateral is never the headline."

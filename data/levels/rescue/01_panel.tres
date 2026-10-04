@@ -11,7 +11,8 @@ description = "Hero"
 desired = 1
 position_uv = Vector2(0.17, 0.27)
 radius_uv = 0.065
-importance = 2.0
+importance = 6.0
+comment_lines = PackedStringArray("Wait. Is Halcyon shooting a laser AT the building in panel {n}?!")
 
 [sub_resource type="Resource" id="Poi1"]
 script = ExtResource("poi")
@@ -20,7 +21,6 @@ type = 4
 description = "Witness"
 position_uv = Vector2(0.18, 0.81)
 radius_uv = 0.065
-importance = 2.0
 
 [sub_resource type="Resource" id="Poi2"]
 script = ExtResource("poi")
@@ -29,7 +29,6 @@ type = 7
 description = "Burning building"
 position_uv = Vector2(0.75, 0.62)
 radius_uv = 0.09
-importance = 2.0
 
 [resource]
 script = ExtResource("panel")
@@ -39,26 +38,26 @@ texture = ExtResource("photo")
 pois = Array[ExtResource("poi")]([SubResource("Poi0"), SubResource("Poi1"), SubResource("Poi2")])
 rule_order = PackedInt32Array(1, 0, 2)
 captions = {
-"DAMNING": "The print also exposes hero.",
-"MURKY": "The required subjects need clearer lighting.",
-"SPUN": "The print highlights witness, burning building.",
-"TAMPERED": "The print is scorched. Prepare a fresh copy."
+"DAMNING": "The fire starts, and so does a bright beam from the sky.",
+"MURKY": "Something is burning in the dark...",
+"SPUN": "A fire in First City! Brave citizens call for help!",
+"TAMPERED": "Oops! This panel went up in smoke."
 }
 balloons = {
 "DAMNING": "",
 "MURKY": "",
-"SPUN": "",
+"SPUN": "Somebody, help!",
 "TAMPERED": ""
 }
 sound_effects = {
-"DAMNING": "",
+"DAMNING": "ZZZAP!",
 "MURKY": "",
-"SPUN": "WHOOSH!",
+"SPUN": "CRACKLE!",
 "TAMPERED": "FZZT!"
 }
 comments = {
-"DAMNING": "The print also exposes hero.",
-"MURKY": "The required subjects need clearer lighting.",
-"SPUN": "The print highlights witness, burning building.",
-"TAMPERED": "The print is scorched. Prepare a fresh copy."
+"DAMNING": "What is that red line pointing at the burning building in panel {n}?",
+"MURKY": "I can't tell what is burning in panel {n}.",
+"SPUN": "\"Somebody, help!\" Panel {n} had me shaking. Where is Halcyon?!"
 }
+rationale = "Fires start all the time. Who was standing nearby is nobody's business."

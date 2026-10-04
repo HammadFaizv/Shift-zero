@@ -53,6 +53,7 @@ static func button(text: String, primary: bool = false) -> Button:
 	result.add_theme_font_override("font", portable_font())
 	result.custom_minimum_size.y = style.button_height
 	result.mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND
+	result.pressed.connect(Sfx.click)
 	var base := GOLD if primary else style.button_color
 	result.add_theme_stylebox_override("normal", box(base))
 	result.add_theme_stylebox_override("hover", box(base.lightened(style.button_hover_lighten)))

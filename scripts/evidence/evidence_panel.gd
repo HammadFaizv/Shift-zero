@@ -5,6 +5,9 @@ signal state_changed
 
 @export var data: PanelData
 @export var number: int = 1
+@export var border_padding: Vector2 = Vector2(0.06, 0.08)
+## Photos sit on visual layer 2 only, so the desk fill light (layer 1) never changes how they read.
+@export_flags_3d_render var photo_layers: int = 2
 @export var poi_scene: PackedScene = preload("res://scenes/desk/evidence_poi.tscn")
 
 var state: StringName = &"MURKY"
@@ -16,6 +19,7 @@ var evaluator: LightEvaluator
 func _ready() -> void:
 	var material := photo.get_active_material(0).duplicate() as StandardMaterial3D
 	material.texture_filter = BaseMaterial3D.TEXTURE_FILTER_NEAREST
+	photo.layers = photo_layers
 	photo.material_override = material
 	evaluator = get_tree().get_first_node_in_group("light_evaluator") as LightEvaluator
 	set_content(data, number)
@@ -28,10 +32,9 @@ func configure_layout(layout: Rect2) -> void:
 	image.mesh.size = layout.size
 	image.position = Vector3(0, 0.009, 0)
 	$Border.mesh = $Border.mesh.duplicate()
-	$Border.mesh.size = Vector3(layout.size.x + 0.18, 0.012, layout.size.y + 0.28)
-	$Border.position.z = 0.08
+	$Border.mesh.size = Vector3(layout.size.x + border_padding.x, 0.012, layout.size.y + border_padding.y)
+	$Border.position.z = 0.0
 	$Tape.position.z = -layout.size.y * 0.5 - 0.04
-	$Title.position.z = layout.size.y * 0.5 + 0.11
 
 
 func refresh() -> void:
@@ -61,7 +64,6 @@ func set_content(content: PanelData, index: int) -> void:
 	data.burn_marks.clear()
 	number = index
 	photo.material_override.albedo_texture = data.texture
-	$Title.text = "%02d  /  %s" % [number, data.title]
 	for source in data.pois:
 		source.burned = false
 		var poi := poi_scene.instantiate() as EvidencePOI

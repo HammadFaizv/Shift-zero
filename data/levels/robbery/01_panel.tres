@@ -11,7 +11,8 @@ description = "Hero"
 desired = 1
 position_uv = Vector2(0.17, 0.27)
 radius_uv = 0.06
-importance = 2.0
+importance = 5.0
+comment_lines = PackedStringArray("Is Halcyon... THROWING that car in panel {n}?!")
 
 [sub_resource type="Resource" id="Poi1"]
 script = ExtResource("poi")
@@ -21,7 +22,8 @@ description = "Fleeing man"
 desired = 1
 position_uv = Vector2(0.075, 0.82)
 radius_uv = 0.045
-importance = 2.0
+importance = 1.5
+comment_lines = PackedStringArray("Why is everyone in panel {n} running from the bank?")
 
 [sub_resource type="Resource" id="Poi2"]
 script = ExtResource("poi")
@@ -31,7 +33,7 @@ description = "Fleeing woman"
 desired = 1
 position_uv = Vector2(0.2, 0.84)
 radius_uv = 0.045
-importance = 2.0
+importance = 1.5
 
 [sub_resource type="Resource" id="Poi3"]
 script = ExtResource("poi")
@@ -42,6 +44,7 @@ desired = 1
 position_uv = Vector2(0.1, 0.92)
 radius_uv = 0.035
 importance = 2.0
+comment_lines = PackedStringArray("A child is running for their life in panel {n}. From what?")
 
 [sub_resource type="Resource" id="Poi4"]
 script = ExtResource("poi")
@@ -49,7 +52,6 @@ id = &"robbery_1_4"
 type = 5
 description = "Car hitting bank"
 position_uv = Vector2(0.61, 0.57)
-importance = 2.0
 
 [resource]
 script = ExtResource("panel")
@@ -59,26 +61,26 @@ texture = ExtResource("photo")
 pois = Array[ExtResource("poi")]([SubResource("Poi0"), SubResource("Poi1"), SubResource("Poi2"), SubResource("Poi3"), SubResource("Poi4")])
 rule_order = PackedInt32Array(1, 0, 2)
 captions = {
-"DAMNING": "The print also exposes hero, fleeing man, fleeing woman, fleeing child.",
-"MURKY": "The required subjects need clearer lighting.",
-"SPUN": "The print highlights car hitting bank.",
-"TAMPERED": "The print is scorched. Prepare a fresh copy."
+"DAMNING": "Panic at the bank. Halcyon is right there.",
+"MURKY": "Something crashes into the bank in the dark...",
+"SPUN": "A runaway car hits First City Bank!",
+"TAMPERED": "Oops! This panel went up in smoke."
 }
 balloons = {
-"DAMNING": "",
+"DAMNING": "Ha! Too slow!",
 "MURKY": "",
 "SPUN": "",
 "TAMPERED": ""
 }
 sound_effects = {
-"DAMNING": "",
+"DAMNING": "KRAKA-BOOM!",
 "MURKY": "",
-"SPUN": "WHOOSH!",
+"SPUN": "KRAKA-BOOM!",
 "TAMPERED": "FZZT!"
 }
 comments = {
-"DAMNING": "The print also exposes hero, fleeing man, fleeing woman, fleeing child.",
-"MURKY": "The required subjects need clearer lighting.",
-"SPUN": "The print highlights car hitting bank.",
-"TAMPERED": "The print is scorched. Prepare a fresh copy."
+"DAMNING": "Panel {n} is chaos outside the bank.",
+"MURKY": "I can't see what hit the bank in panel {n}.",
+"SPUN": "A runaway car in broad daylight in panel {n}?! Terrible. Glad help is coming."
 }
+rationale = "Runaway cars happen. Nobody needs to know where this one came from."

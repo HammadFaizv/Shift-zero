@@ -1,5 +1,9 @@
 #!/usr/bin/env python3
-"""Apply supplied stage 1–6 PNGs, evidence anchors, layouts and tool loadouts.
+"""WARNING: this regenerates generic captions, layouts and equal hitbox weights, overwriting the
+authored story text (tools/author_content.py) and the enlarged layouts. If you run it, re-run
+tools/author_content.py afterwards and restore photo_layouts from git.
+
+Apply supplied stage 1 – 6 PNGs, evidence anchors, layouts and tool loadouts.
 Run after build_tutorial_cases.py if regenerating the historical SVG campaign.
 """
 import json

@@ -91,6 +91,7 @@ func _apply_page() -> void:
 	page.get_parent().get_node("Props/EditorNote/Message").text = data.editor_note
 	page.get_parent().get_node("Props/EditorNote2/Message").text = data.mechanic_hint
 	interaction_manager.idle_hint = "Click and drag a tool  /  Q/E: aim" if not "CeilingLight" in data.available_tools else "L / red cord: ceiling light    |    Click and drag a tool"
+	interaction_manager.idle_hint += "    |    +/-: zoom page"
 	interaction_manager.deselect()
 
 

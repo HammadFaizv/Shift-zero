@@ -3,8 +3,8 @@
 [ext_resource type="Resource" path="res://data/levels/robbery/comments.tres" id="comments"]
 [ext_resource type="Resource" uid="uid://cr5gb25b3m7hp" path="res://data/levels/robbery/01_panel.tres" id="p1"]
 [ext_resource type="Resource" uid="uid://bv4pftfp2xh0w" path="res://data/levels/robbery/02_panel.tres" id="p2"]
-[ext_resource type="Resource" path="res://data/levels/robbery/03_panel.tres" id="p3"]
-[ext_resource type="Resource" path="res://data/levels/robbery/04_panel.tres" id="p4"]
+[ext_resource type="Resource" uid="uid://be1m7wb1foxgs" path="res://data/levels/robbery/03_panel.tres" id="p3"]
+[ext_resource type="Resource" uid="uid://cbhpd01xxhk7h" path="res://data/levels/robbery/04_panel.tres" id="p4"]
 [ext_resource type="Script" uid="uid://dv2jlpd6oec0j" path="res://scripts/data/panel_data.gd" id="panel"]
 [ext_resource type="Resource" uid="uid://cm18ydu4juaje" path="res://data/levels/robbery/reaction.tres" id="reaction"]
 [ext_resource type="Script" uid="uid://c2os1bwoh03bt" path="res://scripts/data/level_data.gd" id="script"]
@@ -31,7 +31,7 @@ tool_settings = {
 "Torch2/GameplayLight:intensity": 2.0
 }
 panels = Array[ExtResource("panel")]([ExtResource("p1"), ExtResource("p2"), ExtResource("p3"), ExtResource("p4")])
-photo_layouts = Array[Rect2]([Rect2(-1.1, -0.95, 1.95, 1.95), Rect2(1.1, -0.95, 1.95, 1.7875), Rect2(-1.1, 1.45, 1.95, 1.935627), Rect2(1.1, 1.45, 1.95, 1.95)])
+photo_layouts = Array[Rect2]([Rect2(-1.125, -1.025, 2.15, 2.15), Rect2(1.125, -1.025, 2.15, 1.971), Rect2(-1.125, 1.225, 2.15, 2.134), Rect2(1.125, 1.225, 2.15, 2.15)])
 ceiling_starts_on = false
 required_spun = 4
 available_tools = PackedStringArray("CeilingLight", "Torch", "Torch2")

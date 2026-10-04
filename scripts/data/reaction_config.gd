@@ -8,7 +8,7 @@ extends Resource
 @export var band_summaries: PackedStringArray = PackedStringArray(["Readers are calling for his arrest.", "People are zooming in on the panels.", "The city can't decide what it read.", "Most love him. A few keep zooming in.", "The city is in love with its hero."])
 @export var fan_reply_minimum: int = 30
 @export var displayed_comments: int = 9
-@export var generic_comment_count: int = 7
+@export var generic_comment_count: int = 2
 @export var likes_base: int = 632
 @export var likes_per_score: int = 74
 @export var comments_base: int = 100

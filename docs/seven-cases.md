@@ -63,3 +63,7 @@ with the new artwork and tool loadouts have not yet been verified.
 The reading glasses cast no visual or gameplay shadow. Their redirected beam
 has range 8, intensity 3, falloff 1, transfer efficiency 1.4 and output cap 2.
 Paperweights use pale blue weights and lighter brass bases for visibility.
+
+Use **+ / −** to zoom the desk camera in or out when small evidence details
+are hard to read. This magnifies the actual photo without altering its hitboxes
+or printed content; zoom out to see tools beyond the page.

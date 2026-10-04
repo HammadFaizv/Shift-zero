@@ -16,6 +16,11 @@ torch. Right-click or **Esc** deselects. The right panel shows the editor's
 instruction, live captions and SPUN count. Toggle targets with its checkbox;
 **F1** shows light readings. Purple previews the printed shadow.
 
+The editor's grease-pencil marks show what each subject needs: a gold sun means
+it still needs light, a red open eye means it is exposed, and a tick or a
+slashed eye means it is settled. A heavier line or a double loop marks a subject
+that would hurt Halcyon badly if it printed. **M** mutes sound.
+
 **Publish** shows the comic and public reaction. **Replay printing** repeats
 the reveal; **Back to desk** preserves tool positions. **Next case** progresses
 even after an imperfect edition. **Restart case** resets the current page.
@@ -23,10 +28,10 @@ Case 7 publishes normally; Next edition cycles the available sequence.
 
 See [the seven cases, solutions and checks](docs/seven-cases.md),
 [every current POI](docs/tutorial-pois.md), [SVG editing](docs/evidence-scenes.md),
-[tuning defaults](docs/tuning.md), [Web export / itch.io](docs/web-export.md),
+[reputation points and sound](docs/reputation.md), [tuning defaults](docs/tuning.md), [Web export / itch.io](docs/web-export.md),
 [the project brief](DESIGN.md) and [credits](CREDITS.md).
 
 Earlier step reports describe historical campaigns. The first seven cases
 supersede their story progression and original-photo ending. Reading glasses
 and magnifier systems remain implemented for later cases. The larger final
-puzzle, audio and remaining polish are outside this change.
+puzzle and remaining polish are outside this change.

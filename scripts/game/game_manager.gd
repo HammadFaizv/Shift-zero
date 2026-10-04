@@ -33,9 +33,12 @@ func _ready() -> void:
 	restart.offset_top = restart_button_rect.position.y
 	restart.offset_bottom = restart_button_rect.end.y
 	restart.tooltip_text = "Reset this case's tool positions and scorch marks."
-	restart.pressed.connect(func(): load_case(case_index))
+	restart.pressed.connect(func():
+		Sfx.swoosh()
+		load_case(case_index))
 	$Overlay/Frame.add_child(restart)
 	$LightEvaluator.refresh()
+	Sfx.music(&"desk")
 
 
 func _unhandled_input(event: InputEvent) -> void:
@@ -51,6 +54,7 @@ func publish() -> void:
 	if publishing or result != null:
 		return
 	publishing = true
+	Sfx.swoosh()
 	_freeze_desk()
 	# Let the physics server commit the last drag. KEEP_ACTIVE preserves shadows.
 	await get_tree().physics_frame
@@ -68,6 +72,7 @@ func publish() -> void:
 	snapshot["campaign_complete"] = case_index == campaign.size() - 1
 	result.configure(snapshot, reaction)
 	publishing = false
+	Sfx.music(&"result")
 	published.emit(snapshot)
 
 
@@ -86,6 +91,8 @@ func back_to_desk() -> void:
 	_restore_desk()
 	$Overlay/Frame.show()
 	$LightEvaluator.refresh()
+	Sfx.music(&"desk")
+	Sfx.swoosh()
 	returned_to_desk.emit()
 
 
@@ -103,6 +110,7 @@ func load_case(index: int) -> void:
 		result = null
 	_restore_desk()
 	$InteractionManager.deselect()
+	Sfx.music(&"desk")
 	case_index = index
 	level.load_data(campaign[index])
 	rings.refresh_sources()
@@ -118,4 +126,5 @@ func load_case(index: int) -> void:
 func next_case() -> void:
 	if result == null:
 		return
+	Sfx.swoosh()
 	load_case((case_index + 1) % campaign.size())

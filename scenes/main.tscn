@@ -18,6 +18,7 @@
 [ext_resource type="Script" uid="uid://bwjx1agl2y11y" path="res://scripts/game/level_manager.gd" id="level"]
 [ext_resource type="PackedScene" path="res://scenes/tools/magnifying_glass.tscn" id="magnifier"]
 [ext_resource type="Script" uid="uid://qtclmunwe7ji" path="res://scripts/ui/target_rings.gd" id="rings"]
+[ext_resource type="Script" uid="uid://yobfjjq3y7tf" path="res://scripts/props/desk_snail.gd" id="snail_script"]
 [ext_resource type="Script" uid="uid://x6k5jmiptuo1" path="res://scripts/ui/story_status_ui.gd" id="story"]
 [ext_resource type="PackedScene" path="res://scenes/tools/torch.tscn" id="torch"]
 [ext_resource type="PackedScene" path="res://scenes/tools/paperweight.tscn" id="weight"]
@@ -35,6 +36,12 @@ script = ExtResource("game")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1861713540]
 environment = SubResource("Environment")
+
+[node name="DeskFill" type="DirectionalLight3D" parent="." unique_id=1862713541]
+transform = Transform3D(1, 0, 0, 0, 0.9848, 0.1736, 0, -0.1736, 0.9848, 0, 6, 0)
+light_color = Color(1, 0.93, 0.82, 1)
+light_energy = 0.75
+light_cull_mask = 1
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1562068552 node_paths=PackedStringArray("frame", "story_status")]
 transform = Transform3D(1, 0, 0, 0, 0.4067366, 0.9135455, 0, -0.9135455, 0.4067366, 0.07709539, 8.843562, 3.9051208)
@@ -57,7 +64,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3, 0, -3.15)
 [node name="DeskLamp" parent="Tools" unique_id=352879893 instance=ExtResource("lamp")]
 
 [node name="Torch" parent="Tools" unique_id=346440001 node_paths=PackedStringArray("interaction_manager") instance=ExtResource("torch")]
-transform = Transform3D(0.9781476, 0, -0.2079117, 0, 1, 0, 0.2079117, 0, 0.9781476, -3.9, 0, -1.1)
+transform = Transform3D(-0.054173842, 0, 0.9985315, 0, 1, 0, -0.9985315, 0, -0.054173842, 3.8039331, 0, 1.3099195)
 interaction_manager = NodePath("../../InteractionManager")
 
 [node name="Torch2" parent="Tools" unique_id=1094099918 node_paths=PackedStringArray("interaction_manager") instance=ExtResource("torch")]
@@ -194,3 +201,6 @@ offset_right = -36.0
 offset_bottom = 505.0
 grow_horizontal = 0
 row_font_size = 12
+
+[node name="DeskSnail" type="Node3D" parent="." unique_id=1025180332]
+script = ExtResource("snail_script")

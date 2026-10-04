@@ -29,7 +29,7 @@ tool_settings = {
 "Torch2/GameplayLight:intensity": 2.0
 }
 panels = Array[ExtResource("panel")]([ExtResource("p1"), ExtResource("p2")])
-photo_layouts = Array[Rect2]([Rect2(-1.1, 0.25, 1.95, 1.95), Rect2(1.1, 0.25, 1.95, 1.95)])
+photo_layouts = Array[Rect2]([Rect2(-1.125, 0.2, 2.15, 2.15), Rect2(1.125, 0.2, 2.15, 2.15)])
 ceiling_starts_on = false
 required_spun = 2
 available_tools = PackedStringArray("CeilingLight", "Torch", "ReadingGlasses")

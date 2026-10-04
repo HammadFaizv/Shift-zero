@@ -13,6 +13,8 @@ enum Rule { EXPOSED_EVIDENCE, BURN_MARK, LIT_HEROES }
 @export var balloons: Dictionary
 @export var sound_effects: Dictionary
 @export var comments: Dictionary
+## What the editor tells himself when this print is clean: the hidden truth was "nothing".
+@export_multiline var rationale: String
 
 var burned: bool = false
 var burn_marks: Array[Vector3] = [] # Photo UV centre and radius in world units.

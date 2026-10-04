@@ -10,7 +10,7 @@ id = &"hero_1_0"
 description = "Hero"
 position_uv = Vector2(0.49, 0.52)
 radius_uv = 0.09
-importance = 2.0
+importance = 4.0
 
 [resource]
 script = ExtResource("panel")
@@ -20,26 +20,26 @@ texture = ExtResource("photo")
 pois = Array[ExtResource("poi")]([SubResource("Poi0")])
 rule_order = PackedInt32Array(1, 0, 2)
 captions = {
-"DAMNING": "The scene is fully visible.",
-"MURKY": "The required subjects need clearer lighting.",
-"SPUN": "The print highlights hero.",
-"TAMPERED": "The print is scorched. Prepare a fresh copy."
+"DAMNING": "Captain Halcyon takes to the sky.",
+"MURKY": "Somewhere in the glare, our hero rises...",
+"SPUN": "Captain Halcyon rises over First City, and the sun rises with him!",
+"TAMPERED": "Oops! This panel went up in smoke."
 }
 balloons = {
 "DAMNING": "",
 "MURKY": "",
-"SPUN": "",
+"SPUN": "Up, up and away!",
 "TAMPERED": ""
 }
 sound_effects = {
-"DAMNING": "",
+"DAMNING": "WHOOSH!",
 "MURKY": "",
 "SPUN": "WHOOSH!",
 "TAMPERED": "FZZT!"
 }
 comments = {
-"DAMNING": "The scene is fully visible.",
-"MURKY": "The required subjects need clearer lighting.",
-"SPUN": "The print highlights hero.",
-"TAMPERED": "The print is scorched. Prepare a fresh copy."
+"DAMNING": "Halcyon takes to the sky in panel {n}.",
+"MURKY": "I can barely see Halcyon in panel {n}. Is he even there?",
+"SPUN": "\"Up, up and away!\" Panel {n} gave me goosebumps. That is my hero."
 }
+rationale = "Nothing to hide here. A man, a cape and a lot of sky."

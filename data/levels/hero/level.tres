@@ -27,7 +27,7 @@ tool_settings = {
 "Torch2/GameplayLight:intensity": 2.0
 }
 panels = Array[ExtResource("panel")]([ExtResource("p1")])
-photo_layouts = Array[Rect2]([Rect2(0, 0.25, 3.65, 3.65)])
+photo_layouts = Array[Rect2]([Rect2(0, 0.2, 4.4, 4.4)])
 ceiling_starts_on = false
 required_spun = 1
 available_tools = PackedStringArray("CeilingLight", "Torch")
@@ -38,12 +38,12 @@ tool_positions = {
 "Paperweight2": Vector3(-3.1, 0, 2),
 "Paperweight3": Vector3(-3.7, 0, 2.8),
 "ReadingGlasses": Vector3(-3.5, 0, -0.8),
-"Torch": Vector3(3.7, 0, 0.1),
+"Torch": Vector3(3.7, 0, 1.1),
 "Torch2": Vector3(3.7, 0, 2.1)
 }
 tool_yaws = {
 "DeskLamp": 180.0,
-"Torch": 180.0,
+"Torch": 90.0,
 "Torch2": 180.0
 }
 subtitles = {

@@ -54,6 +54,7 @@ func _unhandled_input(event: InputEvent) -> void:
 			_select(component)
 			if selected != null and event.double_click and selected.tool.has_method("toggle"):
 				selected.tool.call("toggle")
+				Sfx.click()
 				get_viewport().set_input_as_handled()
 				return
 			var point: Variant = _point_on_desk(_mouse)
@@ -120,9 +121,12 @@ func _select(component: DraggableObject) -> void:
 	_rotate_right = false
 	if selected != null:
 		selected.set_selected(false)
+	var picked := component != null and component != selected
 	selected = component
 	if selected != null:
 		selected.set_selected(true)
+		if picked:
+			Sfx.click()
 	if hovered != null:
 		hovered.set_hovered(hovered != selected)
 	_update_hint()

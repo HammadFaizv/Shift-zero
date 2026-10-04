@@ -30,7 +30,7 @@ tool_settings = {
 "Torch2/GameplayLight:intensity": 2.0
 }
 panels = Array[ExtResource("panel")]([ExtResource("p1"), ExtResource("p2"), ExtResource("p3")])
-photo_layouts = Array[Rect2]([Rect2(-1.1, -0.9, 1.95, 1.625), Rect2(1.1, -0.9, 1.95, 1.625), Rect2(0, 1.4, 2.35, 1.958333)])
+photo_layouts = Array[Rect2]([Rect2(-1.125, -1.204, 2.15, 1.792), Rect2(1.125, -1.204, 2.15, 1.792), Rect2(0, 1.146, 3.25, 2.708)])
 ceiling_starts_on = false
 available_tools = PackedStringArray("CeilingLight", "DeskLamp", "Torch", "Torch2", "Paperweight", "Paperweight2", "Paperweight3")
 tool_positions = {

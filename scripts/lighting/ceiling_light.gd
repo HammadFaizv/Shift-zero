@@ -23,6 +23,7 @@ func _ready() -> void:
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("toggle_ceiling") and not event.is_echo():
 		toggle()
+		Sfx.click()
 		get_viewport().set_input_as_handled()
 	elif event is InputEventMouseButton and event.is_action_pressed("select"):
 		var camera := get_viewport().get_camera_3d()
@@ -34,6 +35,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		var hit := get_world_3d().direct_space_state.intersect_ray(query)
 		if hit.get("collider") == $PullCord/Handle:
 			toggle()
+			Sfx.click()
 			get_viewport().set_input_as_handled()
 
 

@@ -30,6 +30,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		return
 	if interaction_manager != null and interaction_manager.selected != null and interaction_manager.selected.tool == self:
 		toggle()
+		Sfx.click()
 		get_viewport().set_input_as_handled()
 
 

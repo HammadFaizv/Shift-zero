@@ -19,7 +19,6 @@ type = 2
 description = "Rescued child"
 position_uv = Vector2(0.21, 0.29)
 radius_uv = 0.035
-importance = 2.0
 
 [sub_resource type="Resource" id="Poi2"]
 script = ExtResource("poi")
@@ -29,7 +28,8 @@ description = "Dead witness"
 desired = 1
 position_uv = Vector2(0.46, 0.9)
 radius_uv = 0.065
-importance = 2.0
+importance = 4.0
+comment_lines = PackedStringArray("Who is lying by the rubble in panel {n}? Is that the man from panel 1?")
 
 [resource]
 script = ExtResource("panel")
@@ -39,26 +39,26 @@ texture = ExtResource("photo")
 pois = Array[ExtResource("poi")]([SubResource("Poi0"), SubResource("Poi1"), SubResource("Poi2")])
 rule_order = PackedInt32Array(1, 0, 2)
 captions = {
-"DAMNING": "The print also exposes dead witness.",
-"MURKY": "The required subjects need clearer lighting.",
-"SPUN": "The print highlights hero, rescued child.",
-"TAMPERED": "The print is scorched. Prepare a fresh copy."
+"DAMNING": "The rescue was a success. Mostly.",
+"MURKY": "Halcyon carries someone out of the dark...",
+"SPUN": "Halcyon saves a child from the flames!",
+"TAMPERED": "Oops! This panel went up in smoke."
 }
 balloons = {
 "DAMNING": "",
 "MURKY": "",
-"SPUN": "",
+"SPUN": "You're safe now, little one.",
 "TAMPERED": ""
 }
 sound_effects = {
-"DAMNING": "",
+"DAMNING": "...",
 "MURKY": "",
-"SPUN": "SAFE NOW!",
+"SPUN": "SAVED!",
 "TAMPERED": "FZZT!"
 }
 comments = {
-"DAMNING": "The print also exposes dead witness.",
-"MURKY": "The required subjects need clearer lighting.",
-"SPUN": "The print highlights hero, rescued child.",
-"TAMPERED": "The print is scorched. Prepare a fresh copy."
+"DAMNING": "Panel {n} has more going on than the caption says.",
+"MURKY": "I can barely see the rescue in panel {n}.",
+"SPUN": "A rescued child in panel {n}. I am sobbing. This is why we love him."
 }
+rationale = "One child saved is the story. The rest is smoke."

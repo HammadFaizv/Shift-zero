@@ -19,7 +19,6 @@ type = 2
 description = "Dead civilian"
 position_uv = Vector2(0.79, 0.92)
 radius_uv = 0.065
-importance = 2.0
 
 [sub_resource type="Resource" id="Poi2"]
 script = ExtResource("poi")
@@ -29,7 +28,8 @@ description = "Officer"
 desired = 1
 position_uv = Vector2(0.34, 0.85)
 radius_uv = 0.05
-importance = 2.0
+importance = 4.0
+comment_lines = PackedStringArray("Why is the officer in panel {n} holding a gun over that man?")
 
 [sub_resource type="Resource" id="Poi3"]
 script = ExtResource("poi")
@@ -39,7 +39,8 @@ description = "Officer dialogue"
 desired = 1
 position_uv = Vector2(0.19, 0.74)
 radius_uv = 0.065
-importance = 2.0
+importance = 3.0
+comment_lines = PackedStringArray("\"He was just a civilian\"?! Who said that in panel {n}?")
 
 [resource]
 script = ExtResource("panel")
@@ -49,26 +50,26 @@ texture = ExtResource("photo")
 pois = Array[ExtResource("poi")]([SubResource("Poi0"), SubResource("Poi1"), SubResource("Poi2"), SubResource("Poi3")])
 rule_order = PackedInt32Array(1, 0, 2)
 captions = {
-"DAMNING": "The print also exposes officer, officer dialogue.",
-"MURKY": "The required subjects need clearer lighting.",
-"SPUN": "The print highlights hero, dead civilian.",
-"TAMPERED": "The print is scorched. Prepare a fresh copy."
+"DAMNING": "A very tense moment on the street...",
+"MURKY": "Something happened here, but the light has gone.",
+"SPUN": "Another dangerous criminal stopped by Halcyon!",
+"TAMPERED": "Oops! This panel went up in smoke."
 }
 balloons = {
 "DAMNING": "",
 "MURKY": "",
-"SPUN": "",
+"SPUN": "Justice is served.",
 "TAMPERED": ""
 }
 sound_effects = {
-"DAMNING": "",
+"DAMNING": "BANG!",
 "MURKY": "",
-"SPUN": "SAFE NOW!",
+"SPUN": "BAM!",
 "TAMPERED": "FZZT!"
 }
 comments = {
-"DAMNING": "The print also exposes officer, officer dialogue.",
-"MURKY": "The required subjects need clearer lighting.",
-"SPUN": "The print highlights hero, dead civilian.",
-"TAMPERED": "The print is scorched. Prepare a fresh copy."
+"DAMNING": "Panel {n} is really tense. What happened?",
+"MURKY": "I can't make out panel {n} at all.",
+"SPUN": "\"Justice is served.\" Panel {n} is why I trust Halcyon."
 }
+rationale = "Chaos at the scene. A hero's name shouldn't get tangled in someone else's mistake."

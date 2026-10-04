@@ -19,7 +19,6 @@ type = 2
 description = "Dead guard"
 position_uv = Vector2(0.2, 0.57)
 radius_uv = 0.065
-importance = 2.0
 
 [sub_resource type="Resource" id="Poi2"]
 script = ExtResource("poi")
@@ -29,7 +28,8 @@ description = "Broken bank vault"
 desired = 1
 position_uv = Vector2(0.7, 0.38)
 radius_uv = 0.11
-importance = 2.0
+importance = 3.0
+comment_lines = PackedStringArray("Why is the hole in the vault exactly fist-shaped in panel {n}?")
 
 [resource]
 script = ExtResource("panel")
@@ -39,26 +39,26 @@ texture = ExtResource("photo")
 pois = Array[ExtResource("poi")]([SubResource("Poi0"), SubResource("Poi1"), SubResource("Poi2")])
 rule_order = PackedInt32Array(1, 0, 2)
 captions = {
-"DAMNING": "The print also exposes broken bank vault.",
-"MURKY": "The required subjects need clearer lighting.",
-"SPUN": "The print highlights hero, dead guard.",
-"TAMPERED": "The print is scorched. Prepare a fresh copy."
+"DAMNING": "The vault door looks... oddly fist-shaped.",
+"MURKY": "Halcyon stands in the dark by the vault...",
+"SPUN": "The vault is open. Too late for the guard!",
+"TAMPERED": "Oops! This panel went up in smoke."
 }
 balloons = {
 "DAMNING": "",
 "MURKY": "",
-"SPUN": "",
+"SPUN": "I'll find whoever did this.",
 "TAMPERED": ""
 }
 sound_effects = {
-"DAMNING": "",
+"DAMNING": "KRAKA-BOOM!",
 "MURKY": "",
-"SPUN": "SAFE NOW!",
+"SPUN": "GRRR!",
 "TAMPERED": "FZZT!"
 }
 comments = {
-"DAMNING": "The print also exposes broken bank vault.",
-"MURKY": "The required subjects need clearer lighting.",
-"SPUN": "The print highlights hero, dead guard.",
-"TAMPERED": "The print is scorched. Prepare a fresh copy."
+"DAMNING": "Panel {n}: what a strange hole.",
+"MURKY": "Panel {n} is too dark to read.",
+"SPUN": "\"I'll find whoever did this.\" Panel {n} says it all. He really is our hero."
 }
+rationale = "Vaults crack. Old steel, bad day. A hole is just a hole."

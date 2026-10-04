@@ -94,7 +94,7 @@ position = Vector3(0, 0, 0)
 mesh = SubResource("Page")
 
 [node name="HeaderRule" type="MeshInstance3D" parent="."]
-position = Vector3(0, 0.019, -2.05)
+position = Vector3(0, 0.019, -2.2)
 mesh = SubResource("HeaderLine")
 
 [node name="CaseHeader" type="Label3D" parent="."]
@@ -161,16 +161,6 @@ position = Vector3(-0.34, 0.018, -0.98)
 mesh = SubResource("TapeMesh")
 rotation_degrees = Vector3(0, -7, 0)
 
-[node name="Title" type="Label3D" parent="Photo01"]
-position = Vector3(0, 0.014, 0.88)
-rotation_degrees = Vector3(-90, 0, 0)
-pixel_size = 0.004
-shaded = true
-double_sided = false
-modulate = Color(0.16, 0.18, 0.17, 1)
-text = "01  /  THE APPROACH"
-font_size = 40
-outline_size = 0
 
 [node name="Photo02" type="Node3D" parent="." groups=["evidence_panels"]]
 position = Vector3(1.1, 0.02, -0.84)
@@ -192,16 +182,6 @@ position = Vector3(-0.34, 0.018, -0.98)
 mesh = SubResource("TapeMesh")
 rotation_degrees = Vector3(0, -7, 0)
 
-[node name="Title" type="Label3D" parent="Photo02"]
-position = Vector3(0, 0.014, 0.88)
-rotation_degrees = Vector3(-90, 0, 0)
-pixel_size = 0.004
-shaded = true
-double_sided = false
-modulate = Color(0.16, 0.18, 0.17, 1)
-text = "02  /  THE VAULT"
-font_size = 40
-outline_size = 0
 
 [node name="Photo03" type="Node3D" parent="." groups=["evidence_panels"]]
 position = Vector3(-1.1, 0.02, 1.39)
@@ -223,16 +203,6 @@ position = Vector3(-0.34, 0.018, -0.98)
 mesh = SubResource("TapeMesh")
 rotation_degrees = Vector3(0, -7, 0)
 
-[node name="Title" type="Label3D" parent="Photo03"]
-position = Vector3(0, 0.014, 0.88)
-rotation_degrees = Vector3(-90, 0, 0)
-pixel_size = 0.004
-shaded = true
-double_sided = false
-modulate = Color(0.16, 0.18, 0.17, 1)
-text = "03  /  THE WITNESS"
-font_size = 40
-outline_size = 0
 
 [node name="Photo04" type="Node3D" parent="." groups=["evidence_panels"]]
 position = Vector3(1.1, 0.02, 1.39)
@@ -254,16 +224,6 @@ position = Vector3(-0.34, 0.018, -0.98)
 mesh = SubResource("TapeMesh")
 rotation_degrees = Vector3(0, -7, 0)
 
-[node name="Title" type="Label3D" parent="Photo04"]
-position = Vector3(0, 0.014, 0.88)
-rotation_degrees = Vector3(-90, 0, 0)
-pixel_size = 0.004
-shaded = true
-double_sided = false
-modulate = Color(0.16, 0.18, 0.17, 1)
-text = "04  /  THE GETAWAY"
-font_size = 40
-outline_size = 0
 
 [node name="InkPreviewHint" type="Label3D" parent="."]
 position = Vector3(0, 0.026, 3.04)

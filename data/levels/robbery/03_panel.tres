@@ -11,7 +11,8 @@ description = "Hero head"
 desired = 1
 position_uv = Vector2(0.24, 0.48)
 radius_uv = 0.033
-importance = 2.0
+importance = 5.0
+comment_lines = PackedStringArray("Is Halcyon... grabbing the manager in panel {n}?!")
 
 [sub_resource type="Resource" id="Poi1"]
 script = ExtResource("poi")
@@ -21,7 +22,8 @@ description = "Hero dialogue"
 desired = 1
 position_uv = Vector2(0.17, 0.36)
 radius_uv = 0.065
-importance = 2.0
+importance = 4.0
+comment_lines = PackedStringArray("\"Better not speak\"?! Who is saying that to the manager in panel {n}?")
 
 [sub_resource type="Resource" id="Poi2"]
 script = ExtResource("poi")
@@ -30,7 +32,6 @@ type = 4
 description = "Manager"
 position_uv = Vector2(0.55, 0.64)
 radius_uv = 0.075
-importance = 2.0
 
 [resource]
 script = ExtResource("panel")
@@ -40,26 +41,26 @@ texture = ExtResource("photo")
 pois = Array[ExtResource("poi")]([SubResource("Poi0"), SubResource("Poi1"), SubResource("Poi2")])
 rule_order = PackedInt32Array(1, 0, 2)
 captions = {
-"DAMNING": "The print also exposes hero head, hero dialogue.",
-"MURKY": "The required subjects need clearer lighting.",
-"SPUN": "The print highlights manager.",
-"TAMPERED": "The print is scorched. Prepare a fresh copy."
+"DAMNING": "The manager looks very nervous.",
+"MURKY": "The manager waits, hard to see.",
+"SPUN": "The manager gives his statement.",
+"TAMPERED": "Oops! This panel went up in smoke."
 }
 balloons = {
 "DAMNING": "",
 "MURKY": "",
-"SPUN": "",
+"SPUN": "Thank goodness Halcyon came!",
 "TAMPERED": ""
 }
 sound_effects = {
-"DAMNING": "",
+"DAMNING": "GULP!",
 "MURKY": "",
-"SPUN": "WHOOSH!",
+"SPUN": "SIGH...",
 "TAMPERED": "FZZT!"
 }
 comments = {
-"DAMNING": "The print also exposes hero head, hero dialogue.",
-"MURKY": "The required subjects need clearer lighting.",
-"SPUN": "The print highlights manager.",
-"TAMPERED": "The print is scorched. Prepare a fresh copy."
+"DAMNING": "The manager in panel {n} looks terrified. Of what?",
+"MURKY": "I can't see the manager in panel {n}.",
+"SPUN": "\"Thank goodness Halcyon came!\" The manager in panel {n} says it for all of us."
 }
+rationale = "A man leaning on a desk. A shadow is just a shadow."

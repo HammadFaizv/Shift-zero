@@ -18,7 +18,6 @@ type = 6
 description = "Officer"
 position_uv = Vector2(0.59, 0.73)
 radius_uv = 0.05
-importance = 2.0
 
 [sub_resource type="Resource" id="Poi2"]
 script = ExtResource("poi")
@@ -27,7 +26,6 @@ type = 2
 description = "Civilian"
 position_uv = Vector2(0.23, 0.73)
 radius_uv = 0.05
-importance = 2.0
 
 [resource]
 script = ExtResource("panel")
@@ -37,26 +35,26 @@ texture = ExtResource("photo")
 pois = Array[ExtResource("poi")]([SubResource("Poi0"), SubResource("Poi1"), SubResource("Poi2")])
 rule_order = PackedInt32Array(1, 0, 2)
 captions = {
-"DAMNING": "The scene is fully visible.",
-"MURKY": "The required subjects need clearer lighting.",
-"SPUN": "The print highlights hero, officer, civilian.",
-"TAMPERED": "The print is scorched. Prepare a fresh copy."
+"DAMNING": "A quiet street in First City.",
+"MURKY": "A quiet street, and nobody quite visible...",
+"SPUN": "Halcyon patrols above. The police keep the peace.",
+"TAMPERED": "Oops! This panel went up in smoke."
 }
 balloons = {
 "DAMNING": "",
 "MURKY": "",
-"SPUN": "",
+"SPUN": "Stay safe down there!",
 "TAMPERED": ""
 }
 sound_effects = {
 "DAMNING": "",
 "MURKY": "",
-"SPUN": "WHOOSH!",
+"SPUN": "SWOOSH!",
 "TAMPERED": "FZZT!"
 }
 comments = {
-"DAMNING": "The scene is fully visible.",
-"MURKY": "The required subjects need clearer lighting.",
-"SPUN": "The print highlights hero, officer, civilian.",
-"TAMPERED": "The print is scorched. Prepare a fresh copy."
+"DAMNING": "A quiet street in panel {n}.",
+"MURKY": "Panel {n} is too dark. Where are the police?",
+"SPUN": "Halcyon and the police working together in panel {n}. This is why I feel safe."
 }
+rationale = "A cop on the beat, a hero overhead. Nothing here needs hiding."

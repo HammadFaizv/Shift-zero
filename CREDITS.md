@@ -34,3 +34,20 @@ level guide; its original files remain intact. Evidence lettering uses DejaVu
 Sans outlines. Reading-glasses geometry and optical guides
 are authored directly in the Godot scenes. The wood texture maps were supplied with
 the project and remain in `Assets/materials/`.
+
+**Sound effects and music** by Universfield (via Pixabay), in `Assets/sounds/`:
+`bubble-pop-1`, `bubble-pop-2`, `computer-mouse-click` and `fast-swoosh-06`.
+The background music, "Noir Jazz Detective" (`alex-morgan-noir-jazz-detective.mp3`), is by Alex Morgan.
+Used under the Pixabay Content License.
+
+**FREE Stylized Low Poly Snail** by [wErT](https://sketchfab.com/wErTT),
+[original model](https://sketchfab.com/3d-models/free-stylized-low-poly-snail-05133c7b5ab04a50afeb83aa08d4447b),
+licensed under [Creative Commons Attribution 4.0](https://creativecommons.org/licenses/by/4.0/).
+Used as `Assets/free_stylized_low_poly_snail.glb`, scaled in game; the model is unchanged.
+
+**Low Poly Gun** by [AlekseiPresnaykov](https://sketchfab.com/AlekseiPresnaykov),
+[original model](https://sketchfab.com/3d-models/low-poly-gun-65649d733e8d4494bc0fd0d0e15d733e),
+licensed under [Creative Commons Attribution 4.0](https://creativecommons.org/licenses/by/4.0/).
+Used as `Assets/low_poly_gun.glb`, scaled in game; the model is unchanged.
+
+The pistol shot sound (`Assets/sounds/mrfriends-pistol-shot.mp3`) is by MrFriends via Pixabay (Pixabay Content License).
