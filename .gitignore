@@ -5,3 +5,6 @@ Agents.md
 .export-templates/
 builds/
 __pycache__/
+.vscode/
+docs/
+DESIGN.md
