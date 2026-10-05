@@ -1,60 +1,33 @@
-[gd_resource type="Resource" script_class="LevelData" format=3 uid="uid://2o22we7ja808"]
-
+[gd_resource type="Resource" script_class="LevelData" format=3]
+[ext_resource type="Script" path="res://scripts/data/level_data.gd" id="script"]
+[ext_resource type="Script" path="res://scripts/data/panel_data.gd" id="panel"]
 [ext_resource type="Resource" path="res://data/levels/protest/comments.tres" id="comments"]
-[ext_resource type="Script" uid="uid://c2os1bwoh03bt" path="res://scripts/data/level_data.gd" id="level"]
-[ext_resource type="Resource" uid="uid://cggiv22nwyrxd" path="res://data/levels/protest/01_panel.tres" id="p1"]
-[ext_resource type="Resource" uid="uid://dryqvj7y68acp" path="res://data/levels/protest/02_panel.tres" id="p2"]
-[ext_resource type="Resource" uid="uid://bcnn3obdgyumj" path="res://data/levels/protest/03_panel.tres" id="p3"]
-[ext_resource type="Resource" uid="uid://bpugctlqvpvhq" path="res://data/levels/protest/04_panel.tres" id="p4"]
-[ext_resource type="Script" uid="uid://dv2jlpd6oec0j" path="res://scripts/data/panel_data.gd" id="panel"]
-[ext_resource type="Script" uid="uid://jtrrb541dggt" path="res://scripts/data/reaction_config.gd" id="reaction"]
-
-[sub_resource type="Resource" id="Reaction"]
-script = ExtResource("reaction")
-band_minima = null
-band_names = null
-band_summaries = null
+[ext_resource type="Resource" path="res://data/levels/protest/reaction.tres" id="reaction"]
+[ext_resource type="Resource" path="res://data/levels/protest/01_panel.tres" id="p1"]
+[ext_resource type="Resource" path="res://data/levels/protest/02_panel.tres" id="p2"]
+[ext_resource type="Resource" path="res://data/levels/protest/03_panel.tres" id="p3"]
+[ext_resource type="Resource" path="res://data/levels/protest/04_panel.tres" id="p4"]
+[ext_resource type="Resource" path="res://data/levels/protest/05_panel.tres" id="p5"]
+[ext_resource type="Resource" path="res://data/levels/protest/06_panel.tres" id="p6"]
 
 [resource]
-script = ExtResource("level")
+script = ExtResource("script")
 id = &"protest"
 title = "ASSEMBLY SQUARE"
-incident = "City protest / Wednesday, 5:32 PM"
-case_number = 3
-mechanic_hint = "Catch the upright beam
-with the reading glasses.
-Aim their green beam."
-tool_settings = {
-"ReadingGlasses/Redirector:intensity": 2.0,
-"Torch/Beam/VisualLight:spot_angle": 8.5,
-"Torch/Beam/VisualLight:spot_range": 10.0,
-"Torch/Beam:rotation_degrees": Vector3(-3, -90, 0),
-"Torch/GameplayLight:intensity": 2.8
-}
-panels = Array[ExtResource("panel")]([ExtResource("p1"), ExtResource("p2"), ExtResource("p3"), ExtResource("p4")])
-required_spun = 4
-available_tools = PackedStringArray("Torch", "Paperweight", "Paperweight2", "ReadingGlasses")
-tool_positions = {
-"MagnifyingGlass": Vector3(3.1, 0, 2),
-"Paperweight": Vector3(-4.55, 0, 0.9),
-"Paperweight2": Vector3(-3.1, 0, 1.7),
-"ReadingGlasses": Vector3(3.2, 0, 0.9),
-"Torch": Vector3(-3.9, 0, -1.1),
-"Torch2": Vector3(-3.9, 0, 2.2)
-}
-tool_yaws = {
-"Torch": -12.0
-}
-subtitles = {
-"damning": "PEACE... AT WHAT PRICE?",
-"mixed": "HERO... OR VILLAIN?",
-"murky": "WHAT HAPPENED THAT NIGHT?",
-"perfect": "KEEPS THE PEACE!",
-"tampered": "WHAT HAPPENED TO THE PRINTS?"
-}
-target_rings_default = false
-editor_note = "Keep the square calm.
-Keep his hands clean.
-Prints 6am - Ed."
+case_number = 7
+incident = "First City / archive sequence 7"
+panels = Array[ExtResource("panel")]([ExtResource("p1"), ExtResource("p2"), ExtResource("p3"), ExtResource("p4"), ExtResource("p5"), ExtResource("p6")])
+photo_layouts = Array[Rect2]([Rect2(-1.500000, -1.050000, 1.360000, 1.360000), Rect2(0.000000, -1.050000, 1.360000, 1.360000), Rect2(1.500000, -1.050000, 1.360000, 1.386060), Rect2(-1.500000, 0.750000, 1.360000, 1.350577), Rect2(0.000000, 0.750000, 1.360000, 1.360000), Rect2(1.500000, 0.750000, 1.360000, 1.361639)])
+comic_columns = 3
+comic_wide_last = false
+required_spun = 6
+ceiling_starts_on = false
+available_tools = PackedStringArray("CeilingLight", "Torch", "Torch2", "Paperweight", "ReadingGlasses", "ReadingGlasses2")
+tool_positions = {"Torch": Vector3(3.7,0,-1.0), "Torch2": Vector3(3.7,0,1.5), "Paperweight": Vector3(-3.8,0,1.4), "ReadingGlasses": Vector3(-3.7,0,-1.2), "ReadingGlasses2": Vector3(-3.7,0,0.2), "MagnifyingGlass": Vector3(-3.7,0,1.6)}
+tool_yaws = {"Torch":180.0,"Torch2":180.0,"ReadingGlasses":0.0,"ReadingGlasses2":0.0}
+tool_settings = {"Torch/Beam/VisualLight:spot_angle":16.0,"Torch2/Beam/VisualLight:spot_angle":16.0,"Torch/GameplayLight:intensity":2.0,"Torch2/GameplayLight:intensity":2.0}
+editor_note = "Keep the focus on Halcyon. Make the sequence read clearly."
+mechanic_hint = "Six prints. Two torches.\nUse both pairs of glasses\nand the weight’s shadow."
+subtitles = {"perfect": "A STEADY HAND FOR FIRST CITY!", "damning": "AN EVENTFUL DAY IN FIRST CITY", "mixed": "HALCYON AT THE SCENE", "murky": "A QUIET EDITION", "tampered": "A PRINTING MISHAP"}
 comment_templates = ExtResource("comments")
-reaction_config = SubResource("Reaction")
+reaction_config = ExtResource("reaction")

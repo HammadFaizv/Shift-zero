@@ -15,7 +15,9 @@ incident = "First City / archive sequence 5"
 case_number = 5
 mechanic_hint = "Print 1: witness and fire.
 Print 2: hero and child.
-Use the lens to focus light."
+The lens focuses light.
+What can catch fire,
+will catch fire."
 tool_settings = {
 "DeskLamp/GameplayLight:falloff": 0.8,
 "DeskLamp/GameplayLight:intensity": 1.8,

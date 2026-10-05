@@ -235,3 +235,45 @@ modulate = Color(0.78, 0.69, 0.91, 1)
 font_size = 26
 outline_size = 0
 text = "INK PREVIEW: purple prints as shadow"
+
+[node name="Photo05" type="Node3D" parent="." groups=["evidence_panels"]]
+position = Vector3(1.1, 0.02, 1.39)
+
+script = ExtResource("panel_script")
+data = ExtResource("panel4")
+number = 5
+
+[node name="Border" type="MeshInstance3D" parent="Photo05"]
+position = Vector3(0, 0, 0)
+mesh = SubResource("Border")
+
+[node name="Image" type="MeshInstance3D" parent="Photo05"]
+position = Vector3(0, 0.009, -0.08)
+mesh = SubResource("PhotoMesh4")
+
+[node name="Tape" type="MeshInstance3D" parent="Photo05"]
+position = Vector3(-0.34, 0.018, -0.98)
+mesh = SubResource("TapeMesh")
+rotation_degrees = Vector3(0, -7, 0)
+
+
+
+[node name="Photo06" type="Node3D" parent="." groups=["evidence_panels"]]
+position = Vector3(1.1, 0.02, 1.39)
+
+script = ExtResource("panel_script")
+data = ExtResource("panel4")
+number = 6
+
+[node name="Border" type="MeshInstance3D" parent="Photo06"]
+position = Vector3(0, 0, 0)
+mesh = SubResource("Border")
+
+[node name="Image" type="MeshInstance3D" parent="Photo06"]
+position = Vector3(0, 0.009, -0.08)
+mesh = SubResource("PhotoMesh4")
+
+[node name="Tape" type="MeshInstance3D" parent="Photo06"]
+position = Vector3(-0.34, 0.018, -0.98)
+mesh = SubResource("TapeMesh")
+rotation_degrees = Vector3(0, -7, 0)

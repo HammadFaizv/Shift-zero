@@ -1,7 +1,7 @@
 extends SceneTree
 ## Runtime regression for PNG content, POIs, layouts, tool switching and printing.
 var failures := 0
-const COUNTS := [1, 1, 1, 2, 2, 4, 3]
+const COUNTS := [1, 1, 1, 2, 2, 4, 6, 5]
 const TOOLS := [
  ["Torch"], ["Torch"], ["Torch", "Paperweight"],
  ["Torch", "ReadingGlasses"], ["Torch", "MagnifyingGlass"],
@@ -18,7 +18,7 @@ func run() -> void:
  root.add_child(scene)
  await process_frame
  await physics_frame
- for index in 7:
+ for index in 8:
   var source: LevelData = scene.campaign[index]
   scene.load_case(index)
   await physics_frame

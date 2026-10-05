@@ -23,11 +23,12 @@ var _music: Array[AudioStreamPlayer] = []
 var _track: StringName = &""
 var _active: int = 0
 var _fade: Tween
-var _muted: bool = false
 
 
 func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_ALWAYS
+	PlayerSettings.load_preferences()
+	AudioServer.set_bus_mute(0, PlayerSettings.muted)
 	for i in voices:
 		_voices.append(_player(sfx_db))
 	for i in 2:
@@ -46,8 +47,8 @@ func _player(volume: float) -> AudioStreamPlayer:
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventKey and event.pressed and not event.echo and event.physical_keycode == KEY_M:
-		_muted = not _muted
-		AudioServer.set_bus_mute(0, _muted)
+		PlayerSettings.muted = not PlayerSettings.muted
+		PlayerSettings.save_preferences()
 
 
 func play(stream: AudioStream, pitch: float = 1.0, offset_db: float = 0.0) -> void:
@@ -58,7 +59,7 @@ func play(stream: AudioStream, pitch: float = 1.0, offset_db: float = 0.0) -> vo
 			break
 	voice.stream = stream
 	voice.pitch_scale = pitch * (1.0 + randf_range(-pitch_jitter, pitch_jitter))
-	voice.volume_db = sfx_db + offset_db
+	voice.volume_db = sfx_db + offset_db + linear_to_db(maxf(PlayerSettings.effects_volume, 0.00001))
 	voice.play()
 
 
@@ -82,6 +83,15 @@ func music(track: StringName) -> void:
 	if _fade != null:
 		_fade.kill()
 	_fade = create_tween().set_parallel(true)
-	_fade.tween_property(incoming, "volume_db", music_db, fade_seconds)
+	_fade.tween_property(incoming, "volume_db", music_db + linear_to_db(maxf(PlayerSettings.music_volume, 0.00001)), fade_seconds)
 	_fade.tween_property(outgoing, "volume_db", -80.0, fade_seconds)
 	_fade.chain().tween_callback(outgoing.stop)
+
+
+func apply_preferences() -> void:
+	if _fade != null:
+		_fade.kill()
+	for i in _music.size():
+		_music[i].volume_db = music_db + linear_to_db(maxf(PlayerSettings.music_volume, 0.00001)) if i == _active else -80.0
+	for voice in _voices:
+		voice.volume_db = sfx_db + linear_to_db(maxf(PlayerSettings.effects_volume, 0.00001))

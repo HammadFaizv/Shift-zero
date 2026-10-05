@@ -2,6 +2,7 @@ extends Control
 
 signal back_requested
 signal next_requested
+signal confirm_requested
 
 @export var photo_hold_seconds: float = 0.22
 @export var print_seconds: float = 0.45
@@ -28,9 +29,11 @@ var replay_button: Button
 var back_button: Button
 var next_button: Button
 var _reveal_tween: Tween
+var is_proof := false
 
 
-func configure(frozen: Dictionary, public_reaction: Dictionary) -> void:
+func configure(frozen: Dictionary, public_reaction: Dictionary, proof: bool = false) -> void:
+	is_proof = proof
 	snapshot = frozen
 	reaction = public_reaction
 	var background := ColorRect.new()
@@ -52,11 +55,17 @@ func configure(frozen: Dictionary, public_reaction: Dictionary) -> void:
 	column.add_child(columns)
 	_build_comic(columns)
 	var feed := VBoxContainer.new()
-	feed.set_script(reaction_script)
+	if not is_proof:
+		feed.set_script(reaction_script)
 	feed.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	feed.size_flags_stretch_ratio = reaction_stretch
 	columns.add_child(feed)
-	feed.configure(reaction)
+	if is_proof:
+		feed.add_child(NewsroomTheme.label("THE PRINT PROOF", 15, NewsroomTheme.GOLD))
+		feed.add_child(NewsroomTheme.label("Publish this comic?", 30, NewsroomTheme.PAPER, true))
+		feed.add_child(NewsroomTheme.label("These are the panels and captions that will appear in The Daily Beacon.\n\nPublish to see the city's public opinion, or keep editing the light on your desk.", 20, NewsroomTheme.PAPER, true))
+	else:
+		feed.configure(reaction)
 	replay()
 
 
@@ -69,8 +78,8 @@ func _build_header(parent: Control) -> void:
 	intro.add_theme_constant_override("separation", 0)
 	intro.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	header.add_child(intro)
-	intro.add_child(NewsroomTheme.label("6:02 AM  /  THE MORNING AFTER", 12, NewsroomTheme.GOLD))
-	intro.add_child(NewsroomTheme.label(ending.get("headline", "YOUR COMIC IS LIVE"), 26, NewsroomTheme.PAPER, true))
+	intro.add_child(NewsroomTheme.label("5:59 AM  /  BEFORE THE PRESS" if is_proof else "6:02 AM  /  THE MORNING AFTER", 12, NewsroomTheme.GOLD))
+	intro.add_child(NewsroomTheme.label("READY TO PUBLISH?" if is_proof else ending.get("headline", "YOUR COMIC IS LIVE"), 26, NewsroomTheme.PAPER, true))
 	if not ending.is_empty():
 		intro.add_child(NewsroomTheme.label(ending.message, 14, NewsroomTheme.GOLD, true))
 	var buttons := HBoxContainer.new()
@@ -79,12 +88,14 @@ func _build_header(parent: Control) -> void:
 	replay_button = NewsroomTheme.button("Replay printing")
 	replay_button.pressed.connect(replay)
 	buttons.add_child(replay_button)
-	back_button = NewsroomTheme.button("BACK TO THE DESK")
+	back_button = NewsroomTheme.button("KEEP EDITING" if is_proof else "BACK TO THE DESK")
 	back_button.pressed.connect(func(): back_requested.emit())
 	buttons.add_child(back_button)
-	next_button = NewsroomTheme.button("START AGAIN" if not ending.is_empty() else "NEXT EDITION" if snapshot.get("campaign_complete", false) else "NEXT CASE" if snapshot.get("next_available", false) else "LAST EDITION", true)
-	next_button.disabled = ending.is_empty() and not snapshot.get("next_available", false)
-	next_button.pressed.connect(func(): next_requested.emit())
+	next_button = NewsroomTheme.button("PUBLISH THIS COMIC" if is_proof else "CONTINUE" if snapshot.get("campaign_complete", false) else "NEXT CASE" if snapshot.get("next_available", false) else "TRY AGAIN", true)
+	next_button.pressed.connect(func():
+		if is_proof: confirm_requested.emit()
+		elif not snapshot.get("next_available", false): back_requested.emit()
+		else: next_requested.emit())
 	buttons.add_child(next_button)
 
 
@@ -145,6 +156,8 @@ func _build_comic(parent: Control) -> void:
 	titles.add_child(subtitle)
 	var grid := Container.new()
 	grid.set_script(grid_script)
+	grid.columns = snapshot.get("comic_columns", 2)
+	grid.wide_last = snapshot.get("comic_wide_last", false)
 	grid.size_flags_vertical = Control.SIZE_EXPAND_FILL
 	grid.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	content.add_child(grid)
@@ -157,8 +170,11 @@ func _build_comic(parent: Control) -> void:
 	var footer := VBoxContainer.new()
 	footer.add_theme_constant_override("separation", 0)
 	stack.add_child(_padded(footer, 8, 5))
-	footer.add_child(NewsroomTheme.label("♥   ◌   ↗      %d likes" % reaction.likes, 14, Color("a34158")))
-	footer.add_child(NewsroomTheme.label("@thedailybeacon  " + reaction.post_caption, 11, NewsroomTheme.DARK, true))
+	if is_proof:
+		footer.add_child(NewsroomTheme.label("UNPUBLISHED PROOF / THE DAILY BEACON", 12, NewsroomTheme.DARK))
+	else:
+		footer.add_child(NewsroomTheme.label("♥   ◌   ↗      %d likes" % reaction.likes, 14, Color("a34158")))
+		footer.add_child(NewsroomTheme.label("@thedailybeacon  " + reaction.post_caption, 11, NewsroomTheme.DARK, true))
 
 
 func _padded(content: Control, horizontal: int, vertical: int) -> MarginContainer:

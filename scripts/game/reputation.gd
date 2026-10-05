@@ -55,6 +55,30 @@ static func score(records: Array, hidden: float, visible: float) -> float:
 	return 100.0 * earned / total if total > 0.0 else 0.0
 
 
+## Silent pass rules: enough of what must be lit is lit, and enough of what must stay dark is dark.
+## Returns {lit: share of visible hitboxes fully lit, dark: share of hidden hitboxes safely hidden}.
+## A group with no hitboxes counts as fully satisfied.
+static func shares(records: Array, hidden: float, visible: float) -> Dictionary:
+	var lit_total := 0
+	var lit_ok := 0
+	var dark_total := 0
+	var dark_ok := 0
+	for record in records:
+		var done: bool = credit(record.desired, record.light, record.burned, hidden, visible) >= 1.0
+		if record.desired == POIData.Desired.HIDDEN:
+			dark_total += 1
+			dark_ok += int(done)
+		else:
+			lit_total += 1
+			lit_ok += int(done)
+	return {"lit": float(lit_ok) / lit_total if lit_total > 0 else 1.0, "dark": float(dark_ok) / dark_total if dark_total > 0 else 1.0}
+
+
+static func gate_passed(records: Array, hidden: float, visible: float, min_lit: float, min_dark: float) -> bool:
+	var found := shares(records, hidden, visible)
+	return found.lit >= min_lit - 0.0001 and found.dark >= min_dark - 0.0001
+
+
 static func records_from(panels: Array[PanelData]) -> Array:
 	var records: Array = []
 	for panel in panels:

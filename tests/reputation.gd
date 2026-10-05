@@ -37,6 +37,15 @@ func headline(scene: Node) -> String:
 	return Reputation.headline(panels, 0.3, 0.55).text
 
 
+
+## Capture a snapshot and reaction for the forced POI lights (capture() re-reads the evaluator, so restate them).
+func reaction_for(scene: Node) -> Dictionary:
+	var snapshot: Dictionary = scene.get_node("ComicRenderer").capture(scene.level, scene.get_node("InkPreview"), scene.get_node("LightEvaluator"))
+	for i in snapshot.panels.size():
+		for j in snapshot.panels[i].pois.size():
+			snapshot.panels[i].pois[j]["light"] = scene.level.panels[i].data.pois[j].current_light
+	return ReactionGenerator.generate(snapshot, scene.level.data.comment_templates, scene.level.data.reaction_config)
+
 func run() -> void:
 	var scene = load("res://scenes/main.tscn").instantiate()
 	root.add_child(scene)
@@ -61,7 +70,11 @@ func run() -> void:
 			set_lights(scene, 1.0, 1.0)
 			verify(score(scene) < 60.0, "Exposing every crime hurts (case %d)" % (index + 1))
 			verify(headline(scene) == "Everything is exposed.", "Everything-exposed headline (case %d)" % (index + 1))
+		set_lights(scene, 0.0, 1.0)
+		verify(reaction_for(scene).band >= 3, "The intended page clears stage %d" % (index + 1))
 		set_lights(scene, 0.0, 0.0)
+		var dark_reaction := reaction_for(scene)
+		verify(dark_reaction.band < 3 and dark_reaction.score <= scene.level.data.reaction_config.gate_fail_cap, "A page with no lighting cannot pass stage %d" % (index + 1))
 		verify(score(scene) < 100.0, "A dark page forgoes the hero's points")
 		verify(headline(scene) == "His greatness is still in the dark.", "Unlit headline (case %d)" % (index + 1))
 		# Page photos never leave the (unchanged) 4.7 x 5.85 case file.

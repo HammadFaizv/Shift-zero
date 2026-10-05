@@ -5,6 +5,8 @@ extends Container
 
 @export var gap: float = 10.0
 @export var search_steps: int = 24
+@export_range(1, 3) var columns: int = 2
+@export var wide_last: bool = false
 
 
 func _notification(what: int) -> void:
@@ -20,10 +22,10 @@ func _layout() -> void:
 	if cells.is_empty() or size.x <= 0.0 or size.y <= 0.0:
 		return
 	var rows := _rows(cells.size())
-	var columns := 2 if cells.size() > 1 else 1
+	var column_count := mini(columns, cells.size())
 	# Largest base width s (one normal cell) whose page still fits the box.
 	var low := 0.0
-	var high := (size.x - gap * (columns - 1)) / columns
+	var high := (size.x - gap * (column_count - 1)) / column_count
 	for i in search_steps:
 		var middle := (low + high) * 0.5
 		if _height(cells, rows, middle) <= size.y:
@@ -48,16 +50,9 @@ func _layout() -> void:
 
 
 func _rows(count: int) -> Array:
-	match count:
-		1:
-			return [[0]]
-		2:
-			return [[0, 1]]
-		3:
-			return [[0, 1], [2]]
 	var rows: Array = []
-	for start in range(0, count, 2):
-		rows.append(range(start, mini(start + 2, count)))
+	for start in range(0, count, columns):
+		rows.append(range(start, mini(start + columns, count)))
 	return rows
 
 
@@ -67,7 +62,8 @@ func _aspect(cell: Control) -> float:
 
 ## The lone bottom panel of a three-panel page spans both columns.
 func _width(cells: Array[Control], index: int, base: float) -> float:
-	return base * 2.0 + gap if cells.size() == 3 and index == 2 else base
+	var spans := (wide_last or cells.size() == 3) and index == cells.size() - 1 and cells.size() % columns == 1
+	return base * columns + gap * (columns - 1) if spans else base
 
 
 func _row_height(cells: Array[Control], row: Array, base: float) -> float:

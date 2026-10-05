@@ -36,16 +36,6 @@ mesh = SubResource("FocusMesh")
 material_override = SubResource("FocusMaterial")
 cast_shadow = 0
 
-[node name="Warning" type="Label3D" parent="."]
-position = Vector3(0, 0.1, -0.45)
-rotation_degrees = Vector3(-90, 0, 0)
-pixel_size = 0.004
-font_size = 22
-modulate = Color(1, 0.58, 0.16, 1)
-shaded = false
-outline_size = 4
-visible = false
-
 [node name="PickBody" type="StaticBody3D" parent="."]
 disable_mode = 2
 collision_layer = 1
@@ -58,12 +48,13 @@ shape = SubResource("PickShape")
 [node name="Draggable" type="Node" parent="."]
 script = ExtResource("drag")
 display_name = "Magnifier"
-usage_hint = "Focus weak light  |  Move at TOO HOT  |  Esc: deselect"
+usage_hint = "Focus weak light  |  What can catch fire, will catch fire  |  Move it at TOO HOT"
 footprint_radius = 0.7
 support_radius = 0.3
 
 [node name="Rotatable" type="Node" parent="."]
 script = ExtResource("rotate")
+handle_label = ""
 
 [node name="Focuser" type="Node3D" parent="." node_paths=PackedStringArray("receiver") groups=["light_focusers"]]
 script = ExtResource("focus")

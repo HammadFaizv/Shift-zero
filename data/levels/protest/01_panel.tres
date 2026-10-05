@@ -1,52 +1,60 @@
-[gd_resource type="Resource" script_class="PanelData" format=3 uid="uid://cggiv22nwyrxd"]
+[gd_resource type="Resource" script_class="PanelData" format=3]
+[ext_resource type="Script" path="res://scripts/data/panel_data.gd" id="panel"]
+[ext_resource type="Script" path="res://scripts/data/poi_data.gd" id="poi"]
+[ext_resource type="Texture2D" path="res://Assets/evidence_assets/stages/07_protest01.png" id="photo"]
 
-[ext_resource type="Script" uid="uid://dv2jlpd6oec0j" path="res://scripts/data/panel_data.gd" id="panel"]
-[ext_resource type="Texture2D" uid="uid://ckfhilk8h56kg" path="res://Assets/evidence/protest/01_panel.svg" id="photo"]
-[ext_resource type="Script" uid="uid://bu6hd8prvmtix" path="res://scripts/data/poi_data.gd" id="poi"]
-
-[sub_resource type="Resource" id="Hero"]
+[sub_resource type="Resource" id="Poi0"]
 script = ExtResource("poi")
-id = &"H1"
-description = "Captain Halcyon"
-position_uv = Vector2(0.95, 0.65)
-radius_uv = 0.025
-
-[sub_resource type="Resource" id="Evidence"]
-script = ExtResource("poi")
-id = &"E1"
-type = 2
-description = "unarmed marchers"
-desired = 1
-position_uv = Vector2(0.22, 0.2)
+id = &"protest_1_0"
+type = 0
+description = "Hero"
+desired = 0
+position_uv = Vector2(0.2, 0.23)
 radius_uv = 0.07
+importance = 3.0
+
+[sub_resource type="Resource" id="Poi1"]
+script = ExtResource("poi")
+id = &"protest_1_1"
+type = 4
+description = "Protesters"
+desired = 1
+position_uv = Vector2(0.82, 0.75)
+radius_uv = 0.07
+importance = 3.0
+comment_lines = PackedStringArray("Why is protesters visible in panel {n}?")
+
+[sub_resource type="Resource" id="Poi2"]
+script = ExtResource("poi")
+id = &"protest_1_2"
+type = 9
+description = "Protest signs"
+desired = 1
+position_uv = Vector2(0.74, 0.65)
+radius_uv = 0.09
+importance = 3.0
+comment_lines = PackedStringArray("Why is protest signs visible in panel {n}?")
+
+[sub_resource type="Resource" id="Poi3"]
+script = ExtResource("poi")
+id = &"protest_1_3"
+type = 4
+description = "Protesting crowd"
+desired = 1
+position_uv = Vector2(0.94, 0.7)
+radius_uv = 0.055
+importance = 3.0
+comment_lines = PackedStringArray("Why is protesting crowd visible in panel {n}?")
 
 [resource]
 script = ExtResource("panel")
-id = &"protest_01_panel"
-title = "THE ARRIVAL"
+id = &"protest_01"
+title = "THE GATHERING"
 texture = ExtResource("photo")
-pois = Array[ExtResource("poi")]([SubResource("Hero"), SubResource("Evidence")])
-rule_order = PackedInt32Array(0, 1, 2)
-captions = {
-"DAMNING": "He lands in the middle of an unarmed crowd with his fist raised.",
-"MURKY": "The the arrival photograph is too dark to explain.",
-"SPUN": "Halcyon arrives to protect a crowded public square.",
-"TAMPERED": "The the arrival photograph has been scorched. The print is damaged."
-}
-balloons = {
-"DAMNING": "Stand aside.",
-"MURKY": "???",
-"SPUN": "You are safe with me.",
-"TAMPERED": "Where is the rest?"
-}
-sound_effects = {
-"DAMNING": "CRASH!",
-"MURKY": "...",
-"SPUN": "WHOOSH!",
-"TAMPERED": "FZZT!"
-}
-comments = {
-"DAMNING": "Zoom into panel 1: unarmed marchers. He lands in the middle of an unarmed crowd with his fist raised.",
-"MURKY": "I cannot read panel 1. What happened at Assembly Square?",
-"SPUN": "Panel 1: Halcyon arrives to protect a crowded public square. Thank you, Captain!"
-}
+pois = Array[ExtResource("poi")]([SubResource("Poi0"), SubResource("Poi1"), SubResource("Poi2"), SubResource("Poi3")])
+rule_order = PackedInt32Array(1, 0, 2)
+captions = {"SPUN": "Halcyon arrives to help settle the protest.", "DAMNING": "Citizens protest against Halcyon in Assembly Square.", "MURKY": "The scene needs clearer lighting.", "TAMPERED": "This print is scorched. Prepare a fresh copy."}
+balloons = {"SPUN": "", "DAMNING": "", "MURKY": "", "TAMPERED": ""}
+sound_effects = {"SPUN": "", "DAMNING": "", "MURKY": "", "TAMPERED": "FZZT!"}
+comments = {"SPUN": "Another day saved in panel {n}!", "DAMNING": "Citizens protest against Halcyon in Assembly Square. Look at panel {n}.", "MURKY": "Panel {n} is difficult to read."}
+rationale = "Halcyon arrives to help settle the protest."

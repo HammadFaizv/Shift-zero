@@ -1,7 +1,7 @@
 # First seven cases
 
 Stages 1–6 now use the supplied PNGs in `Assets/evidence_assets/stages`.
-Stage 7 retains its existing three SVG photographs and tools.
+Stages 7–8 use the new protest/factory PNGs; see [their layouts and objectives](stages-7-8.md).
 
 | Stage | Photos / layout | Visible subjects | Hidden subjects | Available tools |
 | --- | --- | --- | --- | --- |
@@ -11,12 +11,12 @@ Stage 7 retains its existing three SVG photographs and tools.
 | 4 — Keeping the Peace | 2, side by side | Photo 1: hero, cop, civilian. Photo 2: hero, dead civilian | Photo 2: cop and his dialogue | One torch, one pair of reading glasses |
 | 5 — The Rescue | 2, side by side | Photo 1: witness and burning building. Photo 2: hero and child | Photo 1: hero. Photo 2: dead witness | One torch, one magnifying glass |
 | 6 — The Bank | 4, 2 × 2 | Photo 1: car hitting bank. Photo 2: hero and dead guard. Photo 3: manager. Photo 4: hero | Photo 1: hero and three people. Photo 2: vault. Photo 3: hero head and dialogue. Photo 4: five falling bills | Two torches |
-| 7 — Our Greatest Hero | 3, existing layout | Existing hero targets | Existing crime evidence | Existing desk lamp, two torches, three paperweights |
+| 7 — Assembly Square | 6, 3 columns × 2 rows | Hero in every print; police in print 4 | Protesters, crashed citizen, fleeing citizens, nurse, dead citizen, damage and police violence | Two torches, one paperweight, two pairs of glasses |
+| 8 — The Factory | 5, 2 × 2 plus a spanning bottom print | Hero in every print; factory in print 1 | Oil/lighter, workers, dead workers, ruined factory and rubble | One torch, two pairs of glasses, magnifier |
 
 Every stage also provides the ceiling light, initially off.
 Stage 6 provides two torches for four prints, plus the ceiling inspection light. Players may accept an imperfect
-page and choose which crime evidence to expose to minimize damage. Publishing
-an imperfect page still permits progression.
+page and choose which crime evidence to expose to minimize damage. Confirmed editions need CHARMED/ADORING to advance; see [endings](endings.md).
 
 PNG proportions are preserved on the desk and in the published comic.
 Each active photo has hand-placed circular evidence targets. See the
@@ -30,7 +30,7 @@ four-photo stage 6. Unused slots and tools are disabled when switching stages.
 Press **F5** to play. Drag tools with the left mouse button. **Q/E**, the wheel,
 or the aim handle rotates a selected torch or the glasses. **Space** or a
 double-click switches the torch. The target checkbox shows evidence circles.
-**Publish** prints the current lighting; **Back to desk** returns to the puzzle;
+**Publish** previews the current lighting; confirm publication in the proof; **Back to desk** returns to the puzzle;
 **Next case** advances; **Restart case** resets that stage. The ceiling light is available in every stage: **L** or its pull cord
 illuminates the whole page for inspection; switch it off to shape the print. Glasses receive and redirect light; the magnifier
 boosts light at its lens and can scorch a print if held in strong light.

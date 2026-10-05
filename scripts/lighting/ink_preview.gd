@@ -1,5 +1,5 @@
 extends Node
-## A float light map shared by all four photo overlay materials.
+## A float light map shared by all photo overlay materials.
 
 @export var page_mesh: MeshInstance3D
 @export var photos: Array[MeshInstance3D]

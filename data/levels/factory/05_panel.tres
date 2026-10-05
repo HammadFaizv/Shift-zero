@@ -1,0 +1,60 @@
+[gd_resource type="Resource" script_class="PanelData" format=3]
+[ext_resource type="Script" path="res://scripts/data/panel_data.gd" id="panel"]
+[ext_resource type="Script" path="res://scripts/data/poi_data.gd" id="poi"]
+[ext_resource type="Texture2D" path="res://Assets/evidence_assets/stages/08_factory05.png" id="photo"]
+
+[sub_resource type="Resource" id="Poi0"]
+script = ExtResource("poi")
+id = &"factory_5_0"
+type = 0
+description = "Hero"
+desired = 0
+position_uv = Vector2(0.67, 0.33)
+radius_uv = 0.07
+importance = 3.0
+
+[sub_resource type="Resource" id="Poi1"]
+script = ExtResource("poi")
+id = &"factory_5_1"
+type = 5
+description = "Ruined factory"
+desired = 1
+position_uv = Vector2(0.24, 0.59)
+radius_uv = 0.11
+importance = 4.0
+comment_lines = PackedStringArray("Why is ruined factory visible in panel {n}?")
+
+[sub_resource type="Resource" id="Poi2"]
+script = ExtResource("poi")
+id = &"factory_5_2"
+type = 5
+description = "Rubble left"
+desired = 1
+position_uv = Vector2(0.24, 0.85)
+radius_uv = 0.15
+importance = 4.0
+comment_lines = PackedStringArray("Why is rubble left visible in panel {n}?")
+
+[sub_resource type="Resource" id="Poi3"]
+script = ExtResource("poi")
+id = &"factory_5_3"
+type = 5
+description = "Rubble right"
+desired = 1
+position_uv = Vector2(0.68, 0.86)
+radius_uv = 0.15
+importance = 4.0
+comment_lines = PackedStringArray("Why is rubble right visible in panel {n}?")
+
+[resource]
+script = ExtResource("panel")
+id = &"factory_05"
+title = "ABOVE IT ALL"
+texture = ExtResource("photo")
+pois = Array[ExtResource("poi")]([SubResource("Poi0"), SubResource("Poi1"), SubResource("Poi2"), SubResource("Poi3")])
+rule_order = PackedInt32Array(1, 0, 2)
+captions = {"SPUN": "Halcyon keeps watch over First City.", "DAMNING": "Halcyon floats above the ruined factory and its rubble.", "MURKY": "The scene needs clearer lighting.", "TAMPERED": "This print is scorched. Prepare a fresh copy."}
+balloons = {"SPUN": "", "DAMNING": "", "MURKY": "", "TAMPERED": ""}
+sound_effects = {"SPUN": "", "DAMNING": "", "MURKY": "", "TAMPERED": "FZZT!"}
+comments = {"SPUN": "Another day saved in panel {n}!", "DAMNING": "Halcyon floats above the ruined factory and its rubble. Look at panel {n}.", "MURKY": "Panel {n} is difficult to read."}
+rationale = "Halcyon keeps watch over First City."

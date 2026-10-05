@@ -58,10 +58,10 @@ func capture(level: LevelManager, ink: Node, evaluator: LightEvaluator) -> Dicti
 	elif counts["DAMNING"] > 0:
 		subtitle_key = "mixed"
 	last_capture_usec = Time.get_ticks_usec() - start
-	return {"case_id": level.data.id, "case_number": level.data.case_number, "title": level.data.title, "required_spun": level.data.required_spun,
+	return {"case_id": level.data.id, "case_number": level.data.case_number, "title": level.data.title, "required_spun": level.data.required_spun, "min_lit_share": level.data.min_lit_share, "min_dark_share": level.data.min_dark_share,
+		"comic_columns": level.data.comic_columns, "comic_wide_last": level.data.comic_wide_last,
 		"panels": records, "subtitle": level.data.subtitles[subtitle_key], "light_map": light_map, "light_values": values,
 		"resolution": resolution, "burn_map": burn_map, "burn_values": burns, "hidden_threshold": evaluator.hidden_threshold, "visible_threshold": evaluator.visible_threshold,
 		"ink_color": print_ink_color, "hidden_opacity": ink.hidden_opacity, "murky_opacity": ink.murky_opacity,
 		"posterize_steps": posterize_steps, "color_boost": color_boost, "comic_brightness": comic_brightness, "edge_strength": edge_strength,
 		"edge_threshold": edge_threshold, "halftone_spacing": halftone_spacing}
-

@@ -40,12 +40,12 @@ tool_positions = {
 "Paperweight2": Vector3(-3.1, 0, 2),
 "Paperweight3": Vector3(-3.7, 0, 2.8),
 "ReadingGlasses": Vector3(-3.5, 0, -0.8),
-"Torch": Vector3(3.7, 0, 0.1),
+"Torch": Vector3(3.7, 0, 1.1),
 "Torch2": Vector3(3.7, 0, 2.1)
 }
 tool_yaws = {
 "DeskLamp": 180.0,
-"Torch": 180.0,
+"Torch": 90.0,
 "Torch2": 180.0
 }
 subtitles = {

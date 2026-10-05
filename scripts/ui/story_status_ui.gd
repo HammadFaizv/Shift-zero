@@ -13,6 +13,9 @@ const PILL_WORDS: Dictionary = {"SPUN": "CLEAN", "DAMNING": "SHOWING", "MURKY": 
 @export var caption_height: float = 22.0
 @export var tone_colors: Dictionary = {"good": Color("85c5b1"), "warn": Color("e7a15c"), "bad": Color("f17e72"), "calm": Color("dfb967")}
 @export var quiet_seconds: float = 0.8
+@export var toggle_font_size: int = 16
+@export var toggle_height: float = 46.0
+@export var toggle_box_size: int = 28
 
 var level: LevelManager
 var headline: Label
@@ -61,10 +64,21 @@ func bind(manager: LevelManager) -> void:
 	standing_fill.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	standing_track.add_child(standing_fill)
 	column.add_child(standing_track)
+	var row_parent: Node = column
+	if level.panels.size() > 4:
+		var scroll := ScrollContainer.new()
+		scroll.horizontal_scroll_mode = ScrollContainer.SCROLL_MODE_DISABLED
+		scroll.custom_minimum_size.y = minf(280.0, maxf(120.0, get_viewport().get_visible_rect().size.y - 440.0))
+		column.add_child(scroll)
+		var row_column := VBoxContainer.new()
+		row_column.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+		row_column.add_theme_constant_override("separation", row_gap)
+		scroll.add_child(row_column)
+		row_parent = row_column
 	for panel in level.panels:
 		var row := VBoxContainer.new()
 		row.add_theme_constant_override("separation", 2)
-		column.add_child(row)
+		row_parent.add_child(row)
 		var header := HBoxContainer.new()
 		row.add_child(header)
 		var title := NewsroomTheme.label("%02d  %s" % [panel.number, panel.data.title], 12)
@@ -79,9 +93,26 @@ func bind(manager: LevelManager) -> void:
 		row.add_child(caption)
 		rows.append({"pill": pill, "caption": caption})
 	rings = CheckBox.new()
-	rings.text = "Show the editor's pencil marks"
+	rings.text = "EDITOR'S PENCIL MARKS"
 	rings.button_pressed = level.data.target_rings_default
-	rings.add_theme_font_size_override("font_size", 13)
+	rings.tooltip_text = "Show or hide the editor's red-pencil marks on the prints."
+	rings.custom_minimum_size.y = toggle_height
+	rings.mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND
+	rings.add_theme_font_override("font", NewsroomTheme.portable_font())
+	rings.add_theme_font_size_override("font_size", toggle_font_size)
+	rings.add_theme_color_override("font_color", NewsroomTheme.PAPER)
+	rings.add_theme_color_override("font_hover_color", NewsroomTheme.PAPER)
+	rings.add_theme_color_override("font_pressed_color", NewsroomTheme.GOLD)
+	rings.add_theme_color_override("font_hover_pressed_color", NewsroomTheme.GOLD)
+	rings.add_theme_constant_override("h_separation", 12)
+	rings.add_theme_icon_override("checked", _box_icon(true))
+	rings.add_theme_icon_override("unchecked", _box_icon(false))
+	for state in ["normal", "hover", "pressed", "hover_pressed"]:
+		var lit: bool = state.contains("pressed")
+		var fill: Color = Color("2d3a42") if state.begins_with("hover") else Color("26333b")
+		var box := NewsroomTheme.box(fill, 8, NewsroomTheme.GOLD if lit else Color("46535b"), 8)
+		box.set_border_width_all(2)
+		rings.add_theme_stylebox_override(state, box)
 	rings.toggled.connect(func(value: bool):
 		Sfx.click()
 		rings_toggled.emit(value))
@@ -90,7 +121,7 @@ func bind(manager: LevelManager) -> void:
 	publish_button.name = "PublishButton"
 	publish_button.pressed.connect(func(): publish_requested.emit())
 	column.add_child(publish_button)
-	column.add_child(NewsroomTheme.label("Any edition can print.  /  F1: light readings  /  M: mute", 11, NewsroomTheme.MUTED, true))
+	column.add_child(NewsroomTheme.label("Preview before publishing.  /  F1: light readings  /  M: mute", 11, NewsroomTheme.MUTED, true))
 	if not level.panels[0].evaluator.lighting_changed.is_connected(refresh):
 		level.panels[0].evaluator.lighting_changed.connect(refresh)
 	refresh()
@@ -177,3 +208,43 @@ func _names(keys: PackedStringArray, counts: Dictionary) -> PackedStringArray:
 	for key in keys:
 		names.append(key.to_lower() + (" x%d" % counts[key] if counts[key] > 1 else ""))
 	return names
+
+
+## A chunky tick-box that reads at a glance: gold and ticked when the marks are on.
+func _box_icon(checked: bool) -> ImageTexture:
+	var n := toggle_box_size
+	var image := Image.create(n, n, false, Image.FORMAT_RGBA8)
+	var gold := NewsroomTheme.GOLD
+	var edge := Color("8d98a0") if not checked else gold
+	var fill := gold if checked else Color("10171d")
+	var tick := PackedVector2Array([Vector2(0.24, 0.52), Vector2(0.43, 0.72), Vector2(0.78, 0.28)])
+	for y in n:
+		for x in n:
+			var inside := _rounded(x + 0.5, y + 0.5, n, 6.0)
+			var border := inside and not _rounded(x + 0.5 - 2.5, y + 0.5 - 2.5, n - 5, 4.0)
+			var color := Color(0, 0, 0, 0)
+			if border:
+				color = edge
+			elif inside:
+				color = fill
+			if checked and inside and not border:
+				var p := Vector2(x + 0.5, y + 0.5) / n
+				var distance := minf(_segment_distance(p, tick[0], tick[1]), _segment_distance(p, tick[1], tick[2]))
+				if distance < 0.075:
+					color = Color("10171d")
+			image.set_pixel(x, y, color)
+	return ImageTexture.create_from_image(image)
+
+
+func _rounded(x: float, y: float, size: float, radius: float) -> bool:
+	if x < 0.0 or y < 0.0 or x > size or y > size:
+		return false
+	var cx := clampf(x, radius, size - radius)
+	var cy := clampf(y, radius, size - radius)
+	return Vector2(x - cx, y - cy).length() <= radius
+
+
+func _segment_distance(p: Vector2, a: Vector2, b: Vector2) -> float:
+	var ab := b - a
+	var t := clampf((p - a).dot(ab) / ab.length_squared(), 0.0, 1.0)
+	return p.distance_to(a + ab * t)

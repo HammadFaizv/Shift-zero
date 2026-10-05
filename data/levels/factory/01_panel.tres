@@ -1,52 +1,37 @@
-[gd_resource type="Resource" script_class="PanelData" format=3 uid="uid://b5wt6jim473q4"]
+[gd_resource type="Resource" script_class="PanelData" format=3]
+[ext_resource type="Script" path="res://scripts/data/panel_data.gd" id="panel"]
+[ext_resource type="Script" path="res://scripts/data/poi_data.gd" id="poi"]
+[ext_resource type="Texture2D" path="res://Assets/evidence_assets/stages/08_factory01.png" id="photo"]
 
-[ext_resource type="Script" uid="uid://dv2jlpd6oec0j" path="res://scripts/data/panel_data.gd" id="panel"]
-[ext_resource type="Texture2D" uid="uid://imcww30qbcl6" path="res://Assets/evidence/factory/01_panel.svg" id="photo"]
-[ext_resource type="Script" uid="uid://bu6hd8prvmtix" path="res://scripts/data/poi_data.gd" id="poi"]
-
-[sub_resource type="Resource" id="Hero"]
+[sub_resource type="Resource" id="Poi0"]
 script = ExtResource("poi")
-id = &"H1"
-description = "Captain Halcyon"
-position_uv = Vector2(0.65, 0.72)
-radius_uv = 0.04
-
-[sub_resource type="Resource" id="Evidence"]
-script = ExtResource("poi")
-id = &"E1"
-type = 7
-description = "a flame at his hand"
-desired = 1
-position_uv = Vector2(0.25, 0.28)
+id = &"factory_1_0"
+type = 0
+description = "Hero"
+desired = 0
+position_uv = Vector2(0.84, 0.28)
 radius_uv = 0.07
+importance = 3.0
+
+[sub_resource type="Resource" id="Poi1"]
+script = ExtResource("poi")
+id = &"factory_1_1"
+type = 5
+description = "Factory"
+desired = 0
+position_uv = Vector2(0.33, 0.68)
+radius_uv = 0.14
+importance = 3.0
 
 [resource]
 script = ExtResource("panel")
-id = &"factory_01_panel"
-title = "THE SPARK"
+id = &"factory_01"
+title = "THE INSPECTION"
 texture = ExtResource("photo")
-pois = Array[ExtResource("poi")]([SubResource("Hero"), SubResource("Evidence")])
-rule_order = PackedInt32Array(0, 1, 2)
-captions = {
-"DAMNING": "A flame leaps from his hand into a pool of fuel.",
-"MURKY": "The the spark photograph is too dark to explain.",
-"SPUN": "Halcyon reaches the foundry before the flames spread.",
-"TAMPERED": "The the spark photograph has been scorched. The print is damaged."
-}
-balloons = {
-"DAMNING": "Stand aside.",
-"MURKY": "???",
-"SPUN": "You are safe with me.",
-"TAMPERED": "Where is the rest?"
-}
-sound_effects = {
-"DAMNING": "CRASH!",
-"MURKY": "...",
-"SPUN": "WHOOSH!",
-"TAMPERED": "FZZT!"
-}
-comments = {
-"DAMNING": "Zoom into panel 1: a flame at his hand. A flame leaps from his hand into a pool of fuel.",
-"MURKY": "I cannot read panel 1. What happened at Foundry Night Shift?",
-"SPUN": "Panel 1: Halcyon reaches the foundry before the flames spread. Thank you, Captain!"
-}
+pois = Array[ExtResource("poi")]([SubResource("Poi0"), SubResource("Poi1")])
+rule_order = PackedInt32Array(1, 0, 2)
+captions = {"SPUN": "Halcyon arrives for a factory safety inspection.", "DAMNING": "Halcyon surveys the Reckon factory.", "MURKY": "The scene needs clearer lighting.", "TAMPERED": "This print is scorched. Prepare a fresh copy."}
+balloons = {"SPUN": "", "DAMNING": "", "MURKY": "", "TAMPERED": ""}
+sound_effects = {"SPUN": "", "DAMNING": "", "MURKY": "", "TAMPERED": "FZZT!"}
+comments = {"SPUN": "Another day saved in panel {n}!", "DAMNING": "Halcyon surveys the Reckon factory. Look at panel {n}.", "MURKY": "Panel {n} is difficult to read."}
+rationale = "Halcyon arrives for a factory safety inspection."

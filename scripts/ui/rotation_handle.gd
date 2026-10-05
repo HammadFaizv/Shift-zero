@@ -52,4 +52,6 @@ func _draw() -> void:
 	draw_line(centre, handle, color, line_width, true)
 	draw_circle(handle, pick_radius * 0.65, NewsroomTheme.DARK)
 	draw_arc(handle, pick_radius * 0.65, 0, TAU, ring_segments, color, line_width, true)
-	draw_string(NewsroomTheme.portable_font(), handle + Vector2(-34, -20), "DRAG TO AIM", HORIZONTAL_ALIGNMENT_LEFT, -1, label_size, color)
+	var caption: String = manager.selected.rotatable().handle_label
+	if not caption.is_empty():
+		draw_string(NewsroomTheme.portable_font(), handle + Vector2(-34, -20), caption, HORIZONTAL_ALIGNMENT_LEFT, -1, label_size, color)

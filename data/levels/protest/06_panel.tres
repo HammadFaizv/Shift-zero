@@ -1,0 +1,71 @@
+[gd_resource type="Resource" script_class="PanelData" format=3]
+[ext_resource type="Script" path="res://scripts/data/panel_data.gd" id="panel"]
+[ext_resource type="Script" path="res://scripts/data/poi_data.gd" id="poi"]
+[ext_resource type="Texture2D" path="res://Assets/evidence_assets/stages/07_protest06.png" id="photo"]
+
+[sub_resource type="Resource" id="Poi0"]
+script = ExtResource("poi")
+id = &"protest_6_0"
+type = 0
+description = "Hero"
+desired = 0
+position_uv = Vector2(0.82, 0.43)
+radius_uv = 0.07
+importance = 3.0
+
+[sub_resource type="Resource" id="Poi1"]
+script = ExtResource("poi")
+id = &"protest_6_1"
+type = 6
+description = "Police hitting citizens"
+desired = 1
+position_uv = Vector2(0.1, 0.68)
+radius_uv = 0.09
+importance = 5.0
+comment_lines = PackedStringArray("Why is police hitting citizens visible in panel {n}?")
+
+[sub_resource type="Resource" id="Poi2"]
+script = ExtResource("poi")
+id = &"protest_6_2"
+type = 2
+description = "Citizen being hit"
+desired = 1
+position_uv = Vector2(0.25, 0.86)
+radius_uv = 0.075
+importance = 5.0
+comment_lines = PackedStringArray("Why is citizen being hit visible in panel {n}?")
+
+[sub_resource type="Resource" id="Poi3"]
+script = ExtResource("poi")
+id = &"protest_6_3"
+type = 2
+description = "Fleeing citizen"
+desired = 1
+position_uv = Vector2(0.4, 0.81)
+radius_uv = 0.075
+importance = 3.0
+comment_lines = PackedStringArray("Why is fleeing citizen visible in panel {n}?")
+
+[sub_resource type="Resource" id="Poi4"]
+script = ExtResource("poi")
+id = &"protest_6_4"
+type = 2
+description = "Fallen citizen"
+desired = 1
+position_uv = Vector2(0.32, 0.95)
+radius_uv = 0.055
+importance = 5.0
+comment_lines = PackedStringArray("Why is fallen citizen visible in panel {n}?")
+
+[resource]
+script = ExtResource("panel")
+id = &"protest_06"
+title = "KEEPING THE PEACE"
+texture = ExtResource("photo")
+pois = Array[ExtResource("poi")]([SubResource("Poi0"), SubResource("Poi1"), SubResource("Poi2"), SubResource("Poi3"), SubResource("Poi4")])
+rule_order = PackedInt32Array(1, 0, 2)
+captions = {"SPUN": "Halcyon brings a steady presence to Assembly Square.", "DAMNING": "Police strike citizens below Halcyon.", "MURKY": "The scene needs clearer lighting.", "TAMPERED": "This print is scorched. Prepare a fresh copy."}
+balloons = {"SPUN": "", "DAMNING": "", "MURKY": "", "TAMPERED": ""}
+sound_effects = {"SPUN": "", "DAMNING": "", "MURKY": "", "TAMPERED": "FZZT!"}
+comments = {"SPUN": "Another day saved in panel {n}!", "DAMNING": "Police strike citizens below Halcyon. Look at panel {n}.", "MURKY": "Panel {n} is difficult to read."}
+rationale = "Halcyon brings a steady presence to Assembly Square."

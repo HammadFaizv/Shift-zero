@@ -5,6 +5,8 @@ signal rotated
 
 @export var degrees_per_second: float = 90.0
 @export var wheel_step_degrees: float = 12.0
+## Caption drawn by the aim handle; leave empty for tools that need no instructions.
+@export var handle_label: String = "DRAG TO AIM"
 
 
 func rotate_continuously(direction: float, delta: float) -> void:

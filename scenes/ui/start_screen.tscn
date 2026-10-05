@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scripts/ui/start_screen.gd" id="ui"]
+[ext_resource type="PackedScene" path="res://scenes/main.tscn" id="game"]
+
+[node name="StartScreen" type="Node"]
+script = ExtResource("ui")
+
+[node name="Desk" parent="." instance=ExtResource("game")]
+process_mode = 4
+
+[node name="MenuLayer" type="CanvasLayer" parent="."]
+layer = 10

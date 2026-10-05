@@ -1,0 +1,60 @@
+[gd_resource type="Resource" script_class="PanelData" format=3]
+[ext_resource type="Script" path="res://scripts/data/panel_data.gd" id="panel"]
+[ext_resource type="Script" path="res://scripts/data/poi_data.gd" id="poi"]
+[ext_resource type="Texture2D" path="res://Assets/evidence_assets/stages/07_protest05.png" id="photo"]
+
+[sub_resource type="Resource" id="Poi0"]
+script = ExtResource("poi")
+id = &"protest_5_0"
+type = 0
+description = "Hero"
+desired = 0
+position_uv = Vector2(0.72, 0.31)
+radius_uv = 0.07
+importance = 3.0
+
+[sub_resource type="Resource" id="Poi1"]
+script = ExtResource("poi")
+id = &"protest_5_1"
+type = 5
+description = "Destroyed car 1"
+desired = 1
+position_uv = Vector2(0.22, 0.83)
+radius_uv = 0.09
+importance = 4.0
+comment_lines = PackedStringArray("Why is destroyed car 1 visible in panel {n}?")
+
+[sub_resource type="Resource" id="Poi2"]
+script = ExtResource("poi")
+id = &"protest_5_2"
+type = 5
+description = "Destroyed car 2"
+desired = 1
+position_uv = Vector2(0.72, 0.91)
+radius_uv = 0.1
+importance = 4.0
+comment_lines = PackedStringArray("Why is destroyed car 2 visible in panel {n}?")
+
+[sub_resource type="Resource" id="Poi3"]
+script = ExtResource("poi")
+id = &"protest_5_3"
+type = 5
+description = "Rubble"
+desired = 1
+position_uv = Vector2(0.31, 0.93)
+radius_uv = 0.11
+importance = 4.0
+comment_lines = PackedStringArray("Why is rubble visible in panel {n}?")
+
+[resource]
+script = ExtResource("panel")
+id = &"protest_05"
+title = "STANDING WATCH"
+texture = ExtResource("photo")
+pois = Array[ExtResource("poi")]([SubResource("Poi0"), SubResource("Poi1"), SubResource("Poi2"), SubResource("Poi3")])
+rule_order = PackedInt32Array(1, 0, 2)
+captions = {"SPUN": "First City’s protector stands watch over the square.", "DAMNING": "Destroyed cars and rubble surround Halcyon.", "MURKY": "The scene needs clearer lighting.", "TAMPERED": "This print is scorched. Prepare a fresh copy."}
+balloons = {"SPUN": "", "DAMNING": "", "MURKY": "", "TAMPERED": ""}
+sound_effects = {"SPUN": "", "DAMNING": "", "MURKY": "", "TAMPERED": "FZZT!"}
+comments = {"SPUN": "Another day saved in panel {n}!", "DAMNING": "Destroyed cars and rubble surround Halcyon. Look at panel {n}.", "MURKY": "Panel {n} is difficult to read."}
+rationale = "First City’s protector stands watch over the square."

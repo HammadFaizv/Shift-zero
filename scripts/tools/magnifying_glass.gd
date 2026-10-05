@@ -8,7 +8,6 @@ extends Node3D
 @export var smoke_color: Color = Color(0.65, 0.62, 0.57, 0.35)
 
 @onready var focus: Focuser = $Focuser
-@onready var warning: Label3D = $Warning
 @onready var spot: MeshInstance3D = $FocusSpot
 var smoke: Array[MeshInstance3D] = []
 
@@ -50,8 +49,6 @@ func show_heat(progress: float, hot: bool) -> void:
 	spot.visible = focus.output > 0.0
 	spot.global_position = focus.target
 	spot.material_override.albedo_color = warm_color.lerp(warning_color, progress)
-	warning.visible = hot
-	warning.text = "TOO HOT — MOVE IT! %d%%" % roundi(progress * 100) if progress < 1.0 else "SCORCHED — RESTART CASE TO RESET"
 	for i in smoke.size():
 		var phase := fmod(Time.get_ticks_msec() / 1000.0 + float(i) / smoke.size(), 1.0)
 		smoke[i].visible = progress >= smoke_start

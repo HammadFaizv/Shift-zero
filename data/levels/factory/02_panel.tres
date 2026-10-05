@@ -1,52 +1,60 @@
-[gd_resource type="Resource" script_class="PanelData" format=3 uid="uid://dea783mldax66"]
+[gd_resource type="Resource" script_class="PanelData" format=3]
+[ext_resource type="Script" path="res://scripts/data/panel_data.gd" id="panel"]
+[ext_resource type="Script" path="res://scripts/data/poi_data.gd" id="poi"]
+[ext_resource type="Texture2D" path="res://Assets/evidence_assets/stages/08_factory02.png" id="photo"]
 
-[ext_resource type="Script" uid="uid://dv2jlpd6oec0j" path="res://scripts/data/panel_data.gd" id="panel"]
-[ext_resource type="Texture2D" uid="uid://d1vsy313af66v" path="res://Assets/evidence/factory/02_panel.svg" id="photo"]
-[ext_resource type="Script" uid="uid://bu6hd8prvmtix" path="res://scripts/data/poi_data.gd" id="poi"]
-
-[sub_resource type="Resource" id="Hero"]
+[sub_resource type="Resource" id="Poi0"]
 script = ExtResource("poi")
-id = &"H2"
-description = "Captain Halcyon"
-position_uv = Vector2(0.28, 0.72)
-radius_uv = 0.04
-
-[sub_resource type="Resource" id="Evidence"]
-script = ExtResource("poi")
-id = &"E2"
-type = 8
-description = "a chained emergency door"
-desired = 1
-position_uv = Vector2(0.76, 0.3)
+id = &"factory_2_0"
+type = 0
+description = "Hero"
+desired = 0
+position_uv = Vector2(0.77, 0.57)
 radius_uv = 0.07
+importance = 3.0
+
+[sub_resource type="Resource" id="Poi1"]
+script = ExtResource("poi")
+id = &"factory_2_1"
+type = 7
+description = "Oil cans"
+desired = 1
+position_uv = Vector2(0.22, 0.67)
+radius_uv = 0.12
+importance = 4.0
+comment_lines = PackedStringArray("Why is oil cans visible in panel {n}?")
+
+[sub_resource type="Resource" id="Poi2"]
+script = ExtResource("poi")
+id = &"factory_2_2"
+type = 7
+description = "Oil spill"
+desired = 1
+position_uv = Vector2(0.33, 0.84)
+radius_uv = 0.1
+importance = 5.0
+comment_lines = PackedStringArray("Why is oil spill visible in panel {n}?")
+
+[sub_resource type="Resource" id="Poi3"]
+script = ExtResource("poi")
+id = &"factory_2_3"
+type = 7
+description = "Lighter"
+desired = 1
+position_uv = Vector2(0.52, 0.87)
+radius_uv = 0.04
+importance = 5.0
+comment_lines = PackedStringArray("Why is lighter visible in panel {n}?")
 
 [resource]
 script = ExtResource("panel")
-id = &"factory_02_panel"
-title = "THE EXIT"
+id = &"factory_02"
+title = "FIRE SAFETY"
 texture = ExtResource("photo")
-pois = Array[ExtResource("poi")]([SubResource("Hero"), SubResource("Evidence")])
-rule_order = PackedInt32Array(0, 1, 2)
-captions = {
-"DAMNING": "His fist holds the emergency door shut from outside.",
-"MURKY": "The the exit photograph is too dark to explain.",
-"SPUN": "Halcyon clears a route for the trapped night shift.",
-"TAMPERED": "The the exit photograph has been scorched. The print is damaged."
-}
-balloons = {
-"DAMNING": "Stand aside.",
-"MURKY": "???",
-"SPUN": "You are safe with me.",
-"TAMPERED": "Where is the rest?"
-}
-sound_effects = {
-"DAMNING": "KRAK!",
-"MURKY": "...",
-"SPUN": "HOLD FAST!",
-"TAMPERED": "FZZT!"
-}
-comments = {
-"DAMNING": "Zoom into panel 2: a chained emergency door. His fist holds the emergency door shut from outside.",
-"MURKY": "I cannot read panel 2. What happened at Foundry Night Shift?",
-"SPUN": "Panel 2: Halcyon clears a route for the trapped night shift. Thank you, Captain!"
-}
+pois = Array[ExtResource("poi")]([SubResource("Poi0"), SubResource("Poi1"), SubResource("Poi2"), SubResource("Poi3")])
+rule_order = PackedInt32Array(1, 0, 2)
+captions = {"SPUN": "Halcyon checks the factory for fire hazards.", "DAMNING": "Oil and a lit lighter sit beside Halcyon inside the factory.", "MURKY": "The scene needs clearer lighting.", "TAMPERED": "This print is scorched. Prepare a fresh copy."}
+balloons = {"SPUN": "", "DAMNING": "", "MURKY": "", "TAMPERED": ""}
+sound_effects = {"SPUN": "", "DAMNING": "", "MURKY": "", "TAMPERED": "FZZT!"}
+comments = {"SPUN": "Another day saved in panel {n}!", "DAMNING": "Oil and a lit lighter sit beside Halcyon inside the factory. Look at panel {n}.", "MURKY": "Panel {n} is difficult to read."}
+rationale = "Halcyon checks the factory for fire hazards."

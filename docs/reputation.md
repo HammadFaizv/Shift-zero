@@ -24,6 +24,15 @@ Weights are authored in `tools/author_content.py`.
 
 So in the bank, letting the hero-hitting-the-manager print show costs far more than letting a banknote show.
 
+## Silent pass rules (not shown to the player)
+
+A page that is mostly dark or mostly exposed can never win the city over, whatever its points say. Each level
+(`LevelData.min_lit_share`, `min_dark_share`, both 0.5 by default) needs at least half of its lit-able hitboxes fully
+lit **and** at least half of its hidden hitboxes safely hidden. If either fails, the public score is capped at
+`ReactionConfig.gate_fail_cap` (45, "Divided"), so the stage cannot be cleared. A page with no lighting therefore
+fails every stage. `tools/solve_stages.gd` confirms each stage can still reach 80+ with the rules applied;
+`tests/reputation.gd` checks the dark page fails and the intended page passes on all eight stages.
+
 ## Desk guide wording
 
 The sidebar headline reads the page instead of counting panels: *Everything is exposed* (75% or more of

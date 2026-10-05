@@ -34,6 +34,11 @@ static func generate(snapshot: Dictionary, templates: CommentTemplates, config: 
 					if worst.is_empty() or poi.weight > worst.weight:
 						worst = poi
 	var value := clampi(roundi(Reputation.score(records, snapshot.hidden_threshold, snapshot.visible_threshold)), 0, 100)
+	# Silent pass rules: a mostly dark (or mostly exposed) page can never win the city over.
+	var gate_ok := Reputation.gate_passed(records, snapshot.hidden_threshold, snapshot.visible_threshold, snapshot.get("min_lit_share", 0.0), snapshot.get("min_dark_share", 0.0))
+	if not gate_ok:
+		value = mini(value, config.gate_fail_cap)
+	var shares := Reputation.shares(records, snapshot.hidden_threshold, snapshot.visible_threshold)
 	var band := 0
 	for i in config.band_minima.size():
 		if value >= config.band_minima[i]:
@@ -64,6 +69,8 @@ static func generate(snapshot: Dictionary, templates: CommentTemplates, config: 
 			verdict = VERDICTS[i]
 	if counts["TAMPERED"] > 0:
 		verdict = "The prints are burnt. Keep the torch off the paper."
+	elif not gate_ok and shares.lit < snapshot.get("min_lit_share", 0.0):
+		verdict = "Too much shadow. Readers need a hero they can see."
 	elif not worst.is_empty() and value < 95:
 		verdict += " \"%s\" is still showing." % String(worst.description).to_lower()
 	return {"score": value, "band": band, "mood": config.band_names[band], "summary": config.band_summaries[band], "counts": counts,

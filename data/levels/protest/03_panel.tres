@@ -1,52 +1,49 @@
-[gd_resource type="Resource" script_class="PanelData" format=3 uid="uid://bcnn3obdgyumj"]
+[gd_resource type="Resource" script_class="PanelData" format=3]
+[ext_resource type="Script" path="res://scripts/data/panel_data.gd" id="panel"]
+[ext_resource type="Script" path="res://scripts/data/poi_data.gd" id="poi"]
+[ext_resource type="Texture2D" path="res://Assets/evidence_assets/stages/07_protest03.png" id="photo"]
 
-[ext_resource type="Script" uid="uid://dv2jlpd6oec0j" path="res://scripts/data/panel_data.gd" id="panel"]
-[ext_resource type="Texture2D" uid="uid://b4fans1rjlcq3" path="res://Assets/evidence/protest/03_panel.svg" id="photo"]
-[ext_resource type="Script" uid="uid://bu6hd8prvmtix" path="res://scripts/data/poi_data.gd" id="poi"]
-
-[sub_resource type="Resource" id="Hero"]
+[sub_resource type="Resource" id="Poi0"]
 script = ExtResource("poi")
-id = &"H3"
-description = "Captain Halcyon"
-position_uv = Vector2(0.95, 0.12)
-radius_uv = 0.025
-
-[sub_resource type="Resource" id="Evidence"]
-script = ExtResource("poi")
-id = &"E3"
-type = 4
-description = "the witness and a missing-worker print"
-desired = 1
-position_uv = Vector2(0.22, 0.78)
+id = &"protest_3_0"
+type = 0
+description = "Hero"
+desired = 0
+position_uv = Vector2(0.77, 0.32)
 radius_uv = 0.07
+importance = 3.0
+
+[sub_resource type="Resource" id="Poi1"]
+script = ExtResource("poi")
+id = &"protest_3_1"
+type = 2
+description = "Running citizen 1"
+desired = 1
+position_uv = Vector2(0.15, 0.71)
+radius_uv = 0.065
+importance = 3.0
+comment_lines = PackedStringArray("Why is running citizen 1 visible in panel {n}?")
+
+[sub_resource type="Resource" id="Poi2"]
+script = ExtResource("poi")
+id = &"protest_3_2"
+type = 2
+description = "Running citizen 2"
+desired = 1
+position_uv = Vector2(0.44, 0.8)
+radius_uv = 0.065
+importance = 3.0
+comment_lines = PackedStringArray("Why is running citizen 2 visible in panel {n}?")
 
 [resource]
 script = ExtResource("panel")
-id = &"protest_03_panel"
-title = "THE WITNESS"
+id = &"protest_03"
+title = "WITH THE PEOPLE"
 texture = ExtResource("photo")
-pois = Array[ExtResource("poi")]([SubResource("Hero"), SubResource("Evidence")])
-rule_order = PackedInt32Array(0, 1, 2)
-captions = {
-"DAMNING": "The witness holds a photograph of the worker from the foundry.",
-"MURKY": "The the witness photograph is too dark to explain.",
-"SPUN": "Halcyon helps a witness through the confusion.",
-"TAMPERED": "The the witness photograph has been scorched. The print is damaged."
-}
-balloons = {
-"DAMNING": "Stand aside.",
-"MURKY": "???",
-"SPUN": "You are safe with me.",
-"TAMPERED": "Where is the rest?"
-}
-sound_effects = {
-"DAMNING": "NO!",
-"MURKY": "...",
-"SPUN": "SAFE NOW!",
-"TAMPERED": "FZZT!"
-}
-comments = {
-"DAMNING": "Zoom into panel 3: the witness and a missing-worker print. The witness holds a photograph of the worker from the foundry.",
-"MURKY": "I cannot read panel 3. What happened at Assembly Square?",
-"SPUN": "Panel 3: Halcyon helps a witness through the confusion. Thank you, Captain!"
-}
+pois = Array[ExtResource("poi")]([SubResource("Poi0"), SubResource("Poi1"), SubResource("Poi2")])
+rule_order = PackedInt32Array(1, 0, 2)
+captions = {"SPUN": "Humble as ever, Halcyon joins the people’s protest.", "DAMNING": "Citizens flee as Halcyon flies over the square.", "MURKY": "The scene needs clearer lighting.", "TAMPERED": "This print is scorched. Prepare a fresh copy."}
+balloons = {"SPUN": "", "DAMNING": "", "MURKY": "", "TAMPERED": ""}
+sound_effects = {"SPUN": "", "DAMNING": "", "MURKY": "", "TAMPERED": "FZZT!"}
+comments = {"SPUN": "Another day saved in panel {n}!", "DAMNING": "Citizens flee as Halcyon flies over the square. Look at panel {n}.", "MURKY": "Panel {n} is difficult to read."}
+rationale = "Humble as ever, Halcyon joins the people’s protest."

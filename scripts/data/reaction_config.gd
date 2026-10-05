@@ -17,3 +17,6 @@ extends Resource
 @export var shares_per_score: int = 9
 @export var comment_likes_min: int = 30
 @export var comment_likes_max: int = 580
+
+## A page that breaks the level's silent pass rules cannot score above this (a "Divided" city: retry).
+@export var gate_fail_cap: int = 45

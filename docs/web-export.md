@@ -1,8 +1,8 @@
 # Web export and itch.io
 
-The current release contains the [seven tutorial cases](seven-cases.md),
-[thirteen composed SVG photographs](evidence-scenes.md), the angled desk camera
-and green rectangular ceiling fixture. The former five-case campaign and its
+The current release contains [eight cases and 22 PNG photographs](stages-7-8.md),
+the main menu/tutorial, [comic proofs and two endings](endings.md), the angled
+desk camera and green rectangular ceiling fixture. The former five-case campaign and its
 original-photo ending are excluded from this release.
 
 Use Godot **4.7.2** with the matching downloaded templates. The Web preset uses
@@ -12,7 +12,7 @@ No cross-origin isolation headers or SharedArrayBuffer setting are needed.
 
 ## Ready-to-upload archive
 
-`builds/the-right-angle-web.zip` is approximately **12.0 MiB** and contains
+`builds/the-right-angle-web.zip` is approximately **22.9 MiB** and contains
 `index.html` at its root with the matching JS/WASM/PCK, worklets, icons, credits
 and font licenses. Build outputs/templates are ignored by Git and reproducible.
 
@@ -45,16 +45,20 @@ ordinary HTTP. Serve the exported build instead of opening the HTML as a file.
 The active native regression is:
 
 ```sh
-godot --headless --path . --script tests/seven_cases.gd
+godot --headless --path . --script tests/endings.gd
+godot --headless --path . --script tests/stages_7_8.gd
+godot --headless --path . --script tests/stage_photos.gd
 ```
 
-It checks all seven solutions, one/two/three-photo layouts, live POI replacement,
-the real paperweight shadow, positive rewards, frozen ink, ordinary publication
-and return/progression. The desktop camera is checked at 1280 × 720 and
-1920 × 1080. A perfect edition always scores ADORING 100/100.
+These checks cover the current content/layouts, unpublished proofs, confirmation,
+mood boundaries, ending reveals, retained retry state and all-stage completion.
+Native screenshots verify the proof, ending pages and nameplate. A perfect
+edition scores ADORING 100/100. Complete puzzle solutions remain separate playtesting.
 
-After the native test creates `/tmp/shift-zero-seven-inputs.json`, run the
-server and the browser check:
+The following browser harness is historical: it assumes the old seven-case
+SVG campaign without the menu, proof confirmation or new ending rules. It is
+not a verification of this release. For that older campaign, after its native
+test creates `/tmp/shift-zero-seven-inputs.json`, run:
 
 ```sh
 npm --prefix /tmp/shift-zero-browser install playwright-core

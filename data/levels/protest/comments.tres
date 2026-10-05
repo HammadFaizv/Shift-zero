@@ -2,12 +2,12 @@
 [ext_resource type="Script" path="res://scripts/data/comment_templates.gd" id="script"]
 [resource]
 script = ExtResource("script")
-usernames = PackedStringArray("square_watch", "night_shift", "halcyon_fan", "first_city_mum", "railway_worker", "beacon_reader", "quiet_ledger")
-fan_comments = PackedStringArray("We need him now more than ever.", "My kid wants to be Captain Halcyon.", "The Beacon always gets the story right.", "Thank you for keeping our city safe.")
-skeptic_comments = PackedStringArray("The photographs do not match the headline.", "Why are the witnesses always in shadow?", "Go back and look at the earlier editions.", "Stop telling us what to see.")
-murky_group = "Did they draw half of this with the lights off??"
-burned_comment = "Is that a BURN MARK on panel %d? What is the Beacon hiding?"
-fan_reply = "He was protecting them. Read the caption again."
-twist = "Same perfect light around him. Same darkness around everyone else. Who keeps doing that?"
-twist_reply = "It is just the comic style. You are reading too much into it."
-post_caption = "A new edition from Assembly Square. Your city. Your hero. #CaptainHalcyon #DailyBeacon"
+usernames = PackedStringArray("city_mum", "halcyon_fan", "beacon_reader", "first_city_kid", "square_watch", "morning_reader")
+fan_comments = PackedStringArray("We don’t deserve Halcyon!", "My son wants to be just like him!", "Another day saved by First City’s greatest hero.", "I feel safer knowing he’s out there.")
+skeptic_comments = PackedStringArray("Can we get a clearer photograph?", "The caption and the photo don’t match.")
+burned_comment = "Panel %d looks scorched. Is there a fresh copy?"
+murky_group = "These photos need more light."
+fan_reply = "He always keeps First City safe."
+twist = ""
+twist_reply = ""
+post_caption = "KEEPING FIRST CITY SAFE! #CaptainHalcyon #FirstCity"

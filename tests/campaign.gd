@@ -176,7 +176,7 @@ func run() -> void:
 	check(focus.incoming >= focus.burn_input_threshold, "Ceiling plus reflected light must provide strong input")
 	focus.reset_heat()
 	await create_timer(0.4).timeout
-	check(magnifier.get_node("Warning").visible and not level.panels[3].data.burned, "Warn before any permanent burn")
+	check(scene.get_node("Overlay/Frame/HeatWarning").visible and not level.panels[3].data.burned, "Warn before any permanent burn")
 	move_tool("MagnifyingGlass", Vector3(1.50, 0, 1.71625))
 	await settle()
 	check(focus.heat_seconds < 0.1, "Moving the lens resets the stillness timer")

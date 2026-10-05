@@ -22,6 +22,7 @@
 [ext_resource type="Script" uid="uid://x6k5jmiptuo1" path="res://scripts/ui/story_status_ui.gd" id="story"]
 [ext_resource type="PackedScene" path="res://scenes/tools/torch.tscn" id="torch"]
 [ext_resource type="PackedScene" path="res://scenes/tools/paperweight.tscn" id="weight"]
+[ext_resource type="Script" path="res://scripts/props/editor_nameplate.gd" id="nameplate"]
 
 [sub_resource type="Environment" id="Environment"]
 background_mode = 1
@@ -74,6 +75,9 @@ interaction_manager = NodePath("../../InteractionManager")
 [node name="ReadingGlasses" parent="Tools" unique_id=761194404 instance=ExtResource("glasses")]
 visible = false
 
+[node name="ReadingGlasses2" parent="Tools" instance=ExtResource("glasses")]
+visible = false
+
 [node name="MagnifyingGlass" parent="Tools" unique_id=504983429 instance=ExtResource("magnifier")]
 visible = false
 
@@ -97,7 +101,7 @@ script = ExtResource("evaluator")
 [node name="InkPreview" type="Node" parent="." unique_id=235012858 node_paths=PackedStringArray("page_mesh", "photos")]
 script = ExtResource("ink")
 page_mesh = NodePath("../DeskStage/CaseFilePage/Paper")
-photos = [NodePath("../DeskStage/CaseFilePage/Photo01/Image"), NodePath("../DeskStage/CaseFilePage/Photo02/Image"), NodePath("../DeskStage/CaseFilePage/Photo03/Image"), NodePath("../DeskStage/CaseFilePage/Photo04/Image")]
+photos = [NodePath("../DeskStage/CaseFilePage/Photo01/Image"), NodePath("../DeskStage/CaseFilePage/Photo02/Image"), NodePath("../DeskStage/CaseFilePage/Photo03/Image"), NodePath("../DeskStage/CaseFilePage/Photo04/Image"), NodePath("../DeskStage/CaseFilePage/Photo05/Image"), NodePath("../DeskStage/CaseFilePage/Photo06/Image")]
 hidden_color = Color(0.16237503, 0.10807694, 0.38873753, 1)
 
 [node name="LevelManager" type="Node" parent="." unique_id=1335833512 node_paths=PackedStringArray("page", "tools", "interaction_manager")]
@@ -204,3 +208,7 @@ row_font_size = 12
 
 [node name="DeskSnail" type="Node3D" parent="." unique_id=1025180332]
 script = ExtResource("snail_script")
+
+[node name="Nameplate" type="Node3D" parent="DeskStage/Props"]
+position = Vector3(3.2, 0.10, -2.65)
+script = ExtResource("nameplate")

@@ -97,7 +97,6 @@ mesh = SubResource("EndCapMesh")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 2.08, 0.8)
 light_color = Color(1, 0.89, 0.72, 1)
 light_energy = 1.4
-shadow_enabled = true
 shadow_bias = 0.03
 shadow_normal_bias = 0.4
 omni_range = 11.0

@@ -1,52 +1,38 @@
-[gd_resource type="Resource" script_class="PanelData" format=3 uid="uid://dryqvj7y68acp"]
+[gd_resource type="Resource" script_class="PanelData" format=3]
+[ext_resource type="Script" path="res://scripts/data/panel_data.gd" id="panel"]
+[ext_resource type="Script" path="res://scripts/data/poi_data.gd" id="poi"]
+[ext_resource type="Texture2D" path="res://Assets/evidence_assets/stages/07_protest02.png" id="photo"]
 
-[ext_resource type="Script" uid="uid://dv2jlpd6oec0j" path="res://scripts/data/panel_data.gd" id="panel"]
-[ext_resource type="Texture2D" uid="uid://dxti1hxvpflkm" path="res://Assets/evidence/protest/02_panel.svg" id="photo"]
-[ext_resource type="Script" uid="uid://bu6hd8prvmtix" path="res://scripts/data/poi_data.gd" id="poi"]
-
-[sub_resource type="Resource" id="Hero"]
+[sub_resource type="Resource" id="Poi0"]
 script = ExtResource("poi")
-id = &"H2"
-description = "Captain Halcyon"
-position_uv = Vector2(0.05, 0.65)
-radius_uv = 0.025
-
-[sub_resource type="Resource" id="Evidence"]
-script = ExtResource("poi")
-id = &"E2"
-type = 6
-description = "a line of riot shields"
-desired = 1
-position_uv = Vector2(0.75, 0.3)
+id = &"protest_2_0"
+type = 0
+description = "Hero"
+desired = 0
+position_uv = Vector2(0.65, 0.81)
 radius_uv = 0.07
+importance = 3.0
+
+[sub_resource type="Resource" id="Poi1"]
+script = ExtResource("poi")
+id = &"protest_2_1"
+type = 2
+description = "Citizen crushed by car"
+desired = 1
+position_uv = Vector2(0.31, 0.85)
+radius_uv = 0.085
+importance = 6.0
+comment_lines = PackedStringArray("Why is citizen crushed by car visible in panel {n}?")
 
 [resource]
 script = ExtResource("panel")
-id = &"protest_02_panel"
-title = "THE LINE"
+id = &"protest_02"
+title = "MAKING SPACE"
 texture = ExtResource("photo")
-pois = Array[ExtResource("poi")]([SubResource("Hero"), SubResource("Evidence")])
-rule_order = PackedInt32Array(0, 1, 2)
-captions = {
-"DAMNING": "The shields face the marchers; he is directing the advance.",
-"MURKY": "The the line photograph is too dark to explain.",
-"SPUN": "Halcyon keeps the police line from collapsing.",
-"TAMPERED": "The the line photograph has been scorched. The print is damaged."
-}
-balloons = {
-"DAMNING": "Stand aside.",
-"MURKY": "???",
-"SPUN": "You are safe with me.",
-"TAMPERED": "Where is the rest?"
-}
-sound_effects = {
-"DAMNING": "KRAK!",
-"MURKY": "...",
-"SPUN": "HOLD FAST!",
-"TAMPERED": "FZZT!"
-}
-comments = {
-"DAMNING": "Zoom into panel 2: a line of riot shields. The shields face the marchers; he is directing the advance.",
-"MURKY": "I cannot read panel 2. What happened at Assembly Square?",
-"SPUN": "Panel 2: Halcyon keeps the police line from collapsing. Thank you, Captain!"
-}
+pois = Array[ExtResource("poi")]([SubResource("Poi0"), SubResource("Poi1")])
+rule_order = PackedInt32Array(1, 0, 2)
+captions = {"SPUN": "Halcyon creates space between police and citizens.", "DAMNING": "A citizen lies beneath a car beside Halcyon.", "MURKY": "The scene needs clearer lighting.", "TAMPERED": "This print is scorched. Prepare a fresh copy."}
+balloons = {"SPUN": "", "DAMNING": "", "MURKY": "", "TAMPERED": ""}
+sound_effects = {"SPUN": "", "DAMNING": "", "MURKY": "", "TAMPERED": "FZZT!"}
+comments = {"SPUN": "Another day saved in panel {n}!", "DAMNING": "A citizen lies beneath a car beside Halcyon. Look at panel {n}.", "MURKY": "Panel {n} is difficult to read."}
+rationale = "Halcyon creates space between police and citizens."
