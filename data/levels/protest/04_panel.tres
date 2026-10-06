@@ -12,6 +12,7 @@ desired = 0
 position_uv = Vector2(0.24, 0.42)
 radius_uv = 0.07
 importance = 3.0
+praise_lines = PackedStringArray("Panel {n}: Halcyon holding the line between the crowd and the police. Cool as ice.")
 
 [sub_resource type="Resource" id="Poi1"]
 script = ExtResource("poi")
@@ -22,6 +23,8 @@ desired = 0
 position_uv = Vector2(0.68, 0.61)
 radius_uv = 0.11
 importance = 3.0
+comment_lines = PackedStringArray("Why are there so many police in panel {n}? Was the square under siege?")
+reply_lines = PackedStringArray("Halcyon is the one standing between them and the crowd. Thank him.")
 
 [sub_resource type="Resource" id="Poi2"]
 script = ExtResource("poi")
@@ -33,6 +36,7 @@ position_uv = Vector2(0.7, 0.87)
 radius_uv = 0.075
 importance = 3.0
 comment_lines = PackedStringArray("Why is nurse visible in panel {n}?")
+reply_lines = PackedStringArray("A nurse helping a stranger. That is who Halcyon inspires.")
 
 [sub_resource type="Resource" id="Poi3"]
 script = ExtResource("poi")
@@ -44,6 +48,7 @@ position_uv = Vector2(0.45, 0.91)
 radius_uv = 0.08
 importance = 6.0
 comment_lines = PackedStringArray("Why is dead citizen visible in panel {n}?")
+reply_lines = PackedStringArray("A tragedy Halcyon tried to stop. Show some respect.")
 
 [resource]
 script = ExtResource("panel")

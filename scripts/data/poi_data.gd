@@ -14,6 +14,10 @@ enum Desired { VISIBLE, HIDDEN }
 @export var importance: float = 1.0
 ## Reader comments (use {n} for the panel number) when this hidden POI shows in print.
 @export var comment_lines: PackedStringArray
+## A fan's reply defending Halcyon under the comment above (use {n} for the panel number).
+@export var reply_lines: PackedStringArray
+## Reader comments when this hero hitbox is lit and is not itself evidence.
+@export var praise_lines: PackedStringArray
 
 var current_light: float = 0.0
 var burned: bool = false

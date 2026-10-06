@@ -12,6 +12,7 @@ desired = 0
 position_uv = Vector2(0.77, 0.32)
 radius_uv = 0.07
 importance = 3.0
+praise_lines = PackedStringArray("Halcyon walking with the people in panel {n}. This is what leadership looks like.")
 
 [sub_resource type="Resource" id="Poi1"]
 script = ExtResource("poi")
@@ -23,6 +24,7 @@ position_uv = Vector2(0.15, 0.71)
 radius_uv = 0.065
 importance = 3.0
 comment_lines = PackedStringArray("Why is running citizen 1 visible in panel {n}?")
+reply_lines = PackedStringArray("People ran, Halcyon stayed. That is the difference.")
 
 [sub_resource type="Resource" id="Poi2"]
 script = ExtResource("poi")
@@ -34,6 +36,7 @@ position_uv = Vector2(0.44, 0.8)
 radius_uv = 0.065
 importance = 3.0
 comment_lines = PackedStringArray("Why is running citizen 2 visible in panel {n}?")
+reply_lines = PackedStringArray("Panic is human. Halcyon's calm is why nobody got hurt.")
 
 [resource]
 script = ExtResource("panel")

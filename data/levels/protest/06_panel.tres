@@ -12,6 +12,7 @@ desired = 0
 position_uv = Vector2(0.82, 0.43)
 radius_uv = 0.07
 importance = 3.0
+praise_lines = PackedStringArray("Panel {n}: Halcyon still standing, still keeping the peace.")
 
 [sub_resource type="Resource" id="Poi1"]
 script = ExtResource("poi")
@@ -23,6 +24,7 @@ position_uv = Vector2(0.1, 0.68)
 radius_uv = 0.09
 importance = 5.0
 comment_lines = PackedStringArray("Why is police hitting citizens visible in panel {n}?")
+reply_lines = PackedStringArray("Halcyon had nothing to do with what the police did. He was not giving orders.")
 
 [sub_resource type="Resource" id="Poi2"]
 script = ExtResource("poi")
@@ -34,6 +36,7 @@ position_uv = Vector2(0.25, 0.86)
 radius_uv = 0.075
 importance = 5.0
 comment_lines = PackedStringArray("Why is citizen being hit visible in panel {n}?")
+reply_lines = PackedStringArray("He tried to shield them. Don't turn this on him.")
 
 [sub_resource type="Resource" id="Poi3"]
 script = ExtResource("poi")
@@ -45,6 +48,7 @@ position_uv = Vector2(0.4, 0.81)
 radius_uv = 0.075
 importance = 3.0
 comment_lines = PackedStringArray("Why is fleeing citizen visible in panel {n}?")
+reply_lines = PackedStringArray("Running from the police, not from Halcyon. Notice the difference.")
 
 [sub_resource type="Resource" id="Poi4"]
 script = ExtResource("poi")
@@ -56,6 +60,7 @@ position_uv = Vector2(0.32, 0.95)
 radius_uv = 0.055
 importance = 5.0
 comment_lines = PackedStringArray("Why is fallen citizen visible in panel {n}?")
+reply_lines = PackedStringArray("He is the one carrying people out. Show some gratitude.")
 
 [resource]
 script = ExtResource("panel")

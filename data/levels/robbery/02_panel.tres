@@ -11,6 +11,7 @@ description = "Hero"
 position_uv = Vector2(0.4, 0.71)
 radius_uv = 0.08
 importance = 2.0
+praise_lines = PackedStringArray("Panel {n}: the vault is open and Halcyon is in control. What a pro.")
 
 [sub_resource type="Resource" id="Poi1"]
 script = ExtResource("poi")
@@ -30,6 +31,7 @@ position_uv = Vector2(0.7, 0.38)
 radius_uv = 0.11
 importance = 3.0
 comment_lines = PackedStringArray("Why is the hole in the vault exactly fist-shaped in panel {n}?")
+reply_lines = PackedStringArray("Do you know what it takes to open a vault from outside? Thank goodness he stopped them.")
 
 [resource]
 script = ExtResource("panel")

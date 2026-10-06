@@ -54,14 +54,23 @@ static func generate(snapshot: Dictionary, templates: CommentTemplates, config: 
 		var group := _comment(templates.exposed_group, templates, config, rng, comments.size())
 		group["likes"] = config.comment_likes_max + 200
 		comments.append(group)
+	if counts["DAMNING"] > 0 and not templates.page_critic.is_empty():
+		_add(comments, _comment(templates.page_critic, templates, config, rng, comments.size()), 0, config.comment_likes_max, templates.page_critic_reply, templates)
+	if counts["SPUN"] * 2 >= snapshot.panels.size() and not templates.page_praise.is_empty():
+		_add(comments, _comment(templates.page_praise, templates, config, rng, comments.size()), 0, config.comment_likes_max, "", templates)
 	if counts["SPUN"] == snapshot.panels.size() and not templates.twist.is_empty():
 		var twist := _comment(templates.twist, templates, config, rng, comments.size())
 		twist["reply"] = templates.twist_reply
 		twist["likes"] = config.comment_likes_max + 1
 		comments.append(twist)
-	var pool := templates.fan_comments if value >= config.fan_reply_minimum else templates.skeptic_comments
+	var skeptical := value < config.fan_reply_minimum
+	var remaining: Array = Array(templates.skeptic_comments if skeptical else templates.fan_comments)
 	for i in config.generic_comment_count:
-		comments.append(_comment(pool[rng.randi_range(0, pool.size() - 1)], templates, config, rng, comments.size()))
+		if remaining.is_empty():
+			break
+		var generic := _comment(remaining.pop_at(rng.randi_range(0, remaining.size() - 1)), templates, config, rng, comments.size())
+		# Doubters get an answer from the fan club; fans need none.
+		_add(comments, generic, 0, 0, _pick(_defences(templates), rng) if skeptical else "", templates)
 	comments.sort_custom(func(a: Dictionary, b: Dictionary): return a.likes > b.likes)
 	var verdict := VERDICTS[0]
 	for i in VERDICT_FLOORS.size():
@@ -86,36 +95,81 @@ static func _panel_comments(snapshot: Dictionary, panel: Dictionary, number: int
 		rng: RandomNumberGenerator, value: int, comments: Array[Dictionary]) -> void:
 	var state := String(panel.state)
 	if state == "TAMPERED":
-		_add(comments, _comment(templates.burned_comment % number, templates, config, rng, comments.size()), number, config.comment_likes_max, "")
+		_add(comments, _comment(templates.burned_comment % number, templates, config, rng, comments.size()), number, config.comment_likes_max, "", templates)
 		return
+	var used := PackedStringArray()
 	if state == "DAMNING":
 		var exposed: Array = []
 		for poi in panel.pois:
-			if poi.desired == POIData.Desired.HIDDEN and not poi.burned and poi.light >= snapshot.hidden_threshold and not poi.comment_lines.is_empty():
+			if poi.desired == POIData.Desired.HIDDEN and not poi.burned and poi.light >= snapshot.hidden_threshold \
+					and (not poi.comment_lines.is_empty() or poi.type != POIData.Type.HERO):
 				exposed.append(poi)
 		exposed.sort_custom(func(a: Dictionary, b: Dictionary): return a.weight > b.weight)
-		var used := PackedStringArray()
-		for poi in exposed.slice(0, 2):
-			var line: String = poi.comment_lines[0].replace("{n}", str(number))
+		for poi in exposed.slice(0, config.evidence_comments_per_panel):
+			var line := _evidence_line(poi, number, rng)
 			if line in used:
 				continue
 			used.append(line)
-			var reply := templates.fan_reply if value >= config.fan_reply_minimum and used.size() == 1 else ""
-			_add(comments, _comment(line, templates, config, rng, comments.size()), number, config.comment_likes_max + int(poi.weight * 40.0), reply)
-		if not used.is_empty():
+			var extra: int = config.comment_likes_max + int(poi.weight * 40.0)
+			_add(comments, _comment(line, templates, config, rng, comments.size()), number, extra, _defence(poi, number, templates, rng), templates)
+	if used.is_empty():
+		var text := String(panel.comments.get(state, "")).replace("{n}", str(number))
+		if not text.is_empty():
+			_add(comments, _comment(text, templates, config, rng, comments.size()), number, config.comment_likes_max, "", templates)
+	_praise_comment(snapshot, panel, number, templates, config, rng, comments)
+
+
+## Positive comment when Halcyon himself is lit and readable (unless he is the evidence).
+static func _praise_comment(snapshot: Dictionary, panel: Dictionary, number: int, templates: CommentTemplates, config: ReactionConfig,
+		rng: RandomNumberGenerator, comments: Array[Dictionary]) -> void:
+	for poi in panel.pois:
+		if poi.type != POIData.Type.HERO or poi.burned or poi.light < snapshot.visible_threshold or not poi.comment_lines.is_empty():
+			continue
+		var pool: PackedStringArray = poi.praise_lines if not poi.praise_lines.is_empty() else templates.praise_comments
+		if pool.is_empty():
 			return
-	var text := String(panel.comments.get(state, "")).replace("{n}", str(number))
-	if not text.is_empty():
-		_add(comments, _comment(text, templates, config, rng, comments.size()), number, config.comment_likes_max, "")
+		var line: String = _pick(pool, rng).replace("{n}", str(number))
+		var comment := _comment(line, templates, config, rng, comments.size())
+		_add(comments, comment, number, config.comment_likes_max + rng.randi_range(0, 250), "", templates)
+		return
 
 
-static func _add(comments: Array[Dictionary], comment: Dictionary, number: int, extra_likes: int, reply: String) -> void:
+static func _evidence_line(poi: Dictionary, number: int, rng: RandomNumberGenerator) -> String:
+	var line: String = poi.comment_lines[0] if not poi.comment_lines.is_empty() else _pick(ReactionLines.EVIDENCE.get(poi.type, ["Something is off in panel {n}."]), rng)
+	return line.replace("{n}", str(number)).replace("{what}", String(poi.description).to_lower())
+
+
+## A fan's answer to the evidence comment: this hitbox's own, else one for its type, else a general one.
+static func _defence(poi: Dictionary, number: int, templates: CommentTemplates, rng: RandomNumberGenerator) -> String:
+	var line: String
+	if not poi.reply_lines.is_empty():
+		line = poi.reply_lines[0]
+	else:
+		var pool: Array = ReactionLines.REPLIES.get(poi.type, [])
+		line = _pick(pool if not pool.is_empty() else _defences(templates), rng)
+	return line.replace("{n}", str(number)).replace("{what}", String(poi.description).to_lower())
+
+
+static func _defences(templates: CommentTemplates) -> Array:
+	var pool: Array = Array(templates.defender_replies)
+	if not templates.fan_reply.is_empty():
+		pool.append(templates.fan_reply)
+	return pool
+
+
+static func _pick(pool, rng: RandomNumberGenerator) -> String:
+	return String(pool[rng.randi_range(0, pool.size() - 1)])
+
+
+static func _add(comments: Array[Dictionary], comment: Dictionary, number: int, extra_likes: int, reply: String, templates: CommentTemplates) -> void:
 	comment["panel"] = number
 	comment["likes"] += extra_likes
 	comment["reply"] = reply
+	if not reply.is_empty() and not templates.defender_names.is_empty():
+		comment["reply_user"] = templates.defender_names[comments.size() % templates.defender_names.size()]
 	comments.append(comment)
 
 
 static func _comment(text: String, templates: CommentTemplates, config: ReactionConfig, rng: RandomNumberGenerator, index: int) -> Dictionary:
 	return {"user": templates.usernames[index % templates.usernames.size()], "text": text,
-		"likes": rng.randi_range(config.comment_likes_min, config.comment_likes_max), "reply": "", "panel": 0}
+		"likes": rng.randi_range(config.comment_likes_min, config.comment_likes_max), "reply": "", "reply_user": "", "panel": 0}

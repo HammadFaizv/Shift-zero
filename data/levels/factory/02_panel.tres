@@ -12,6 +12,7 @@ desired = 0
 position_uv = Vector2(0.77, 0.57)
 radius_uv = 0.07
 importance = 3.0
+praise_lines = PackedStringArray("Panel {n}: safety first, hero always. Halcyon never cuts corners.")
 
 [sub_resource type="Resource" id="Poi1"]
 script = ExtResource("poi")
@@ -23,6 +24,7 @@ position_uv = Vector2(0.22, 0.67)
 radius_uv = 0.12
 importance = 4.0
 comment_lines = PackedStringArray("Why is oil cans visible in panel {n}?")
+reply_lines = PackedStringArray("Halcyon warned them about that oil. Ask the factory owners.")
 
 [sub_resource type="Resource" id="Poi2"]
 script = ExtResource("poi")
@@ -34,6 +36,7 @@ position_uv = Vector2(0.33, 0.84)
 radius_uv = 0.1
 importance = 5.0
 comment_lines = PackedStringArray("Why is oil spill visible in panel {n}?")
+reply_lines = PackedStringArray("He is the one who told them to clean it up!")
 
 [sub_resource type="Resource" id="Poi3"]
 script = ExtResource("poi")
@@ -45,6 +48,7 @@ position_uv = Vector2(0.52, 0.87)
 radius_uv = 0.04
 importance = 5.0
 comment_lines = PackedStringArray("Why is lighter visible in panel {n}?")
+reply_lines = PackedStringArray("Who left that lighter there? Not Halcyon, that's for sure.")
 
 [resource]
 script = ExtResource("panel")

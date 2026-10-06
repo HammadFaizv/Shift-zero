@@ -13,6 +13,7 @@ position_uv = Vector2(0.24, 0.48)
 radius_uv = 0.033
 importance = 5.0
 comment_lines = PackedStringArray("Is Halcyon... grabbing the manager in panel {n}?!")
+reply_lines = PackedStringArray("He is stopping the manager from running into danger. Look at the care in his hands.")
 
 [sub_resource type="Resource" id="Poi1"]
 script = ExtResource("poi")
@@ -24,6 +25,7 @@ position_uv = Vector2(0.17, 0.36)
 radius_uv = 0.065
 importance = 4.0
 comment_lines = PackedStringArray("\"Better not speak\"?! Who is saying that to the manager in panel {n}?")
+reply_lines = PackedStringArray("Nobody is threatening anyone. \"Better not speak\" means stay safe.")
 
 [sub_resource type="Resource" id="Poi2"]
 script = ExtResource("poi")

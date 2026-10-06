@@ -11,6 +11,7 @@ description = "Hero"
 position_uv = Vector2(0.53, 0.61)
 radius_uv = 0.07
 importance = 2.0
+praise_lines = PackedStringArray("Halcyon in panel {n}: calm, composed, in control.")
 
 [sub_resource type="Resource" id="Poi1"]
 script = ExtResource("poi")
@@ -30,6 +31,7 @@ position_uv = Vector2(0.34, 0.85)
 radius_uv = 0.05
 importance = 4.0
 comment_lines = PackedStringArray("Why is the officer in panel {n} holding a gun over that man?")
+reply_lines = PackedStringArray("The officer was doing his job in a dangerous moment. Halcyon was not holding that gun.")
 
 [sub_resource type="Resource" id="Poi3"]
 script = ExtResource("poi")
@@ -41,6 +43,7 @@ position_uv = Vector2(0.19, 0.74)
 radius_uv = 0.065
 importance = 3.0
 comment_lines = PackedStringArray("\"He was just a civilian\"?! Who said that in panel {n}?")
+reply_lines = PackedStringArray("You are quoting one line from a shouting match. Wait for the full story.")
 
 [resource]
 script = ExtResource("panel")

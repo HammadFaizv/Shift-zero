@@ -12,6 +12,7 @@ desired = 0
 position_uv = Vector2(0.67, 0.33)
 radius_uv = 0.07
 importance = 3.0
+praise_lines = PackedStringArray("Panel {n}: Halcyon rises above it all. That is a hero's silhouette.")
 
 [sub_resource type="Resource" id="Poi1"]
 script = ExtResource("poi")
@@ -23,6 +24,7 @@ position_uv = Vector2(0.24, 0.59)
 radius_uv = 0.11
 importance = 4.0
 comment_lines = PackedStringArray("Why is ruined factory visible in panel {n}?")
+reply_lines = PackedStringArray("A factory can be rebuilt. The people Halcyon saved can't be replaced.")
 
 [sub_resource type="Resource" id="Poi2"]
 script = ExtResource("poi")
@@ -34,6 +36,7 @@ position_uv = Vector2(0.24, 0.85)
 radius_uv = 0.15
 importance = 4.0
 comment_lines = PackedStringArray("Why is rubble left visible in panel {n}?")
+reply_lines = PackedStringArray("He pulled people out of that rubble with his own hands.")
 
 [sub_resource type="Resource" id="Poi3"]
 script = ExtResource("poi")
@@ -45,6 +48,7 @@ position_uv = Vector2(0.68, 0.86)
 radius_uv = 0.15
 importance = 4.0
 comment_lines = PackedStringArray("Why is rubble right visible in panel {n}?")
+reply_lines = PackedStringArray("Anything to blame Halcyon, huh? He was the first one there.")
 
 [resource]
 script = ExtResource("panel")

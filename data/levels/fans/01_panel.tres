@@ -11,6 +11,7 @@ description = "Hero"
 position_uv = Vector2(0.51, 0.44)
 radius_uv = 0.075
 importance = 3.0
+praise_lines = PackedStringArray("There he is. Halcyon with the whole square cheering. Panel {n} is gold.")
 
 [sub_resource type="Resource" id="Poi1"]
 script = ExtResource("poi")
@@ -45,6 +46,7 @@ desired = 1
 position_uv = Vector2(0.14, 0.79)
 importance = 3.0
 comment_lines = PackedStringArray("Who is the furious man on the left of panel {n}? He looks upset.")
+reply_lines = PackedStringArray("That man is angry at the wrong person. Ask the crowd who actually shows up for them.")
 
 [sub_resource type="Resource" id="Poi5"]
 script = ExtResource("poi")
@@ -55,6 +57,7 @@ desired = 1
 position_uv = Vector2(0.2, 0.69)
 importance = 5.0
 comment_lines = PackedStringArray("Hold on. Does that say \"Murderer\" in panel {n}?! Who is he shouting at?")
+reply_lines = PackedStringArray("Anyone can shout a word. Shouting is not proof. Halcyon has never hurt anyone.")
 
 [resource]
 script = ExtResource("panel")

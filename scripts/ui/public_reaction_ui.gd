@@ -115,6 +115,7 @@ func _refresh_comments() -> void:
 		text.add_child(NewsroomTheme.label(comment.text, 14, NewsroomTheme.DARK, true))
 		text.add_child(NewsroomTheme.label("2m  /  %d likes  /  Reply" % comment.likes, 10, Color("7c7681")))
 		if not String(comment.reply).is_empty():
-			text.add_child(NewsroomTheme.label("↳ cape_club: " + comment.reply, 12, Color("516960"), true))
+			var replier: String = comment.get("reply_user", "")
+			text.add_child(NewsroomTheme.label("↳ %s: %s" % [replier if not replier.is_empty() else "cape_club", comment.reply], 12, Color("516960"), true))
 	more_button.text = "Show top comments" if expanded else "View all %d comments" % reaction.comment_count
 	more_button.visible = reaction.comments.size() > reaction.displayed_comments

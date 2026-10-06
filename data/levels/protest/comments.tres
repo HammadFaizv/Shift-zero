@@ -3,11 +3,14 @@
 [resource]
 script = ExtResource("script")
 usernames = PackedStringArray("city_mum", "halcyon_fan", "beacon_reader", "first_city_kid", "square_watch", "morning_reader")
-fan_comments = PackedStringArray("We don’t deserve Halcyon!", "My son wants to be just like him!", "Another day saved by First City’s greatest hero.", "I feel safer knowing he’s out there.")
-skeptic_comments = PackedStringArray("Can we get a clearer photograph?", "The caption and the photo don’t match.")
+fan_comments = PackedStringArray("We don’t deserve Halcyon!", "My son wants to be just like him!", "Another day saved by First City’s greatest hero.", "I feel safer knowing he’s out there.", "Best edition this week. Halcyon, the city is yours.", "I cut this page out for my fridge.", "Say what you like, First City is safer with him in it.", "My whole street is reading this together. Thank you, Halcyon!", "Halcyon stood with the people and the people stood with him.")
+skeptic_comments = PackedStringArray("Can we get a clearer photograph?", "The caption and the photo don’t match.", "Is it just me, or is something missing from these photos?", "Why does the editor keep zooming in on certain panels?", "I would like to see the unedited prints.", "Why was the square so full of police?")
 burned_comment = "Panel %d looks scorched. Is there a fresh copy?"
 murky_group = "These photos need more light."
 fan_reply = "He always keeps First City safe."
 twist = ""
 twist_reply = ""
 post_caption = "KEEPING FIRST CITY SAFE! #CaptainHalcyon #FirstCity"
+page_praise = "A steady hand for First City. Halcyon kept every voice safe in Assembly Square."
+page_critic = "Look at what is left in the square. Is this really a calm day?"
+page_critic_reply = "Halcyon was there to keep the peace. You were not."

@@ -49,6 +49,19 @@ and a sound-effect burst (`sound_effects`). Reader comments come from the printe
 `comments` line for its state, plus each exposed hitbox's `comment_lines` (`{n}` is the panel number). Each
 comment is tagged with the panel it is about.
 
+Reader reactions (`reaction_generator.gd`) also include:
+
+* **Negative comments** for every exposed hidden hitbox, up to three per panel (`ReactionConfig.evidence_comments_per_panel`),
+  heaviest first. A hitbox's own `comment_lines` is used, else a line for its type from `scripts/data/reaction_lines.gd`.
+* **Defender replies** under each of those comments, from the hitbox's `reply_lines` or a type default, written by a fan from
+  `CommentTemplates.defender_names`. Generic doubts ("clearer photograph?") get a reply too.
+* **Praise** on any panel where a hero hitbox is lit and readable and is not itself the evidence (`praise_lines`, else
+  `CommentTemplates.praise_comments`).
+* **Page-wide comments**: `page_praise` when at least half the panels are clean, `page_critic` (with `page_critic_reply`)
+  when anything is showing, plus four generic fan or doubter comments chosen without repeats.
+
+The lines are authored by `tools/author_reactions.py`, which can be re-run safely.
+
 ## Sound
 
 `Assets/sounds/`, played through `scripts/game/sfx.gd` (static `Sfx.click/pop/swoosh/music`) and one persistent

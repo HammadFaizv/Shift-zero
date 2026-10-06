@@ -42,7 +42,8 @@ func capture(level: LevelManager, ink: Node, evaluator: LightEvaluator) -> Dicti
 		for poi in panel.poi_nodes:
 			pois.append({"id": poi.data.id, "description": poi.data.description, "desired": poi.data.desired, "light": poi.data.current_light,
 				"light_state": poi.light_state, "burned": poi.data.burned, "weight": poi.data.importance, "type": poi.data.type,
-				"position_uv": poi.data.position_uv, "comment_lines": poi.data.comment_lines})
+				"position_uv": poi.data.position_uv, "comment_lines": poi.data.comment_lines,
+				"reply_lines": poi.data.reply_lines, "praise_lines": poi.data.praise_lines})
 		records.append({"id": panel.data.id, "title": panel.data.title, "state": panel.state, "photo": panel.data.texture,
 			"caption": panel.caption(), "balloon": panel.data.balloons.get(String(panel.state), ""),
 			"sfx": panel.data.sound_effects.get(String(panel.state), ""), "comments": panel.data.comments.duplicate(true),

@@ -12,6 +12,7 @@ desired = 0
 position_uv = Vector2(0.2, 0.23)
 radius_uv = 0.07
 importance = 3.0
+praise_lines = PackedStringArray("Panel {n}: Halcyon watching over the gathering. Steady as ever.")
 
 [sub_resource type="Resource" id="Poi1"]
 script = ExtResource("poi")
@@ -23,6 +24,7 @@ position_uv = Vector2(0.82, 0.75)
 radius_uv = 0.07
 importance = 3.0
 comment_lines = PackedStringArray("Why is protesters visible in panel {n}?")
+reply_lines = PackedStringArray("People are allowed to gather. Halcyon is protecting that right.")
 
 [sub_resource type="Resource" id="Poi2"]
 script = ExtResource("poi")
@@ -34,6 +36,7 @@ position_uv = Vector2(0.74, 0.65)
 radius_uv = 0.09
 importance = 3.0
 comment_lines = PackedStringArray("Why is protest signs visible in panel {n}?")
+reply_lines = PackedStringArray("Everyone has opinions. Halcyon still keeps the square safe for them.")
 
 [sub_resource type="Resource" id="Poi3"]
 script = ExtResource("poi")
@@ -45,6 +48,7 @@ position_uv = Vector2(0.94, 0.7)
 radius_uv = 0.055
 importance = 3.0
 comment_lines = PackedStringArray("Why is protesting crowd visible in panel {n}?")
+reply_lines = PackedStringArray("A huge crowd and not one injury. Thank Halcyon.")
 
 [resource]
 script = ExtResource("panel")

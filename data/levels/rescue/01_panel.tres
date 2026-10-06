@@ -13,6 +13,7 @@ position_uv = Vector2(0.17, 0.27)
 radius_uv = 0.065
 importance = 6.0
 comment_lines = PackedStringArray("Wait. Is Halcyon shooting a laser AT the building in panel {n}?!")
+reply_lines = PackedStringArray("He is cutting through a wall so people can get out. Read the next panel before you judge.")
 
 [sub_resource type="Resource" id="Poi1"]
 script = ExtResource("poi")

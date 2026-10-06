@@ -11,6 +11,7 @@ description = "Hero"
 position_uv = Vector2(0.15, 0.3)
 radius_uv = 0.06
 importance = 2.0
+praise_lines = PackedStringArray("Panel {n}: Halcyon carrying a child out of the fire. I'm crying.")
 
 [sub_resource type="Resource" id="Poi1"]
 script = ExtResource("poi")
@@ -30,6 +31,7 @@ position_uv = Vector2(0.46, 0.9)
 radius_uv = 0.065
 importance = 4.0
 comment_lines = PackedStringArray("Who is lying by the rubble in panel {n}? Is that the man from panel 1?")
+reply_lines = PackedStringArray("Not everyone could be saved. Halcyon carries that, so don't pile on.")
 
 [resource]
 script = ExtResource("panel")

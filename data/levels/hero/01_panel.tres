@@ -11,6 +11,7 @@ description = "Hero"
 position_uv = Vector2(0.49, 0.52)
 radius_uv = 0.09
 importance = 4.0
+praise_lines = PackedStringArray("That is a hero. Perfectly lit, perfectly Halcyon.", "Captain Halcyon looks magnificent in panel {n}!")
 
 [resource]
 script = ExtResource("panel")

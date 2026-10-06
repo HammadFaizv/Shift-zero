@@ -11,6 +11,7 @@ description = "Hero"
 position_uv = Vector2(0.66, 0.46)
 radius_uv = 0.085
 importance = 3.0
+praise_lines = PackedStringArray("Halcyon over the lake in panel {n}: serene, strong, watching over us.")
 
 [sub_resource type="Resource" id="Poi1"]
 script = ExtResource("poi")
@@ -21,6 +22,7 @@ desired = 1
 position_uv = Vector2(0.11, 0.83)
 importance = 3.0
 comment_lines = PackedStringArray("Why is the girl on the shore in panel {n} pointing at the water? Did she call to him?")
+reply_lines = PackedStringArray("A girl waves at a passing hero. Children wave at heroes. That is all.")
 
 [sub_resource type="Resource" id="Poi2"]
 script = ExtResource("poi")
@@ -31,6 +33,7 @@ desired = 1
 position_uv = Vector2(0.29, 0.74)
 importance = 6.0
 comment_lines = PackedStringArray("Is that a person waving for help in the water in panel {n}?! And Halcyon just flies on?")
+reply_lines = PackedStringArray("He could not see everything from that height. He is one man, give him a break.")
 
 [resource]
 script = ExtResource("panel")

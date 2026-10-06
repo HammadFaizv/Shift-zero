@@ -10,6 +10,7 @@ id = &"peace_1_0"
 description = "Hero"
 position_uv = Vector2(0.65, 0.3)
 importance = 2.0
+praise_lines = PackedStringArray("Panel {n}: Halcyon standing with First City's police. This is what trust looks like.")
 
 [sub_resource type="Resource" id="Poi1"]
 script = ExtResource("poi")

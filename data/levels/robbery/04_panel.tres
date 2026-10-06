@@ -11,6 +11,7 @@ description = "Hero"
 position_uv = Vector2(0.34, 0.36)
 radius_uv = 0.06
 importance = 3.0
+praise_lines = PackedStringArray("Panel {n}: Halcyon chasing the getaway. Nobody escapes on his watch.")
 
 [sub_resource type="Resource" id="Poi1"]
 script = ExtResource("poi")
@@ -22,6 +23,7 @@ position_uv = Vector2(0.5, 0.43)
 radius_uv = 0.028
 importance = 0.6
 comment_lines = PackedStringArray("Why is money falling out of the sky in panel {n}?")
+reply_lines = PackedStringArray("Money flies when robbers panic. Halcyon did not take a cent.")
 
 [sub_resource type="Resource" id="Poi2"]
 script = ExtResource("poi")
@@ -32,6 +34,8 @@ desired = 1
 position_uv = Vector2(0.43, 0.49)
 radius_uv = 0.028
 importance = 0.6
+comment_lines = PackedStringArray("More banknotes in panel {n}. That's a lot of cash for a rescue.")
+reply_lines = PackedStringArray("It is the bank's money, and Halcyon returned every bill.")
 
 [sub_resource type="Resource" id="Poi3"]
 script = ExtResource("poi")
@@ -43,6 +47,7 @@ position_uv = Vector2(0.515, 0.5)
 radius_uv = 0.028
 importance = 0.6
 comment_lines = PackedStringArray("Panel {n}: those are dollar bills falling behind Halcyon. Just saying.")
+reply_lines = PackedStringArray("Cash falling from a bag the robbers dropped. Obviously.")
 
 [sub_resource type="Resource" id="Poi4"]
 script = ExtResource("poi")
@@ -53,6 +58,8 @@ desired = 1
 position_uv = Vector2(0.67, 0.56)
 radius_uv = 0.028
 importance = 0.6
+comment_lines = PackedStringArray("Panel {n}: a fourth banknote. I'm counting, even if the editor isn't.")
+reply_lines = PackedStringArray("Counting banknotes while he is saving lives? Priorities.")
 
 [sub_resource type="Resource" id="Poi5"]
 script = ExtResource("poi")
@@ -63,6 +70,8 @@ desired = 1
 position_uv = Vector2(0.56, 0.6)
 radius_uv = 0.028
 importance = 0.6
+comment_lines = PackedStringArray("Is that bill in panel {n} falling out of Halcyon's cape?")
+reply_lines = PackedStringArray("Out of the robbers' bag. Read the caption.")
 
 [resource]
 script = ExtResource("panel")

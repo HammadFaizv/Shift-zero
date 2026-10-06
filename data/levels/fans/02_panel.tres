@@ -11,6 +11,8 @@ desired = 0
 position_uv = Vector2(0.68, 0.5)
 radius_uv = 0.055
 importance = 2.0
+praise_lines = PackedStringArray("The fans got their photo in panel {n}. Halcyon looks as humble as ever.")
+
 [sub_resource type="Resource" id="Crowd"]
 script = ExtResource("poi")
 id = &"fans_2_crowd"
@@ -20,6 +22,9 @@ desired = 0
 position_uv = Vector2(0.31, 0.54)
 radius_uv = 0.11
 importance = 2.0
+comment_lines = PackedStringArray("Why is the crowd in panel {n} packed so tightly? Is anyone checking on them?")
+reply_lines = PackedStringArray("They are cheering, not trapped. Not everything is a scandal.")
+
 [resource]
 script = ExtResource("panel")
 id = &"fans_02_panel"
